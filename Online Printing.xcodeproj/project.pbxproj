@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */; };
+		FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6E1251FCEBA0088190E /* ContentView.swift */; };
+		FFDFC6E4251FCEBB0088190E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC6E3251FCEBB0088190E /* Assets.xcassets */; };
+		FFDFC6E7251FCEBB0088190E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC6E6251FCEBB0088190E /* Preview Assets.xcassets */; };
+		FFDFC6F2251FCEBC0088190E /* Online_PrintingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */; };
+		FFDFC6FD251FCEBC0088190E /* Online_PrintingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6FC251FCEBC0088190E /* Online_PrintingUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFDFC6EE251FCEBC0088190E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFDFC6D4251FCEBA0088190E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFDFC6DB251FCEBA0088190E;
+			remoteInfo = "Online Printing";
+		};
+		FFDFC6F9251FCEBC0088190E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFDFC6D4251FCEBA0088190E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFDFC6DB251FCEBA0088190E;
+			remoteInfo = "Online Printing";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FFDFC6DC251FCEBA0088190E /* Online Printing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Printing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingApp.swift; sourceTree = "<group>"; };
+		FFDFC6E1251FCEBA0088190E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FFDFC6E3251FCEBB0088190E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFDFC6E6251FCEBB0088190E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFDFC6E8251FCEBB0088190E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDFC6ED251FCEBC0088190E /* Online PrintingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Online PrintingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingTests.swift; sourceTree = "<group>"; };
+		FFDFC6F3251FCEBC0088190E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDFC6F8251FCEBC0088190E /* Online PrintingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Online PrintingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDFC6FC251FCEBC0088190E /* Online_PrintingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingUITests.swift; sourceTree = "<group>"; };
+		FFDFC6FE251FCEBC0088190E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFDFC6D9251FCEBA0088190E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDFC6EA251FCEBC0088190E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDFC6F5251FCEBC0088190E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFDFC6D3251FCEBA0088190E = {
+			isa = PBXGroup;
+			children = (
+				FFDFC6DE251FCEBA0088190E /* Online Printing */,
+				FFDFC6F0251FCEBC0088190E /* Online PrintingTests */,
+				FFDFC6FB251FCEBC0088190E /* Online PrintingUITests */,
+				FFDFC6DD251FCEBA0088190E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFDFC6DD251FCEBA0088190E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFDFC6DC251FCEBA0088190E /* Online Printing.app */,
+				FFDFC6ED251FCEBC0088190E /* Online PrintingTests.xctest */,
+				FFDFC6F8251FCEBC0088190E /* Online PrintingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFDFC6DE251FCEBA0088190E /* Online Printing */ = {
+			isa = PBXGroup;
+			children = (
+				FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */,
+				FFDFC6E1251FCEBA0088190E /* ContentView.swift */,
+				FFDFC6E3251FCEBB0088190E /* Assets.xcassets */,
+				FFDFC6E8251FCEBB0088190E /* Info.plist */,
+				FFDFC6E5251FCEBB0088190E /* Preview Content */,
+			);
+			path = "Online Printing";
+			sourceTree = "<group>";
+		};
+		FFDFC6E5251FCEBB0088190E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FFDFC6E6251FCEBB0088190E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FFDFC6F0251FCEBC0088190E /* Online PrintingTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */,
+				FFDFC6F3251FCEBC0088190E /* Info.plist */,
+			);
+			path = "Online PrintingTests";
+			sourceTree = "<group>";
+		};
+		FFDFC6FB251FCEBC0088190E /* Online PrintingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FFDFC6FC251FCEBC0088190E /* Online_PrintingUITests.swift */,
+				FFDFC6FE251FCEBC0088190E /* Info.plist */,
+			);
+			path = "Online PrintingUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFDFC6DB251FCEBA0088190E /* Online Printing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDFC701251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online Printing" */;
+			buildPhases = (
+				FFDFC6D8251FCEBA0088190E /* Sources */,
+				FFDFC6D9251FCEBA0088190E /* Frameworks */,
+				FFDFC6DA251FCEBA0088190E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Online Printing";
+			productName = "Online Printing";
+			productReference = FFDFC6DC251FCEBA0088190E /* Online Printing.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFDFC6EC251FCEBC0088190E /* Online PrintingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDFC704251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingTests" */;
+			buildPhases = (
+				FFDFC6E9251FCEBC0088190E /* Sources */,
+				FFDFC6EA251FCEBC0088190E /* Frameworks */,
+				FFDFC6EB251FCEBC0088190E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFDFC6EF251FCEBC0088190E /* PBXTargetDependency */,
+			);
+			name = "Online PrintingTests";
+			productName = "Online PrintingTests";
+			productReference = FFDFC6ED251FCEBC0088190E /* Online PrintingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FFDFC6F7251FCEBC0088190E /* Online PrintingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDFC707251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingUITests" */;
+			buildPhases = (
+				FFDFC6F4251FCEBC0088190E /* Sources */,
+				FFDFC6F5251FCEBC0088190E /* Frameworks */,
+				FFDFC6F6251FCEBC0088190E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFDFC6FA251FCEBC0088190E /* PBXTargetDependency */,
+			);
+			name = "Online PrintingUITests";
+			productName = "Online PrintingUITests";
+			productReference = FFDFC6F8251FCEBC0088190E /* Online PrintingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFDFC6D4251FCEBA0088190E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					FFDFC6DB251FCEBA0088190E = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					FFDFC6EC251FCEBC0088190E = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = FFDFC6DB251FCEBA0088190E;
+					};
+					FFDFC6F7251FCEBC0088190E = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = FFDFC6DB251FCEBA0088190E;
+					};
+				};
+			};
+			buildConfigurationList = FFDFC6D7251FCEBA0088190E /* Build configuration list for PBXProject "Online Printing" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFDFC6D3251FCEBA0088190E;
+			productRefGroup = FFDFC6DD251FCEBA0088190E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFDFC6DB251FCEBA0088190E /* Online Printing */,
+				FFDFC6EC251FCEBC0088190E /* Online PrintingTests */,
+				FFDFC6F7251FCEBC0088190E /* Online PrintingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFDFC6DA251FCEBA0088190E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDFC6E7251FCEBB0088190E /* Preview Assets.xcassets in Resources */,
+				FFDFC6E4251FCEBB0088190E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDFC6EB251FCEBC0088190E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDFC6F6251FCEBC0088190E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFDFC6D8251FCEBA0088190E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */,
+				FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDFC6E9251FCEBC0088190E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDFC6F2251FCEBC0088190E /* Online_PrintingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDFC6F4251FCEBC0088190E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDFC6FD251FCEBC0088190E /* Online_PrintingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFDFC6EF251FCEBC0088190E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFDFC6DB251FCEBA0088190E /* Online Printing */;
+			targetProxy = FFDFC6EE251FCEBC0088190E /* PBXContainerItemProxy */;
+		};
+		FFDFC6FA251FCEBC0088190E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFDFC6DB251FCEBA0088190E /* Online Printing */;
+			targetProxy = FFDFC6F9251FCEBC0088190E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FFDFC6FF251FCEBC0088190E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFDFC700251FCEBC0088190E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFDFC702251FCEBC0088190E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Online Printing/Preview Content\"";
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Online Printing/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.store.Online-Printing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFDFC703251FCEBC0088190E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Online Printing/Preview Content\"";
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Online Printing/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.store.Online-Printing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FFDFC705251FCEBC0088190E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
+				INFOPLIST_FILE = "Online PrintingTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.store.Online-PrintingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Online Printing.app/Online Printing";
+			};
+			name = Debug;
+		};
+		FFDFC706251FCEBC0088190E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
+				INFOPLIST_FILE = "Online PrintingTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.store.Online-PrintingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Online Printing.app/Online Printing";
+			};
+			name = Release;
+		};
+		FFDFC708251FCEBC0088190E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
+				INFOPLIST_FILE = "Online PrintingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.store.Online-PrintingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Online Printing";
+			};
+			name = Debug;
+		};
+		FFDFC709251FCEBC0088190E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
+				INFOPLIST_FILE = "Online PrintingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.store.Online-PrintingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Online Printing";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFDFC6D7251FCEBA0088190E /* Build configuration list for PBXProject "Online Printing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDFC6FF251FCEBC0088190E /* Debug */,
+				FFDFC700251FCEBC0088190E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDFC701251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online Printing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDFC702251FCEBC0088190E /* Debug */,
+				FFDFC703251FCEBC0088190E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDFC704251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDFC705251FCEBC0088190E /* Debug */,
+				FFDFC706251FCEBC0088190E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDFC707251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDFC708251FCEBC0088190E /* Debug */,
+				FFDFC709251FCEBC0088190E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFDFC6D4251FCEBA0088190E /* Project object */;
+}
