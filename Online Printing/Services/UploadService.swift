@@ -10,6 +10,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseStorage
+import FirebaseAuth
 
 class UploadService {
     let storageRef = Storage.storage().reference()
@@ -96,7 +97,7 @@ class UploadService {
         // etc
         
         
-        db.collection("Orders").document("+37493936313").setData( ["order" : orders]) { error in
+        db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).setData( ["order" : orders]) { error in
             if error != nil {
                 DispatchQueue.main.async {
                     completion( false )

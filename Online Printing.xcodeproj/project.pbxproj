@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		912554C0B6E0F106C6A2078E /* Pods_Online_Printing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE279B945FA5D31DB2DA38D6 /* Pods_Online_Printing.framework */; };
-		BBC44678945BB11DDA49C982 /* Pods_Online_PrintingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371FFCD467D55FF0903F0D77 /* Pods_Online_PrintingTests.framework */; };
-		BCF5A508984CD7EFDB01EC95 /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EDB4BA227C748E5DCEE45 /* Pods_Online_Printing_Online_PrintingUITests.framework */; };
+		22771CAD32B8F2311AB91A1C /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB20375C36A46A52556596F5 /* Pods_Online_Printing_Online_PrintingUITests.framework */; };
+		7A6BE8C92696ED6BC01DAC46 /* Pods_Online_Printing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6164F130AD2872ABA0B74BBC /* Pods_Online_Printing.framework */; };
+		FD9D3EFB58BB414F637FA602 /* Pods_Online_PrintingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906A1E34D8DD52E95D70C4 /* Pods_Online_PrintingTests.framework */; };
 		FF046542252FB90100D7460D /* HideRowSeparatorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF046541252FB90100D7460D /* HideRowSeparatorModifier.swift */; };
 		FF046548252FB96300D7460D /* SelectedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF046547252FB96300D7460D /* SelectedCategory.swift */; };
 		FF11E530257E8E4B00ED4389 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11E52F257E8E4B00ED4389 /* Dimensions.swift */; };
 		FF11E53D257EC7D300ED4389 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF11E53C257EC7D300ED4389 /* LaunchScreen.storyboard */; };
+		FF1B451F2582809100A6E639 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B451E2582809100A6E639 /* AuthView.swift */; };
+		FF1B4524258280AC00A6E639 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B4523258280AC00A6E639 /* AuthService.swift */; };
+		FF1B4529258280C500A6E639 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B4528258280C500A6E639 /* AuthViewModel.swift */; };
+		FF1B45312582974C00A6E639 /* AuthBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B45302582974C00A6E639 /* AuthBackground.swift */; };
 		FF4136DC252FAFFF00345FF7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136DB252FAFFF00345FF7 /* MainViewModel.swift */; };
 		FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136E3252FB14500345FF7 /* SingleCategoryPreview.swift */; };
 		FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6405D8251FD1FB0062DA9B /* AppDelegate.swift */; };
@@ -53,19 +57,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2EE58B9989AFE66BBBF90AF0 /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.release.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.release.xcconfig"; sourceTree = "<group>"; };
-		320EDB4BA227C748E5DCEE45 /* Pods_Online_Printing_Online_PrintingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing_Online_PrintingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		371FFCD467D55FF0903F0D77 /* Pods_Online_PrintingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_PrintingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38CF847CA93A0DFF6D765461 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		41E2A81F616E997B3FA888C6 /* Pods-Online Printing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.release.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.release.xcconfig"; sourceTree = "<group>"; };
-		AE279B945FA5D31DB2DA38D6 /* Pods_Online_Printing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5F55D950CFB77ADD8C04606 /* Pods-Online Printing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.debug.xcconfig"; sourceTree = "<group>"; };
-		C6CB94C0227B8E790A4853F1 /* Pods-Online PrintingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.debug.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		ED79F2CAE7D4087ADE85E05E /* Pods-Online PrintingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.release.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.release.xcconfig"; sourceTree = "<group>"; };
+		113B6C4B07DB4231F889CDE9 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		518CDF9129BA174007B23681 /* Pods-Online Printing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.debug.xcconfig"; sourceTree = "<group>"; };
+		6164F130AD2872ABA0B74BBC /* Pods_Online_Printing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8591CCA7E75EE580177357A3 /* Pods-Online PrintingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.debug.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1CD0B7A92EBD97CF24B0E8C /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.release.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AB20375C36A46A52556596F5 /* Pods_Online_Printing_Online_PrintingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing_Online_PrintingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9906A1E34D8DD52E95D70C4 /* Pods_Online_PrintingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_PrintingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45C7144BB315668551F82AE /* Pods-Online PrintingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.release.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.release.xcconfig"; sourceTree = "<group>"; };
+		F5915100FB2ABB41A7170C5F /* Pods-Online Printing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.release.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.release.xcconfig"; sourceTree = "<group>"; };
 		FF046541252FB90100D7460D /* HideRowSeparatorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideRowSeparatorModifier.swift; sourceTree = "<group>"; };
 		FF046547252FB96300D7460D /* SelectedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategory.swift; sourceTree = "<group>"; };
 		FF11E52F257E8E4B00ED4389 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		FF11E53C257EC7D300ED4389 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF1B451E2582809100A6E639 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		FF1B4523258280AC00A6E639 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FF1B4528258280C500A6E639 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		FF1B45302582974C00A6E639 /* AuthBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBackground.swift; sourceTree = "<group>"; };
 		FF4136DB252FAFFF00345FF7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FF4136E3252FB14500345FF7 /* SingleCategoryPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCategoryPreview.swift; sourceTree = "<group>"; };
 		FF6405D8251FD1FB0062DA9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				912554C0B6E0F106C6A2078E /* Pods_Online_Printing.framework in Frameworks */,
+				7A6BE8C92696ED6BC01DAC46 /* Pods_Online_Printing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBC44678945BB11DDA49C982 /* Pods_Online_PrintingTests.framework in Frameworks */,
+				FD9D3EFB58BB414F637FA602 /* Pods_Online_PrintingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,19 +122,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCF5A508984CD7EFDB01EC95 /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */,
+				22771CAD32B8F2311AB91A1C /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7816F6E85549A5445281A19F /* Frameworks */ = {
+		541E2EF10DDCC986371CED53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AE279B945FA5D31DB2DA38D6 /* Pods_Online_Printing.framework */,
-				320EDB4BA227C748E5DCEE45 /* Pods_Online_Printing_Online_PrintingUITests.framework */,
-				371FFCD467D55FF0903F0D77 /* Pods_Online_PrintingTests.framework */,
+				6164F130AD2872ABA0B74BBC /* Pods_Online_Printing.framework */,
+				AB20375C36A46A52556596F5 /* Pods_Online_Printing_Online_PrintingUITests.framework */,
+				C9906A1E34D8DD52E95D70C4 /* Pods_Online_PrintingTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,12 +142,12 @@
 		9C31D7ACCF45030B2106C1B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C5F55D950CFB77ADD8C04606 /* Pods-Online Printing.debug.xcconfig */,
-				41E2A81F616E997B3FA888C6 /* Pods-Online Printing.release.xcconfig */,
-				38CF847CA93A0DFF6D765461 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */,
-				2EE58B9989AFE66BBBF90AF0 /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */,
-				C6CB94C0227B8E790A4853F1 /* Pods-Online PrintingTests.debug.xcconfig */,
-				ED79F2CAE7D4087ADE85E05E /* Pods-Online PrintingTests.release.xcconfig */,
+				518CDF9129BA174007B23681 /* Pods-Online Printing.debug.xcconfig */,
+				F5915100FB2ABB41A7170C5F /* Pods-Online Printing.release.xcconfig */,
+				113B6C4B07DB4231F889CDE9 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */,
+				A1CD0B7A92EBD97CF24B0E8C /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */,
+				8591CCA7E75EE580177357A3 /* Pods-Online PrintingTests.debug.xcconfig */,
+				E45C7144BB315668551F82AE /* Pods-Online PrintingTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -161,6 +169,8 @@
 				FF046547252FB96300D7460D /* SelectedCategory.swift */,
 				FF7FADFD257FE6B900FDB32E /* Cart.swift */,
 				FFBEE38D253CE419001EF94F /* Loading.swift */,
+				FF1B451E2582809100A6E639 /* AuthView.swift */,
+				FF1B45302582974C00A6E639 /* AuthBackground.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +190,7 @@
 			children = (
 				FF6405E1251FD5C10062DA9B /* CategoryService.swift */,
 				FF69EBF92567F34900939256 /* UploadService.swift */,
+				FF1B4523258280AC00A6E639 /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -189,6 +200,7 @@
 			children = (
 				FF4136DB252FAFFF00345FF7 /* MainViewModel.swift */,
 				FF69EBF42567F33000939256 /* UploadViewModel.swift */,
+				FF1B4528258280C500A6E639 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,7 +214,7 @@
 				FFDFC6FB251FCEBC0088190E /* Online PrintingUITests */,
 				FFDFC6DD251FCEBA0088190E /* Products */,
 				9C31D7ACCF45030B2106C1B4 /* Pods */,
-				7816F6E85549A5445281A19F /* Frameworks */,
+				541E2EF10DDCC986371CED53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,11 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFDFC701251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online Printing" */;
 			buildPhases = (
-				1D9575BF57C3A82722C7A730 /* [CP] Check Pods Manifest.lock */,
+				193E318932F5A1968D79B243 /* [CP] Check Pods Manifest.lock */,
 				FFDFC6D8251FCEBA0088190E /* Sources */,
 				FFDFC6D9251FCEBA0088190E /* Frameworks */,
 				FFDFC6DA251FCEBA0088190E /* Resources */,
-				4AB0433A53880C29980EE13E /* [CP] Embed Pods Frameworks */,
+				8125DD7DD6A6F9BEF6F5C2B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,7 +299,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFDFC704251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingTests" */;
 			buildPhases = (
-				05C5EDB4AC86DA7CFC4AA773 /* [CP] Check Pods Manifest.lock */,
+				45315D24C78FCB2CCEE64FE6 /* [CP] Check Pods Manifest.lock */,
 				FFDFC6E9251FCEBC0088190E /* Sources */,
 				FFDFC6EA251FCEBC0088190E /* Frameworks */,
 				FFDFC6EB251FCEBC0088190E /* Resources */,
@@ -306,11 +318,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFDFC707251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingUITests" */;
 			buildPhases = (
-				2041EAA4E1D9113D6EE1611D /* [CP] Check Pods Manifest.lock */,
+				91E60FF18D1B24D92DBCF1D6 /* [CP] Check Pods Manifest.lock */,
 				FFDFC6F4251FCEBC0088190E /* Sources */,
 				FFDFC6F5251FCEBC0088190E /* Frameworks */,
 				FFDFC6F6251FCEBC0088190E /* Resources */,
-				2F820CD0A903A9AF67FE643F /* [CP] Embed Pods Frameworks */,
+				B56DF75601BC805FF61FA672 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -394,29 +406,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05C5EDB4AC86DA7CFC4AA773 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Online PrintingTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1D9575BF57C3A82722C7A730 /* [CP] Check Pods Manifest.lock */ = {
+		193E318932F5A1968D79B243 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -438,7 +428,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2041EAA4E1D9113D6EE1611D /* [CP] Check Pods Manifest.lock */ = {
+		45315D24C78FCB2CCEE64FE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Online PrintingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8125DD7DD6A6F9BEF6F5C2B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91E60FF18D1B24D92DBCF1D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -460,7 +489,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2F820CD0A903A9AF67FE643F /* [CP] Embed Pods Frameworks */ = {
+		B56DF75601BC805FF61FA672 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -477,23 +506,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4AB0433A53880C29980EE13E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -504,8 +516,11 @@
 				FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */,
 				FF69EBF52567F33000939256 /* UploadViewModel.swift in Sources */,
 				FF046548252FB96300D7460D /* SelectedCategory.swift in Sources */,
+				FF1B4524258280AC00A6E639 /* AuthService.swift in Sources */,
 				FFBEE38E253CE419001EF94F /* Loading.swift in Sources */,
+				FF1B45312582974C00A6E639 /* AuthBackground.swift in Sources */,
 				FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */,
+				FF1B4529258280C500A6E639 /* AuthViewModel.swift in Sources */,
 				FF7FAE16258006FD00FDB32E /* Home.swift in Sources */,
 				FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */,
 				FF046542252FB90100D7460D /* HideRowSeparatorModifier.swift in Sources */,
@@ -515,6 +530,7 @@
 				FF69EBFA2567F34900939256 /* UploadService.swift in Sources */,
 				FF4136DC252FAFFF00345FF7 /* MainViewModel.swift in Sources */,
 				FF7FADFE257FE6B900FDB32E /* Cart.swift in Sources */,
+				FF1B451F2582809100A6E639 /* AuthView.swift in Sources */,
 				FF11E530257E8E4B00ED4389 /* Dimensions.swift in Sources */,
 				FF6405E2251FD5C10062DA9B /* CategoryService.swift in Sources */,
 			);
@@ -670,7 +686,7 @@
 		};
 		FFDFC702251FCEBC0088190E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5F55D950CFB77ADD8C04606 /* Pods-Online Printing.debug.xcconfig */;
+			baseConfigurationReference = 518CDF9129BA174007B23681 /* Pods-Online Printing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -693,7 +709,7 @@
 		};
 		FFDFC703251FCEBC0088190E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41E2A81F616E997B3FA888C6 /* Pods-Online Printing.release.xcconfig */;
+			baseConfigurationReference = F5915100FB2ABB41A7170C5F /* Pods-Online Printing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -716,7 +732,7 @@
 		};
 		FFDFC705251FCEBC0088190E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6CB94C0227B8E790A4853F1 /* Pods-Online PrintingTests.debug.xcconfig */;
+			baseConfigurationReference = 8591CCA7E75EE580177357A3 /* Pods-Online PrintingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -739,7 +755,7 @@
 		};
 		FFDFC706251FCEBC0088190E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED79F2CAE7D4087ADE85E05E /* Pods-Online PrintingTests.release.xcconfig */;
+			baseConfigurationReference = E45C7144BB315668551F82AE /* Pods-Online PrintingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -762,7 +778,7 @@
 		};
 		FFDFC708251FCEBC0088190E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38CF847CA93A0DFF6D765461 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */;
+			baseConfigurationReference = 113B6C4B07DB4231F889CDE9 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -783,7 +799,7 @@
 		};
 		FFDFC709251FCEBC0088190E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EE58B9989AFE66BBBF90AF0 /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */;
+			baseConfigurationReference = A1CD0B7A92EBD97CF24B0E8C /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

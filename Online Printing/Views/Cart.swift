@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 import SDWebImageSwiftUI
 
 struct Cart: View {
     
     @EnvironmentObject var uploadVM: UploadViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
         
@@ -34,13 +36,19 @@ struct Cart: View {
                             Text( "Count: \(order.count)" )
                             Text( "Total Price: \(order.totalPrice)" )
                         }
-                    }.padding( .horizontal )
+                    }.padding( .horizontal, 8 )
                 }.onDelete(perform: delete)
             }
             
             Button(action: {
                 
-                uploadVM.placeOrder()
+                if Auth.auth().currentUser == nil {
+                    self.authVM.showAuth.toggle()
+                } else {
+                    print("User is logged and server performs an action")
+                    uploadVM.placeOrder()
+                }
+                
                 
             }, label: {
                 Text( "Գրանցել Պատվեր" )
@@ -48,8 +56,12 @@ struct Cart: View {
                     .padding()
                     .background(Color.blue)
                     .cornerRadius(30)
-            })
-        }
+            }).padding(.bottom, 10)
+        }        
+        .sheet(isPresented: self.$authVM.showAuth, content: {
+            AuthView()
+                .environmentObject(self.authVM)
+        })
         
     }
     

@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var uploadVM = UploadViewModel()
+    @ObservedObject var authVM = AuthViewModel()
     
     var body: some View {
         
@@ -30,6 +31,7 @@ struct ContentView: View {
                         
                         Cart()
                             .environmentObject(self.uploadVM)
+                            .environmentObject( self.authVM )
                             .tabItem {
                                 Image(systemName: "cart")
                                 Text("Cart")
@@ -48,7 +50,15 @@ struct ContentView: View {
                     .frame(width: 15, height: 15)
                     .offset(x: ( ( 2 * 2) - 1 ) * ( UIScreen.main.bounds.size.width / ( 2 * 2 ) ), y: -30)
                     .opacity(2 == 0 ? 0 : 1)
-                }.navigationBarTitle(Text( "OnlinePrinting" ), displayMode: .inline)            }
+                }.navigationBarTitle(Text( "OnlinePrinting" ), displayMode: .inline)
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        self.authVM.logOutUser()
+                    }, label: {
+                        Text("Sign Out")
+                    })
+                )
+            }
                 
 
         }
