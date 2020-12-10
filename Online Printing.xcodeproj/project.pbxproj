@@ -24,6 +24,7 @@
 		FF7FADFE257FE6B900FDB32E /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FADFD257FE6B900FDB32E /* Cart.swift */; };
 		FF7FAE0E2580052A00FDB32E /* CartItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FAE0D2580052A00FDB32E /* CartItemModel.swift */; };
 		FF7FAE16258006FD00FDB32E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FAE15258006FD00FDB32E /* Home.swift */; };
+		FF7FAE3E25815B0600FDB32E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FF7FAE3D25815B0600FDB32E /* .gitignore */; };
 		FFBEE38E253CE419001EF94F /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE38D253CE419001EF94F /* Loading.swift */; };
 		FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */; };
 		FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6E1251FCEBA0088190E /* ContentView.swift */; };
@@ -75,6 +76,7 @@
 		FF7FADFD257FE6B900FDB32E /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		FF7FAE0D2580052A00FDB32E /* CartItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemModel.swift; sourceTree = "<group>"; };
 		FF7FAE15258006FD00FDB32E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		FF7FAE3D25815B0600FDB32E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FFBEE38D253CE419001EF94F /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		FFDFC6DC251FCEBA0088190E /* Online Printing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Printing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingApp.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		FFDFC6D3251FCEBA0088190E = {
 			isa = PBXGroup;
 			children = (
+				FF7FAE3D25815B0600FDB32E /* .gitignore */,
 				FFDFC6DE251FCEBA0088190E /* Online Printing */,
 				FFDFC6F0251FCEBC0088190E /* Online PrintingTests */,
 				FFDFC6FB251FCEBC0088190E /* Online PrintingUITests */,
@@ -366,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7FAE3E25815B0600FDB32E /* .gitignore in Resources */,
 				FFDFC6E7251FCEBB0088190E /* Preview Assets.xcassets in Resources */,
 				FF11E53D257EC7D300ED4389 /* LaunchScreen.storyboard in Resources */,
 				FFDFC6E4251FCEBB0088190E /* Assets.xcassets in Resources */,

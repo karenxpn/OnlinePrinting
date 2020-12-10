@@ -11,6 +11,7 @@ struct CartItemModel: Codable, Identifiable {
     var dimensions: String
     var count: Int
     var totalPrice: Int
+    var info: String
     var category: String
     var image: String
     var filePath: URL

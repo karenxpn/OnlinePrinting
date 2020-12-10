@@ -24,9 +24,9 @@ class UploadViewModel : ObservableObject {
         self.loading = true
         UploadService().uploadFileToStorage(cartItems: self.orderList, completion: { (response) in
             if let response = response {
-                print(response)
                 UploadService().placeOrder(orderList: self.orderList, fileURLS: response) { (orderPlacementResponse) in
                     if orderPlacementResponse == true {
+                        self.orderList.removeAll(keepingCapacity: false)
                         self.loading = false
                     } else {
                         print("Fuck")

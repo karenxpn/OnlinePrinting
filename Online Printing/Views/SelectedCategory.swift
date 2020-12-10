@@ -21,100 +21,97 @@ struct SelectedCategory: View {
     
     var body: some View {
         
-        if self.uploadVM.loading {
-            Loading()
-        } else {
-            VStack( spacing: 20) {
+        
+        VStack( spacing: 20) {
+            
+            SizeScroller(category: self.category).environmentObject( self.uploadVM )
+            
+            TextField("Նշեք քանակը", text: self.$uploadVM.count)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.numberPad)
+            
+            
+            TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            
+            Button {
                 
-                SizeScroller(category: self.category).environmentObject( self.uploadVM )
+                self.openFile.toggle()
                 
-                TextField("Նշեք քանակը", text: self.$uploadVM.count)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.numberPad)
+            } label: {
                 
-                
-                TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                
-                Button {
-                    
-                    self.openFile.toggle()
-                    
-                } label: {
-                    
-                    if self.uploadVM.fileName == "" {
-                        VStack {
-                            Image("upload")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 150, height: 150)
-                            
-                            Text( "Ներբեռնել ֆայլը" )
-                        }
-                    } else {
-                        Text( self.uploadVM.fileName )
+                if self.uploadVM.fileName == "" {
+                    VStack {
+                        Image("upload")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 150, height: 150)
+                        
+                        Text( "Ներբեռնել ֆայլը" )
                     }
-                    
-                }
-                
-                Button {
-                    if self.uploadVM.size == "" || self.uploadVM.count == "" || self.uploadVM.fileName == "" {
-                        self.uploadVM.activeAlert = .error
-                        self.uploadVM.alertMessage = "Fill in all required fields"
-                        self.alert.toggle()
-                    } else {
-                        self.uploadVM.activeAlert = .dialog
-                        self.uploadVM.alertMessage = "\(UploadService().countPrice(count: Int( self.uploadVM.count )!, price: Int( self.uploadVM.sizePrice )!))"
-                        self.alert.toggle()
-                    }
-                } label: {
-                    
-                    Text( "Հաշվարկել Գումարը" )
-                        .foregroundColor(Color.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(30)
-                }
-                
-                Spacer()
-                
-            }.padding()
-            .fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
-                do {
-                    
-                    let fileURL = try res.get()
-                    self.uploadVM.fileName = fileURL.lastPathComponent
-                    
-                    saveFile(url: fileURL)
-                    
-                } catch {
-                    print( "Error reading document" )
-                    print(error.localizedDescription)
-                }
-            })
-            .alert(isPresented: self.$alert, content: {
-                if self.uploadVM.activeAlert == .dialog {
-                    return Alert(title: Text( "Amount is" ), message: Text( "\(self.uploadVM.alertMessage) AMD" ), primaryButton: .destructive(Text( "Ավելացնել զամբյուղի մեջ" ), action: {
-                        let cartModel = CartItemModel(dimensions: self.uploadVM.size, count: Int( self.uploadVM.count )!, totalPrice: Int( self.uploadVM.alertMessage )!, category: self.category.name, image: self.category.image, filePath: self.uploadVM.path!)
-                        
-                        self.uploadVM.orderList.append(cartModel)
-                        
-                        self.uploadVM.path = nil
-                        self.uploadVM.fileName = ""
-                        self.uploadVM.info = ""
-                        self.uploadVM.count = ""
-                        self.uploadVM.size = ""
-                        self.uploadVM.sizePrice = ""
-                        
-                    }), secondaryButton: .cancel())
                 } else {
-                    return Alert(title: Text( "Alert" ), message: Text( self.uploadVM.alertMessage ), dismissButton: .default(Text( "OK" )))
+                    Text( self.uploadVM.fileName )
                 }
-
-            })
-            .navigationBarTitle(Text(self.category.name), displayMode: .inline)
-        }
+                
+            }
+            
+            Button {
+                if self.uploadVM.size == "" || self.uploadVM.count == "" || self.uploadVM.fileName == "" {
+                    self.uploadVM.activeAlert = .error
+                    self.uploadVM.alertMessage = "Fill in all required fields"
+                    self.alert.toggle()
+                } else {
+                    self.uploadVM.activeAlert = .dialog
+                    self.uploadVM.alertMessage = "\(UploadService().countPrice(count: Int( self.uploadVM.count )!, price: Int( self.uploadVM.sizePrice )!))"
+                    self.alert.toggle()
+                }
+            } label: {
+                
+                Text( "Հաշվարկել Գումարը" )
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(30)
+            }
+            
+            Spacer()
+            
+        }.padding()
+        .fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
+            do {
+                
+                let fileURL = try res.get()
+                self.uploadVM.fileName = fileURL.lastPathComponent
+                
+                saveFile(url: fileURL)
+                
+            } catch {
+                print( "Error reading document" )
+                print(error.localizedDescription)
+            }
+        })
+        .alert(isPresented: self.$alert, content: {
+            if self.uploadVM.activeAlert == .dialog {
+                return Alert(title: Text( "Amount is" ), message: Text( "\(self.uploadVM.alertMessage) AMD" ), primaryButton: .destructive(Text( "Ավելացնել զամբյուղի մեջ" ), action: {
+                    let cartModel = CartItemModel(dimensions: self.uploadVM.size, count: Int( self.uploadVM.count )!, totalPrice: Int( self.uploadVM.alertMessage )!, info: self.uploadVM.info, category: self.category.name, image: self.category.image, filePath: self.uploadVM.path!)
+                    
+                    self.uploadVM.orderList.append(cartModel)
+                    
+                    self.uploadVM.path = nil
+                    self.uploadVM.fileName = ""
+                    self.uploadVM.info = ""
+                    self.uploadVM.count = ""
+                    self.uploadVM.size = ""
+                    self.uploadVM.sizePrice = ""
+                    
+                }), secondaryButton: .cancel())
+            } else {
+                return Alert(title: Text( "Alert" ), message: Text( self.uploadVM.alertMessage ), dismissButton: .default(Text( "OK" )))
+            }
+            
+        })
+        .navigationBarTitle(Text(self.category.name), displayMode: .inline)
         
     }
     

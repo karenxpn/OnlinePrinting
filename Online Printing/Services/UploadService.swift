@@ -21,40 +21,55 @@ class UploadService {
         let mediaFolder = storageRef.child("uploaded")
         
         var count = 0
-        let arraySize = cartItems.count
         var fileURLS = [String]()
 
-        for item in cartItems {
-
-            let fileRef = mediaFolder.child("\(UUID().uuidString).pdf")
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        // On background thread perform upload file function
+        // semaphore helps us to notify which session should be completed
+        // so semaphone.signal() gives a signal that perform an action
+        // semaphone.wait() does not allow to pass the next line of the code until it is not completed
+        
+        DispatchQueue.global().async {
             
-            fileRef.putFile(from: item.filePath, metadata: nil) { (metadata, error) in
-                if error != nil {
-                    DispatchQueue.main.async {
-                        completion( nil )
-                    }
-                    return
-                }
+            for item in cartItems {
+
+                let fileRef = mediaFolder.child("\(UUID().uuidString).pdf")
                 
-                fileRef.downloadURL { (url, error) in
+                fileRef.putFile(from: item.filePath, metadata: nil) { (metadata, error) in
                     if error != nil {
                         DispatchQueue.main.async {
                             completion( nil )
                         }
-                        
+
                         return
                     }
                     
-                    fileURLS.append(url?.absoluteString ?? "")
-                    count += 1
-                    
-                    if count == arraySize {
-                        DispatchQueue.main.async {
-                            completion( fileURLS )
+                    fileRef.downloadURL { (url, error) in
+                        if error != nil {
+                            DispatchQueue.main.async {
+                                completion( nil )
+                            }
+                            
+                            return
                         }
+                        
+                        semaphore.signal()
+                        fileURLS.append(url?.absoluteString ?? "")
+                        count += 1
+                        
+                        if count == cartItems.count {
+                            DispatchQueue.main.async {
+                                completion( fileURLS )
+                            }
+                        }
+                        
+
                     }
                 }
+                semaphore.wait()
             }
+            
         }
         
     }
@@ -69,9 +84,17 @@ class UploadService {
                 "dimensions" : orderList[i].dimensions,
                 "count" : orderList[i].count,
                 "price" : orderList[i].totalPrice,
-                "file" : fileURLS[i]
+                "file" : fileURLS[i],
+                "additionalInformation" : orderList[i].info
             ])
         }
+        
+        // orderDetails should contain
+        // user phone
+        // order total Price
+        // order address
+        // etc
+        
         
         db.collection("Orders").document("+37493936313").setData( ["order" : orders]) { error in
             if error != nil {

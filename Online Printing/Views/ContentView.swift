@@ -12,12 +12,15 @@ struct ContentView: View {
     @ObservedObject var uploadVM = UploadViewModel()
     
     var body: some View {
+        
         NavigationView {
             
-            GeometryReader { geometry in
-                
+            if self.uploadVM.loading {
+                Loading()
+            } else {
                 ZStack ( alignment: .bottomLeading) {
                     TabView {
+                        
                         Home()
                             .environmentObject(self.uploadVM)
                             .tabItem {
@@ -43,11 +46,11 @@ struct ContentView: View {
                             .font(Font.system(size: 12))
                     }
                     .frame(width: 15, height: 15)
-                    .offset(x: ( ( 2 * 2) - 1 ) * ( geometry.size.width / ( 2 * 2 ) ), y: -30)
+                    .offset(x: ( ( 2 * 2) - 1 ) * ( UIScreen.main.bounds.size.width / ( 2 * 2 ) ), y: -30)
                     .opacity(2 == 0 ? 0 : 1)
-                }
+                }.navigationBarTitle(Text( "OnlinePrinting" ), displayMode: .inline)            }
                 
-            }.navigationBarTitle( Text( "OnlinePrinting" ))
+
         }
     }
 }
