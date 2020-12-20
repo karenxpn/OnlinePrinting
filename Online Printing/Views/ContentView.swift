@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertX
 
 struct ContentView: View {
     
@@ -61,6 +62,20 @@ struct ContentView: View {
             }
                 
 
+        }.alertX(isPresented: self.$uploadVM.showAlert) {
+            return AlertX(title: Text( "Շնորհավորում ենք" ), message: Text( self.uploadVM.alertMessage ), primaryButton: .default(Text( "OK" ), action: {                
+                self.uploadVM.activeAlert = nil
+                self.uploadVM.alertMessage = ""
+            }), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 17/255, green: 83/255, blue: 252/255, alpha: 0.5)),
+                                                               alertTextColor: Color.white,
+                                                               enableShadow: true,
+                                                               enableRoundedCorners: true,
+                                                               enableTransparency: true,
+                                                               cancelButtonColor: Color(UIColor(red: 17/255, green: 83/255, blue: 252/255, alpha: 1)),
+                                                               cancelButtonTextColor: Color.white,
+                                                               defaultButtonColor: Color(UIColor(red: 17/255, green: 83/255, blue: 252/255, alpha: 1)), defaultButtonTextColor: Color.white),
+                                    animation: .defaultEffect())
+            
         }
     }
 }

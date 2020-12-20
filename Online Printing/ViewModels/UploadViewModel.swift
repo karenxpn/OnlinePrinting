@@ -8,16 +8,23 @@
 import Foundation
 
 class UploadViewModel : ObservableObject {
+    
+    // Order Details
     @Published var info: String = ""
     @Published var count: String = ""
     @Published var size: String = ""
     @Published var sizePrice: String = ""
     @Published var fileName: String = ""
     @Published var path: URL? = nil
-    @Published var loading: Bool = false
+    @Published var orderList = [CartItemModel]()
+    
+    // Alert
     @Published var activeAlert: ActiveAlert? = nil
     @Published var alertMessage: String = ""
-    @Published var orderList = [CartItemModel]()
+    @Published var showAlert: Bool = false
+    
+    // Loading
+    @Published var loading: Bool = false
 
     
     func placeOrder() {
@@ -28,11 +35,13 @@ class UploadViewModel : ObservableObject {
                     if orderPlacementResponse == true {
                         self.orderList.removeAll(keepingCapacity: false)
                         self.loading = false
+                        self.activeAlert = .placeCompleted
+                        self.alertMessage = "Շնորհավորում ենք ձեր պատվերը գրանցված է:"
+                        self.showAlert = true
                     } else {
                         print("Fuck")
                     }
                 }
-                
             }
         })
     }

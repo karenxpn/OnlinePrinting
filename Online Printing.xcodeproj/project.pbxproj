@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		FF1B4524258280AC00A6E639 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B4523258280AC00A6E639 /* AuthService.swift */; };
 		FF1B4529258280C500A6E639 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B4528258280C500A6E639 /* AuthViewModel.swift */; };
 		FF1B45312582974C00A6E639 /* AuthBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B45302582974C00A6E639 /* AuthBackground.swift */; };
+		FF1B45372582A54B00A6E639 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FF1B45362582A54B00A6E639 /* AlertX */; };
 		FF4136DC252FAFFF00345FF7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136DB252FAFFF00345FF7 /* MainViewModel.swift */; };
 		FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136E3252FB14500345FF7 /* SingleCategoryPreview.swift */; };
 		FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6405D8251FD1FB0062DA9B /* AppDelegate.swift */; };
@@ -106,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1B45372582A54B00A6E639 /* AlertX in Frameworks */,
 				7A6BE8C92696ED6BC01DAC46 /* Pods_Online_Printing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,9 +170,9 @@
 				FF4136E3252FB14500345FF7 /* SingleCategoryPreview.swift */,
 				FF046547252FB96300D7460D /* SelectedCategory.swift */,
 				FF7FADFD257FE6B900FDB32E /* Cart.swift */,
-				FFBEE38D253CE419001EF94F /* Loading.swift */,
 				FF1B451E2582809100A6E639 /* AuthView.swift */,
 				FF1B45302582974C00A6E639 /* AuthBackground.swift */,
+				FFBEE38D253CE419001EF94F /* Loading.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +293,9 @@
 			dependencies = (
 			);
 			name = "Online Printing";
+			packageProductDependencies = (
+				FF1B45362582A54B00A6E639 /* AlertX */,
+			);
 			productName = "Online Printing";
 			productReference = FFDFC6DC251FCEBA0088190E /* Online Printing.app */;
 			productType = "com.apple.product-type.application";
@@ -365,6 +370,9 @@
 				Base,
 			);
 			mainGroup = FFDFC6D3251FCEBA0088190E;
+			packageReferences = (
+				FF1B45352582A54B00A6E639 /* XCRemoteSwiftPackageReference "AlertX" */,
+			);
 			productRefGroup = FFDFC6DD251FCEBA0088190E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -858,6 +866,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF1B45352582A54B00A6E639 /* XCRemoteSwiftPackageReference "AlertX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF1B45362582A54B00A6E639 /* AlertX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF1B45352582A54B00A6E639 /* XCRemoteSwiftPackageReference "AlertX" */;
+			productName = AlertX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FFDFC6D4251FCEBA0088190E /* Project object */;
 }

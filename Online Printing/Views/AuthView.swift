@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertX
 
 struct AuthView: View {
     
@@ -81,7 +82,9 @@ struct AuthView: View {
                     
                 }.padding()
                 .animation(.spring())
-            }
+            }.alert(isPresented: self.$authVM.showAlert, content: {
+                Alert(title: Text( "Սխալ" ), message: Text( "Մուտքագրեք հեռախոսահամարը և հաստատման կոդը" ), dismissButton: .default(Text( "Լավ" )))
+            })
         }
     }
     

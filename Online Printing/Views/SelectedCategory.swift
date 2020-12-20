@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum ActiveAlert {
-    case error, dialog
+    case error, dialog, placeCompleted
 }
 
 struct SelectedCategory: View {
