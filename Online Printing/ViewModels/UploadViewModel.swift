@@ -16,6 +16,7 @@ class UploadViewModel : ObservableObject {
     @Published var sizePrice: String = ""
     @Published var fileName: String = ""
     @Published var path: URL? = nil
+    @Published var selectedCategory: CategoryModel? = nil
     @Published var orderList = [CartItemModel]()
     
     // Alert

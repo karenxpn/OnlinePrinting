@@ -21,10 +21,6 @@ struct SingleCategoryPreview: View {
                     .resizable()
                     .scaledToFill()
                     .cornerRadius(20)
-//                
-//                Text( category.name )
-//                    .font(.system(size: 20))
-//                    .foregroundColor( Color.black )
                 
             }.padding()
         }

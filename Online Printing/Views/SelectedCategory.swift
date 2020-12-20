@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertX
 
 enum ActiveAlert {
     case error, dialog, placeCompleted
@@ -17,7 +18,6 @@ struct SelectedCategory: View {
     
     let category: CategoryModel
     @State private var openFile: Bool = false
-    @State private var alert: Bool = false
     
     var body: some View {
         
@@ -60,11 +60,12 @@ struct SelectedCategory: View {
                 if self.uploadVM.size == "" || self.uploadVM.count == "" || self.uploadVM.fileName == "" {
                     self.uploadVM.activeAlert = .error
                     self.uploadVM.alertMessage = "Fill in all required fields"
-                    self.alert.toggle()
+                    self.uploadVM.showAlert = true
                 } else {
                     self.uploadVM.activeAlert = .dialog
                     self.uploadVM.alertMessage = "\(UploadService().countPrice(count: Int( self.uploadVM.count )!, price: Int( self.uploadVM.sizePrice )!))"
-                    self.alert.toggle()
+                    self.uploadVM.selectedCategory = self.category
+                    self.uploadVM.showAlert = true
                 }
             } label: {
                 
@@ -90,26 +91,6 @@ struct SelectedCategory: View {
                 print( "Error reading document" )
                 print(error.localizedDescription)
             }
-        })
-        .alert(isPresented: self.$alert, content: {
-            if self.uploadVM.activeAlert == .dialog {
-                return Alert(title: Text( "Amount is" ), message: Text( "\(self.uploadVM.alertMessage) AMD" ), primaryButton: .destructive(Text( "Ավելացնել զամբյուղի մեջ" ), action: {
-                    let cartModel = CartItemModel(dimensions: self.uploadVM.size, count: Int( self.uploadVM.count )!, totalPrice: Int( self.uploadVM.alertMessage )!, info: self.uploadVM.info, category: self.category.name, image: self.category.image, filePath: self.uploadVM.path!)
-                    
-                    self.uploadVM.orderList.append(cartModel)
-                    
-                    self.uploadVM.path = nil
-                    self.uploadVM.fileName = ""
-                    self.uploadVM.info = ""
-                    self.uploadVM.count = ""
-                    self.uploadVM.size = ""
-                    self.uploadVM.sizePrice = ""
-                    
-                }), secondaryButton: .cancel())
-            } else {
-                return Alert(title: Text( "Alert" ), message: Text( self.uploadVM.alertMessage ), dismissButton: .default(Text( "OK" )))
-            }
-            
         })
         .navigationBarTitle(Text(self.category.name), displayMode: .inline)
         
