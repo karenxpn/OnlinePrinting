@@ -40,7 +40,11 @@ class UploadViewModel : ObservableObject {
                         self.alertMessage = "Շնորհավորում ենք ձեր պատվերը գրանցված է:"
                         self.showAlert = true
                     } else {
-                        print("Fuck")
+                        
+                        self.loading = false
+                        self.activeAlert = .error
+                        self.alertMessage = "Ցավոք տեղի է ունեցել սխալ"
+                        self.showAlert = true
                     }
                 }
             }

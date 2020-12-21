@@ -49,7 +49,6 @@ struct Cart: View {
                     uploadVM.placeOrder()
                 }
                 
-                
             }, label: {
                 Text( "Գրանցել Պատվեր" )
                     .foregroundColor(Color.white)
@@ -62,7 +61,6 @@ struct Cart: View {
             AuthView()
                 .environmentObject(self.authVM)
         })
-        
     }
     
     func delete(at offsets: IndexSet) {

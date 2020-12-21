@@ -8,6 +8,11 @@
 import SwiftUI
 import AlertX
 
+enum ActiveAlert {
+    case error, dialog, placeCompleted
+}
+
+
 struct ContentView: View {
     
     @ObservedObject var uploadVM = UploadViewModel()
