@@ -24,10 +24,13 @@ struct SelectedCategory: View {
             
             TextField("Նշեք քանակը", text: self.$uploadVM.count)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.numberPad)            
+                .keyboardType(.numberPad)
+                .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
+            
             
             TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
             
             
             Button {
