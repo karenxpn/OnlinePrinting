@@ -96,8 +96,7 @@ class UploadService {
         // order address
         // etc
         
-        
-        db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).setData( ["order" : orders]) { error in
+        db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).collection("orders").addDocument(data: ["order" : orders]) { error in
             if error != nil {
                 DispatchQueue.main.async {
                     completion( false )

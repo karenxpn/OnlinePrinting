@@ -44,8 +44,11 @@ struct Cart: View {
                 
                 if Auth.auth().currentUser == nil {
                     self.authVM.showAuth.toggle()
-                } else {
-                    print("User is logged and server performs an action")
+                } else if self.uploadVM.orderList.isEmpty {
+                    self.uploadVM.activeAlert = .error
+                    self.uploadVM.alertMessage = "Your List is Empty"
+                    self.uploadVM.showAlert = true
+                }else {
                     uploadVM.placeOrder()
                 }
                 
@@ -56,8 +59,7 @@ struct Cart: View {
                     .background(Color.blue)
                     .cornerRadius(30)
             }).padding(.bottom, 10)
-        }        
-        .sheet(isPresented: self.$authVM.showAuth, content: {
+        }.sheet(isPresented: self.$authVM.showAuth, content: {
             AuthView()
                 .environmentObject(self.authVM)
         })
