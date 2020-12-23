@@ -15,6 +15,7 @@ class UploadViewModel : ObservableObject {
     @Published var size: String = ""
     @Published var sizePrice: String = ""
     @Published var fileName: String = ""
+    @Published var address: String = ""
     @Published var path: URL? = nil
     @Published var selectedCategory: CategoryModel? = nil
     @Published var orderList = [CartItemModel]()
@@ -32,7 +33,7 @@ class UploadViewModel : ObservableObject {
         self.loading = true
         UploadService().uploadFileToStorage(cartItems: self.orderList, completion: { (response) in
             if let response = response {
-                UploadService().placeOrder(orderList: self.orderList, fileURLS: response) { (orderPlacementResponse) in
+                UploadService().placeOrder(orderList: self.orderList, address: self.address, fileURLS: response) { (orderPlacementResponse) in
                     if orderPlacementResponse == true {
                         self.orderList.removeAll(keepingCapacity: false)
                         self.loading = false

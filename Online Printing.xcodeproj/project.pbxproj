@@ -10,7 +10,6 @@
 		22771CAD32B8F2311AB91A1C /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB20375C36A46A52556596F5 /* Pods_Online_Printing_Online_PrintingUITests.framework */; };
 		7A6BE8C92696ED6BC01DAC46 /* Pods_Online_Printing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6164F130AD2872ABA0B74BBC /* Pods_Online_Printing.framework */; };
 		FD9D3EFB58BB414F637FA602 /* Pods_Online_PrintingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906A1E34D8DD52E95D70C4 /* Pods_Online_PrintingTests.framework */; };
-		FF046542252FB90100D7460D /* HideRowSeparatorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF046541252FB90100D7460D /* HideRowSeparatorModifier.swift */; };
 		FF046548252FB96300D7460D /* SelectedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF046547252FB96300D7460D /* SelectedCategory.swift */; };
 		FF11E530257E8E4B00ED4389 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11E52F257E8E4B00ED4389 /* Dimensions.swift */; };
 		FF11E53D257EC7D300ED4389 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF11E53C257EC7D300ED4389 /* LaunchScreen.storyboard */; };
@@ -68,7 +67,6 @@
 		C9906A1E34D8DD52E95D70C4 /* Pods_Online_PrintingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_PrintingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45C7144BB315668551F82AE /* Pods-Online PrintingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.release.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.release.xcconfig"; sourceTree = "<group>"; };
 		F5915100FB2ABB41A7170C5F /* Pods-Online Printing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.release.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.release.xcconfig"; sourceTree = "<group>"; };
-		FF046541252FB90100D7460D /* HideRowSeparatorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideRowSeparatorModifier.swift; sourceTree = "<group>"; };
 		FF046547252FB96300D7460D /* SelectedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategory.swift; sourceTree = "<group>"; };
 		FF11E52F257E8E4B00ED4389 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		FF11E53C257EC7D300ED4389 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -156,14 +154,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		FF046546252FB94000D7460D /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				FF046541252FB90100D7460D /* HideRowSeparatorModifier.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		FF6405DD251FD58C0062DA9B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,12 +233,11 @@
 		FFDFC6DE251FCEBA0088190E /* Online Printing */ = {
 			isa = PBXGroup;
 			children = (
-				FFB81EAE2593CFBE007554B5 /* font */,
-				FF046546252FB94000D7460D /* Utils */,
+				FF6405DE251FD5970062DA9B /* Models */,
 				FF6405E0251FD5B30062DA9B /* ViewModels */,
 				FF6405DF251FD59C0062DA9B /* Services */,
-				FF6405DE251FD5970062DA9B /* Models */,
 				FF6405DD251FD58C0062DA9B /* Views */,
+				FFB81EAE2593CFBE007554B5 /* font */,
 				FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */,
 				FFDFC6E3251FCEBB0088190E /* Assets.xcassets */,
 				FFDFC710251FCFF40088190E /* GoogleService-Info.plist */,
@@ -543,7 +532,6 @@
 				FF1B4529258280C500A6E639 /* AuthViewModel.swift in Sources */,
 				FF7FAE16258006FD00FDB32E /* Home.swift in Sources */,
 				FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */,
-				FF046542252FB90100D7460D /* HideRowSeparatorModifier.swift in Sources */,
 				FF7FAE0E2580052A00FDB32E /* CartItemModel.swift in Sources */,
 				FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */,
 				FF6405EA251FD6070062DA9B /* CategoryModel.swift in Sources */,

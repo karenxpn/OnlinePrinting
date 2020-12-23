@@ -75,10 +75,12 @@ class UploadService {
         
     }
     
-    func placeOrder( orderList: [CartItemModel], fileURLS: [String], completion: @escaping ( Bool ) -> ()) {
+    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], completion: @escaping ( Bool ) -> ()) {
         
         var orders = [[String: Any]]()
+        var totalPrice = 0
         for i in 0..<orderList.count {
+            totalPrice += orderList[i].totalPrice
             
             orders.append([
                 "productName" : orderList[i].category,
@@ -90,13 +92,12 @@ class UploadService {
             ])
         }
         
-        // orderDetails should contain
-        // user phone
-        // order total Price
-        // order address
-        // etc
+        let orderDetails = [
+            "totalPrice" : totalPrice,
+            "address" : address
+        ] as [String : Any]
         
-        db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).collection("orders").addDocument(data: ["order" : orders]) { error in
+        db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).collection("orders").addDocument(data: ["orderDetails" : orderDetails, "order" : orders]) { error in
             if error != nil {
                 DispatchQueue.main.async {
                     completion( false )

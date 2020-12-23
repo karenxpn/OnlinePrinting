@@ -12,18 +12,14 @@ enum ActiveAlert {
     case error, dialog, placeCompleted
 }
 
-
 struct ContentView: View {
     
     @ObservedObject var uploadVM = UploadViewModel()
     @ObservedObject var authVM = AuthViewModel()
     @State private var selectedTab = 0
     
-    
     var body: some View {
-        
 
-        
         NavigationView {
             
             if self.uploadVM.loading {
@@ -67,6 +63,7 @@ struct ContentView: View {
                                         self.authVM.logOutUser()
                                     }, label: {
                                         Text("Sign Out")
+                                            .font(.custom("McLaren-Regular", size: 16))
                                     })) : AnyView( EmptyView() ))
             }
             
