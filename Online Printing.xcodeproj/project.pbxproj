@@ -30,6 +30,7 @@
 		FF7FAE0E2580052A00FDB32E /* CartItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FAE0D2580052A00FDB32E /* CartItemModel.swift */; };
 		FF7FAE16258006FD00FDB32E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FAE15258006FD00FDB32E /* Home.swift */; };
 		FF7FAE3E25815B0600FDB32E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FF7FAE3D25815B0600FDB32E /* .gitignore */; };
+		FFB81EB02593D001007554B5 /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFB81EAF2593D001007554B5 /* McLaren-Regular.ttf */; };
 		FFBEE38E253CE419001EF94F /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE38D253CE419001EF94F /* Loading.swift */; };
 		FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */; };
 		FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6E1251FCEBA0088190E /* ContentView.swift */; };
@@ -86,6 +87,7 @@
 		FF7FAE0D2580052A00FDB32E /* CartItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemModel.swift; sourceTree = "<group>"; };
 		FF7FAE15258006FD00FDB32E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		FF7FAE3D25815B0600FDB32E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FFB81EAF2593D001007554B5 /* McLaren-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "McLaren-Regular.ttf"; sourceTree = "<group>"; };
 		FFBEE38D253CE419001EF94F /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		FFDFC6DC251FCEBA0088190E /* Online Printing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Printing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingApp.swift; sourceTree = "<group>"; };
@@ -207,6 +209,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		FFB81EAE2593CFBE007554B5 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				FFB81EAF2593D001007554B5 /* McLaren-Regular.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		FFDFC6D3251FCEBA0088190E = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +243,7 @@
 		FFDFC6DE251FCEBA0088190E /* Online Printing */ = {
 			isa = PBXGroup;
 			children = (
+				FFB81EAE2593CFBE007554B5 /* font */,
 				FF046546252FB94000D7460D /* Utils */,
 				FF6405E0251FD5B30062DA9B /* ViewModels */,
 				FF6405DF251FD59C0062DA9B /* Services */,
@@ -389,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB81EB02593D001007554B5 /* McLaren-Regular.ttf in Resources */,
 				FF7FAE3E25815B0600FDB32E /* .gitignore in Resources */,
 				FFDFC6E7251FCEBB0088190E /* Preview Assets.xcassets in Resources */,
 				FF11E53D257EC7D300ED4389 /* LaunchScreen.storyboard in Resources */,

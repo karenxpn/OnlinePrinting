@@ -26,8 +26,10 @@ struct SingleCategoryPreview: View {
         }
         .background(Color.white)
         .cornerRadius(20)
-        .padding(4)
+        .padding(.top, 20)
+        .padding(.horizontal, 8)
         .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
+        .shadow(color: Color.black, radius: 8, x: -8, y: -8)
     }
 }
 
