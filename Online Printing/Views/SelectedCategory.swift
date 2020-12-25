@@ -57,7 +57,7 @@ struct SelectedCategory: View {
             Button {
                 if self.uploadVM.size == "" || self.uploadVM.count == "" || self.uploadVM.fileName == "" {
                     self.uploadVM.activeAlert = .error
-                    self.uploadVM.alertMessage = "Fill in all required fields"
+                    self.uploadVM.alertMessage = "Լրացրեք բոլոր անհրաժեշտ դաշտերը:"
                     self.uploadVM.showAlert = true
                 } else {
                     self.uploadVM.activeAlert = .dialog
@@ -86,7 +86,6 @@ struct SelectedCategory: View {
                 saveFile(url: fileURL)
                 
             } catch {
-                print( "Error reading document" )
                 print(error.localizedDescription)
             }
         })

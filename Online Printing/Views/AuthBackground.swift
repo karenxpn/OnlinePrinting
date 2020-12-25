@@ -11,7 +11,8 @@ struct AuthBackground: View {
     var body: some View {
         Image( "background" )
              .resizable()
-             .edgesIgnoringSafeArea(.all)    }
+             .edgesIgnoringSafeArea(.all)
+    }
 }
 
 struct AuthBackground_Previews: PreviewProvider {

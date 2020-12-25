@@ -77,7 +77,7 @@ struct Cart: View {
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
         
         
-        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
+        let saveAction = UIAlertAction(title: "Done", style: .default, handler: { alert -> Void in
             
             let secondTextField = alertController.textFields![0] as UITextField
             if secondTextField.text == "" {
@@ -96,8 +96,6 @@ struct Cart: View {
         alertController.addAction(saveAction)
 
         UIApplication.shared.windows.first?.rootViewController?.present(alertController, animated: true, completion: nil)
-        
-        
     }
 }
 

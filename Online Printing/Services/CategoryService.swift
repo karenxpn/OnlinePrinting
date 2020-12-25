@@ -14,6 +14,7 @@ class CategoryService {
     let db = Firestore.firestore()
     
     func fetchCategories(completion: @escaping([CategoryModel]?) -> ()) {
+        
         db.collection("Categories").addSnapshotListener { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {

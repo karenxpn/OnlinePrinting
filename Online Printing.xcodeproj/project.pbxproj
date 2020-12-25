@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22771CAD32B8F2311AB91A1C /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB20375C36A46A52556596F5 /* Pods_Online_Printing_Online_PrintingUITests.framework */; };
-		7A6BE8C92696ED6BC01DAC46 /* Pods_Online_Printing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6164F130AD2872ABA0B74BBC /* Pods_Online_Printing.framework */; };
-		FD9D3EFB58BB414F637FA602 /* Pods_Online_PrintingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906A1E34D8DD52E95D70C4 /* Pods_Online_PrintingTests.framework */; };
+		43BD3E0A876476E8B46FC1C9 /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769AA0F5869DDFBA4E06E884 /* Pods_Online_Printing_Online_PrintingUITests.framework */; };
+		8F9E5DAC4B8A7EBA77277496 /* Pods_Online_PrintingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF225BEBC8B4861FB5E73DB /* Pods_Online_PrintingTests.framework */; };
+		C50D0887C560CD1427353BBD /* Pods_Online_Printing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14430420797D92E9F4A82CCF /* Pods_Online_Printing.framework */; };
 		FF046548252FB96300D7460D /* SelectedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF046547252FB96300D7460D /* SelectedCategory.swift */; };
 		FF11E530257E8E4B00ED4389 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11E52F257E8E4B00ED4389 /* Dimensions.swift */; };
 		FF11E53D257EC7D300ED4389 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF11E53C257EC7D300ED4389 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,6 @@
 		FF1B4524258280AC00A6E639 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B4523258280AC00A6E639 /* AuthService.swift */; };
 		FF1B4529258280C500A6E639 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B4528258280C500A6E639 /* AuthViewModel.swift */; };
 		FF1B45312582974C00A6E639 /* AuthBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B45302582974C00A6E639 /* AuthBackground.swift */; };
-		FF1B45372582A54B00A6E639 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FF1B45362582A54B00A6E639 /* AlertX */; };
 		FF4136DC252FAFFF00345FF7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136DB252FAFFF00345FF7 /* MainViewModel.swift */; };
 		FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136E3252FB14500345FF7 /* SingleCategoryPreview.swift */; };
 		FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6405D8251FD1FB0062DA9B /* AppDelegate.swift */; };
@@ -30,6 +29,7 @@
 		FF7FAE16258006FD00FDB32E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FAE15258006FD00FDB32E /* Home.swift */; };
 		FF7FAE3E25815B0600FDB32E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FF7FAE3D25815B0600FDB32E /* .gitignore */; };
 		FFB81EB02593D001007554B5 /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFB81EAF2593D001007554B5 /* McLaren-Regular.ttf */; };
+		FFBCD092259542C600339448 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FFBCD091259542C600339448 /* AlertX */; };
 		FFBEE38E253CE419001EF94F /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE38D253CE419001EF94F /* Loading.swift */; };
 		FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */; };
 		FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6E1251FCEBA0088190E /* ContentView.swift */; };
@@ -58,15 +58,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		113B6C4B07DB4231F889CDE9 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		518CDF9129BA174007B23681 /* Pods-Online Printing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.debug.xcconfig"; sourceTree = "<group>"; };
-		6164F130AD2872ABA0B74BBC /* Pods_Online_Printing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8591CCA7E75EE580177357A3 /* Pods-Online PrintingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.debug.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A1CD0B7A92EBD97CF24B0E8C /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.release.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.release.xcconfig"; sourceTree = "<group>"; };
-		AB20375C36A46A52556596F5 /* Pods_Online_Printing_Online_PrintingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing_Online_PrintingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9906A1E34D8DD52E95D70C4 /* Pods_Online_PrintingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_PrintingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E45C7144BB315668551F82AE /* Pods-Online PrintingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.release.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.release.xcconfig"; sourceTree = "<group>"; };
-		F5915100FB2ABB41A7170C5F /* Pods-Online Printing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.release.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.release.xcconfig"; sourceTree = "<group>"; };
+		14430420797D92E9F4A82CCF /* Pods_Online_Printing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4C4237C3F3F91B21216133 /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.release.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		31AEF846C1CF20DCC8DD1868 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3DC15BF3987BC44B571BB273 /* Pods-Online Printing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.debug.xcconfig"; sourceTree = "<group>"; };
+		769AA0F5869DDFBA4E06E884 /* Pods_Online_Printing_Online_PrintingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing_Online_PrintingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEF225BEBC8B4861FB5E73DB /* Pods_Online_PrintingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_PrintingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D8E1913777F545EE15FA0A /* Pods-Online PrintingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.debug.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4A7295A9F66161FE1612310 /* Pods-Online PrintingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.release.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.release.xcconfig"; sourceTree = "<group>"; };
+		F7FDD87679AA8CE77A9EC4CA /* Pods-Online Printing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.release.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.release.xcconfig"; sourceTree = "<group>"; };
 		FF046547252FB96300D7460D /* SelectedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategory.swift; sourceTree = "<group>"; };
 		FF11E52F257E8E4B00ED4389 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		FF11E53C257EC7D300ED4389 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF1B45372582A54B00A6E639 /* AlertX in Frameworks */,
-				7A6BE8C92696ED6BC01DAC46 /* Pods_Online_Printing.framework in Frameworks */,
+				FFBCD092259542C600339448 /* AlertX in Frameworks */,
+				C50D0887C560CD1427353BBD /* Pods_Online_Printing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD9D3EFB58BB414F637FA602 /* Pods_Online_PrintingTests.framework in Frameworks */,
+				8F9E5DAC4B8A7EBA77277496 /* Pods_Online_PrintingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,19 +124,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22771CAD32B8F2311AB91A1C /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */,
+				43BD3E0A876476E8B46FC1C9 /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		541E2EF10DDCC986371CED53 /* Frameworks */ = {
+		1DE93ACC306B96E4AB6B4C0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6164F130AD2872ABA0B74BBC /* Pods_Online_Printing.framework */,
-				AB20375C36A46A52556596F5 /* Pods_Online_Printing_Online_PrintingUITests.framework */,
-				C9906A1E34D8DD52E95D70C4 /* Pods_Online_PrintingTests.framework */,
+				14430420797D92E9F4A82CCF /* Pods_Online_Printing.framework */,
+				769AA0F5869DDFBA4E06E884 /* Pods_Online_Printing_Online_PrintingUITests.framework */,
+				DEF225BEBC8B4861FB5E73DB /* Pods_Online_PrintingTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,12 +144,12 @@
 		9C31D7ACCF45030B2106C1B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				518CDF9129BA174007B23681 /* Pods-Online Printing.debug.xcconfig */,
-				F5915100FB2ABB41A7170C5F /* Pods-Online Printing.release.xcconfig */,
-				113B6C4B07DB4231F889CDE9 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */,
-				A1CD0B7A92EBD97CF24B0E8C /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */,
-				8591CCA7E75EE580177357A3 /* Pods-Online PrintingTests.debug.xcconfig */,
-				E45C7144BB315668551F82AE /* Pods-Online PrintingTests.release.xcconfig */,
+				3DC15BF3987BC44B571BB273 /* Pods-Online Printing.debug.xcconfig */,
+				F7FDD87679AA8CE77A9EC4CA /* Pods-Online Printing.release.xcconfig */,
+				31AEF846C1CF20DCC8DD1868 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */,
+				2E4C4237C3F3F91B21216133 /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */,
+				E8D8E1913777F545EE15FA0A /* Pods-Online PrintingTests.debug.xcconfig */,
+				F4A7295A9F66161FE1612310 /* Pods-Online PrintingTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 				FFDFC6FB251FCEBC0088190E /* Online PrintingUITests */,
 				FFDFC6DD251FCEBA0088190E /* Products */,
 				9C31D7ACCF45030B2106C1B4 /* Pods */,
-				541E2EF10DDCC986371CED53 /* Frameworks */,
+				1DE93ACC306B96E4AB6B4C0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,11 +282,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFDFC701251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online Printing" */;
 			buildPhases = (
-				193E318932F5A1968D79B243 /* [CP] Check Pods Manifest.lock */,
+				74711F2F334722D8744CB748 /* [CP] Check Pods Manifest.lock */,
 				FFDFC6D8251FCEBA0088190E /* Sources */,
 				FFDFC6D9251FCEBA0088190E /* Frameworks */,
 				FFDFC6DA251FCEBA0088190E /* Resources */,
-				8125DD7DD6A6F9BEF6F5C2B4 /* [CP] Embed Pods Frameworks */,
+				746E6DBB34C101892224A5D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,7 +294,7 @@
 			);
 			name = "Online Printing";
 			packageProductDependencies = (
-				FF1B45362582A54B00A6E639 /* AlertX */,
+				FFBCD091259542C600339448 /* AlertX */,
 			);
 			productName = "Online Printing";
 			productReference = FFDFC6DC251FCEBA0088190E /* Online Printing.app */;
@@ -304,7 +304,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFDFC704251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingTests" */;
 			buildPhases = (
-				45315D24C78FCB2CCEE64FE6 /* [CP] Check Pods Manifest.lock */,
+				71C76F5E166F5C5341FC22FD /* [CP] Check Pods Manifest.lock */,
 				FFDFC6E9251FCEBC0088190E /* Sources */,
 				FFDFC6EA251FCEBC0088190E /* Frameworks */,
 				FFDFC6EB251FCEBC0088190E /* Resources */,
@@ -323,11 +323,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFDFC707251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingUITests" */;
 			buildPhases = (
-				91E60FF18D1B24D92DBCF1D6 /* [CP] Check Pods Manifest.lock */,
+				1907B4F36E84F76620F853A5 /* [CP] Check Pods Manifest.lock */,
 				FFDFC6F4251FCEBC0088190E /* Sources */,
 				FFDFC6F5251FCEBC0088190E /* Frameworks */,
 				FFDFC6F6251FCEBC0088190E /* Resources */,
-				B56DF75601BC805FF61FA672 /* [CP] Embed Pods Frameworks */,
+				371E220E35E91726899F6ED5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -371,7 +371,7 @@
 			);
 			mainGroup = FFDFC6D3251FCEBA0088190E;
 			packageReferences = (
-				FF1B45352582A54B00A6E639 /* XCRemoteSwiftPackageReference "AlertX" */,
+				FFBCD090259542C600339448 /* XCRemoteSwiftPackageReference "AlertX" */,
 			);
 			productRefGroup = FFDFC6DD251FCEBA0088190E /* Products */;
 			projectDirPath = "";
@@ -415,68 +415,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		193E318932F5A1968D79B243 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Online Printing-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		45315D24C78FCB2CCEE64FE6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Online PrintingTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8125DD7DD6A6F9BEF6F5C2B4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		91E60FF18D1B24D92DBCF1D6 /* [CP] Check Pods Manifest.lock */ = {
+		1907B4F36E84F76620F853A5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -498,7 +437,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B56DF75601BC805FF61FA672 /* [CP] Embed Pods Frameworks */ = {
+		371E220E35E91726899F6ED5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -513,6 +452,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71C76F5E166F5C5341FC22FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Online PrintingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		746E6DBB34C101892224A5D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74711F2F334722D8744CB748 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Online Printing-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -602,7 +602,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -663,7 +663,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -694,7 +694,7 @@
 		};
 		FFDFC702251FCEBC0088190E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 518CDF9129BA174007B23681 /* Pods-Online Printing.debug.xcconfig */;
+			baseConfigurationReference = 3DC15BF3987BC44B571BB273 /* Pods-Online Printing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -717,7 +717,7 @@
 		};
 		FFDFC703251FCEBC0088190E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5915100FB2ABB41A7170C5F /* Pods-Online Printing.release.xcconfig */;
+			baseConfigurationReference = F7FDD87679AA8CE77A9EC4CA /* Pods-Online Printing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -740,7 +740,7 @@
 		};
 		FFDFC705251FCEBC0088190E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8591CCA7E75EE580177357A3 /* Pods-Online PrintingTests.debug.xcconfig */;
+			baseConfigurationReference = E8D8E1913777F545EE15FA0A /* Pods-Online PrintingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -763,7 +763,7 @@
 		};
 		FFDFC706251FCEBC0088190E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E45C7144BB315668551F82AE /* Pods-Online PrintingTests.release.xcconfig */;
+			baseConfigurationReference = F4A7295A9F66161FE1612310 /* Pods-Online PrintingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -786,7 +786,7 @@
 		};
 		FFDFC708251FCEBC0088190E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 113B6C4B07DB4231F889CDE9 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */;
+			baseConfigurationReference = 31AEF846C1CF20DCC8DD1868 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -807,7 +807,7 @@
 		};
 		FFDFC709251FCEBC0088190E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1CD0B7A92EBD97CF24B0E8C /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */;
+			baseConfigurationReference = 2E4C4237C3F3F91B21216133 /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -868,7 +868,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FF1B45352582A54B00A6E639 /* XCRemoteSwiftPackageReference "AlertX" */ = {
+		FFBCD090259542C600339448 /* XCRemoteSwiftPackageReference "AlertX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
 			requirement = {
@@ -879,9 +879,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FF1B45362582A54B00A6E639 /* AlertX */ = {
+		FFBCD091259542C600339448 /* AlertX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF1B45352582A54B00A6E639 /* XCRemoteSwiftPackageReference "AlertX" */;
+			package = FFBCD090259542C600339448 /* XCRemoteSwiftPackageReference "AlertX" */;
 			productName = AlertX;
 		};
 /* End XCSwiftPackageProductDependency section */
