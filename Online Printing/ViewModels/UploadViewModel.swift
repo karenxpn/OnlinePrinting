@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class UploadViewModel : ObservableObject {
     
@@ -27,6 +28,46 @@ class UploadViewModel : ObservableObject {
     
     // Loading
     @Published var loading: Bool = false
+    @Published var buttonClickable: Bool = false
+    
+    @Published var countMessage: String = ""
+    @Published var sizeMessage: String = ""
+    @Published var fileMessage: String = ""
+    
+    private var cancellableSet: Set<AnyCancellable> = []
+
+    
+    init() {
+        isCountPublisherValid
+            .receive(on: RunLoop.main)
+            .map { count in
+                count ? "" : "Քանակը պարտադիր է"
+            }
+            .assign(to: \.countMessage, on: self)
+            .store(in: &cancellableSet)
+
+        
+        isSizePublisherValid
+            .receive(on: RunLoop.main)
+            .map { size in
+                size ? "" : "Չափը պարտադիր է"
+            }
+            .assign(to: \.sizeMessage, on: self)
+            .store(in: &cancellableSet)
+        
+        isFileNamePublisherValid
+            .receive(on: RunLoop.main)
+            .map { file in
+                file ? "" : "Ֆայլը ընտրված չէ"
+            }
+            .assign(to: \.fileMessage, on: self)
+            .store(in: &cancellableSet)
+        
+        isButtonClickable
+            .receive(on: RunLoop.main)
+            .assign(to: \.buttonClickable, on: self)
+            .store(in: &cancellableSet)
+    }
 
     
     func placeOrder() {
@@ -50,5 +91,40 @@ class UploadViewModel : ObservableObject {
                 }
             }
         })
+    }
+    
+    private var isCountPublisherValid: AnyPublisher<Bool, Never> {
+        $count
+            .debounce(for: 0.1, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .map { input in
+                return input != ""
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    private var isFileNamePublisherValid: AnyPublisher<Bool, Never> {
+        $fileName
+            .map{ file in
+                return file != ""
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    private var isSizePublisherValid: AnyPublisher<Bool, Never> {
+        $size
+            .map { size in
+                return size != ""
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    private var isButtonClickable: AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest3( isCountPublisherValid, isFileNamePublisherValid, isSizePublisherValid)
+            .map { count, file, size in
+                print(count && file && size)
+                return count && file && size
+            }
+            .eraseToAnyPublisher()
     }
 }

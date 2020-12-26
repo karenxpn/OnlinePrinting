@@ -21,7 +21,7 @@ struct AuthView: View {
                 
                 VStack( spacing: 20) {
                     
-                    Image( "launchImage" )
+                    Image( "authPageLogo" )
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: UIScreen.main.bounds.size.width/1.5, height: UIScreen.main.bounds.size.height/3.5)

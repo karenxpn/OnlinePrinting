@@ -18,65 +18,72 @@ struct SelectedCategory: View {
     var body: some View {
         
         
-        VStack( spacing: 20) {
+        Form {
             
+                        
             SizeScroller(category: self.category).environmentObject( self.uploadVM )
             
-            TextField("Նշեք քանակը", text: self.$uploadVM.count)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.numberPad)
-                .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
-            
-            
-            TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
-            
-            
-            Button {
-                
-                self.openFile.toggle()
-                
-            } label: {
-                
-                if self.uploadVM.fileName == "" {
-                    VStack {
-                        Image("upload")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 150, height: 150)
-                        
-                        Text( "Ներբեռնել ֆայլը" )
-                    }
-                } else {
-                    Text( self.uploadVM.fileName )
-                }
-                
+            Section(header: Text( "Քանակ" ) ,footer: Text(self.uploadVM.countMessage).foregroundColor(.red)) {
+                TextField("Նշեք քանակը", text: self.$uploadVM.count)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+//                    .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
             }
             
-            Button {
-                if self.uploadVM.size == "" || self.uploadVM.count == "" || self.uploadVM.fileName == "" {
-                    self.uploadVM.activeAlert = .error
-                    self.uploadVM.alertMessage = "Լրացրեք բոլոր անհրաժեշտ դաշտերը:"
-                    self.uploadVM.showAlert = true
-                } else {
+            Section(header: Text( "Հավելյալ նշումներ" ), footer: Text("(Optional)").foregroundColor(.gray)) {
+                TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
+            }
+ 
+            
+            Section( footer: Text( self.uploadVM.fileMessage).foregroundColor(Color.red)) {
+                Button {
+                    self.openFile.toggle()
+                } label: {
+                    
+                    HStack {
+                        Spacer()
+                        if self.uploadVM.fileName == "" {
+                            VStack {
+                                Image("upload")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 150, height: 150)
+                                
+                                Text( "Ներբեռնել ֆայլը" )
+                            }
+                        } else {
+                            Text( self.uploadVM.fileName )
+                        }
+                        Spacer()
+                    }
+                }
+            }
+
+            Section {
+                Button {
                     self.uploadVM.activeAlert = .dialog
                     self.uploadVM.alertMessage = "\(UploadService().countPrice(count: Int( self.uploadVM.count )!, price: Int( self.uploadVM.sizePrice )!))"
                     self.uploadVM.selectedCategory = self.category
                     self.uploadVM.showAlert = true
-                }
-            } label: {
+                } label: {
+                    
+                    HStack {
+                        Spacer()
+                        Text( "Հաշվարկել Գումարը" )
+                            .foregroundColor(Color.white)
+                            .padding()
+                            .background(self.uploadVM.buttonClickable ? Color.blue : Color.gray)
+                            .cornerRadius(30)
+                        Spacer()
+                    }
+
+                }.disabled(!self.uploadVM.buttonClickable)
                 
-                Text( "Հաշվարկել Գումարը" )
-                    .foregroundColor(Color.white)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(30)
             }
-            
-            Spacer()
-            
-        }.padding()
+ 
+        }
         .fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
             do {
                 
@@ -128,22 +135,25 @@ struct SizeScroller : View {
     @EnvironmentObject var uploadVM: UploadViewModel
     
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack {
-                ForEach( self.category.dimensions, id : \.id) { dimension in
-                    
-                    Button {
-                        self.uploadVM.size = dimension.size
-                        self.uploadVM.sizePrice = dimension.price
-                    } label: {
-                        VStack {
-                            Image("dimens")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 100)
-                                .foregroundColor( self.uploadVM.size == dimension.size ? Color.black : Color.gray)
-                            
-                            Text( dimension.size )
+        
+        Section(header: Text("Չափեր"), footer: Text(self.uploadVM.sizeMessage).foregroundColor(.red)) {
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach( self.category.dimensions, id : \.id) { dimension in
+                        
+                        Button {
+                            self.uploadVM.size = dimension.size
+                            self.uploadVM.sizePrice = dimension.price
+                        } label: {
+                            VStack {
+                                Image("dimens")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 100, height: 100)
+                                    .foregroundColor( self.uploadVM.size == dimension.size ? Color.black : Color.gray)
+                                
+                                Text( dimension.size )
+                            }
                         }
                     }
                 }
