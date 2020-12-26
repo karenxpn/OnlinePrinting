@@ -14,8 +14,8 @@ enum ActiveAlert {
 
 struct ContentView: View {
     
-    @ObservedObject var uploadVM = UploadViewModel()
-    @ObservedObject var authVM = AuthViewModel()
+    @EnvironmentObject var uploadVM: UploadViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     @State private var selectedTab = 0
     
     var body: some View {

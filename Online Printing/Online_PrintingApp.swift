@@ -11,6 +11,8 @@ import IdramMerchantPayment
 @main
 struct Online_PrintingApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @ObservedObject var uploadVM = UploadViewModel()
+    @ObservedObject var authVM = AuthViewModel()
     
     init() {
         let newAppearance = UINavigationBarAppearance()
@@ -23,17 +25,18 @@ struct Online_PrintingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(self.uploadVM)
+                .environmentObject(self.authVM)
                 .onOpenURL(perform: { (url) in
-                    if let urlComponents = URLComponents(string: url.absoluteString), let host = urlComponents.host, let queryItems = urlComponents.queryItems {
+                    if let urlComponents = URLComponents(string: url.absoluteString), let _ = urlComponents.host, let queryItems = urlComponents.queryItems {
 
-                        print(host) // mydummysite.com
-
-                        print(queryItems) // [encodedMessage=PD94bWwgdmVyNlPg==, signature=kcig33sdAOAr/YYGf5r4HGN]
-                        for item in queryItems {
-                            print("\(item.name) -> \(item.value)")
+                        if let errorCode = queryItems[0].value {
+                            if errorCode == "0" {
+                                self.uploadVM.placeOrder()
+                            }
+                            print(errorCode)
                         }
                     }
-//                    print( "Karen Mirakyan opened this url -> \(url)" )
                 })
         }
     }

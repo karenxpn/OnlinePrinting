@@ -9,15 +9,11 @@ import Foundation
 
 class PaymentViewModel: ObservableObject {
     
-    @Published var amount: Int = 0
+    @Published var products = [CartItemModel]()
     
     func payWithIdram() {
-        PaymentService().payWithIdram(amount: self.amount)
-    }
-    
-    func calculateTotalAmount(products: [CartItemModel]) {
-        for product in products {
-            amount += product.totalPrice
-        }
+        PaymentService().calculateTotalAmount(products: products, completion: { amount in
+            PaymentService().payWithIdram(amount: amount)
+        })
     }
 }

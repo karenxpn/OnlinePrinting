@@ -50,9 +50,7 @@ struct Cart: View {
                     self.uploadVM.alertMessage = "Զամբյուղը դատարկ է:"
                     self.uploadVM.showAlert = true
                 } else {
-//                    self.dialog()
-                    self.paymentVM.calculateTotalAmount(products: self.uploadVM.orderList)
-                    self.paymentVM.payWithIdram()
+                    self.dialog()
                 }
             }, label: {
                 Text( "Գրանցել Պատվեր" )
@@ -89,9 +87,10 @@ struct Cart: View {
                 self.uploadVM.alertMessage = "Մուտքագրեք հասցեն"
                 self.uploadVM.showAlert = true
             } else {
-                
                 self.uploadVM.address = secondTextField.text ?? "Invalid Address"
-                uploadVM.placeOrder()
+                
+                self.paymentVM.products = self.uploadVM.orderList
+                self.paymentVM.payWithIdram()
             }
         })
         
