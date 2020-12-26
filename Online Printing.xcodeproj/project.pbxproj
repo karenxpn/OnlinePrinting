@@ -38,6 +38,8 @@
 		FFDFC6F2251FCEBC0088190E /* Online_PrintingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */; };
 		FFDFC6FD251FCEBC0088190E /* Online_PrintingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6FC251FCEBC0088190E /* Online_PrintingUITests.swift */; };
 		FFDFC711251FCFF40088190E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC710251FCFF40088190E /* GoogleService-Info.plist */; };
+		FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE019B2597D78B009B614C /* PaymentService.swift */; };
+		FFEE01A22597D819009B614C /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE01A12597D819009B614C /* PaymentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		FFDFC6FC251FCEBC0088190E /* Online_PrintingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingUITests.swift; sourceTree = "<group>"; };
 		FFDFC6FE251FCEBC0088190E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFDFC710251FCFF40088190E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FFEE019B2597D78B009B614C /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
+		FFEE01A12597D819009B614C /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 				FF6405E1251FD5C10062DA9B /* CategoryService.swift */,
 				FF69EBF92567F34900939256 /* UploadService.swift */,
 				FF1B4523258280AC00A6E639 /* AuthService.swift */,
+				FFEE019B2597D78B009B614C /* PaymentService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				FF4136DB252FAFFF00345FF7 /* MainViewModel.swift */,
 				FF69EBF42567F33000939256 /* UploadViewModel.swift */,
 				FF1B4528258280C500A6E639 /* AuthViewModel.swift */,
+				FFEE01A12597D819009B614C /* PaymentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -536,10 +542,12 @@
 				FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */,
 				FF6405EA251FD6070062DA9B /* CategoryModel.swift in Sources */,
 				FF69EBFA2567F34900939256 /* UploadService.swift in Sources */,
+				FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */,
 				FF4136DC252FAFFF00345FF7 /* MainViewModel.swift in Sources */,
 				FF7FADFE257FE6B900FDB32E /* Cart.swift in Sources */,
 				FF1B451F2582809100A6E639 /* AuthView.swift in Sources */,
 				FF11E530257E8E4B00ED4389 /* Dimensions.swift in Sources */,
+				FFEE01A22597D819009B614C /* PaymentViewModel.swift in Sources */,
 				FF6405E2251FD5C10062DA9B /* CategoryService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

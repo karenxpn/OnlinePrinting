@@ -159,16 +159,14 @@ struct CalculatePriceButton: View {
             self.uploadVM.showAlert = true
         } label: {
             
-            HStack {
-                Spacer()
-                Text( "Հաշվարկել Գումարը" )
-                    .foregroundColor(Color.white)
-                    .padding()
-                    .background(self.uploadVM.buttonClickable ? Color.blue : Color.gray)
-                    .cornerRadius(30)
-                Spacer()
-            }
+            Text( "Հաշվարկել Գումարը" )
+                .foregroundColor(Color.white)
+                .padding()
             
-        }.disabled(!self.uploadVM.buttonClickable)
+        }
+        .frame(minWidth: 0, maxWidth: .infinity)
+        .background(self.uploadVM.buttonClickable ? Color.blue : Color.gray)
+        .cornerRadius(10)
+        .disabled(!self.uploadVM.buttonClickable)
     }
 }

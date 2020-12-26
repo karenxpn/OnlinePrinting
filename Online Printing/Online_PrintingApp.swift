@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import IdramMerchantPayment
 
 @main
 struct Online_PrintingApp: App {
@@ -22,6 +23,18 @@ struct Online_PrintingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onOpenURL(perform: { (url) in
+                    if let urlComponents = URLComponents(string: url.absoluteString), let host = urlComponents.host, let queryItems = urlComponents.queryItems {
+
+                        print(host) // mydummysite.com
+
+                        print(queryItems) // [encodedMessage=PD94bWwgdmVyNlPg==, signature=kcig33sdAOAr/YYGf5r4HGN]
+                        for item in queryItems {
+                            print("\(item.name) -> \(item.value)")
+                        }
+                    }
+//                    print( "Karen Mirakyan opened this url -> \(url)" )
+                })
         }
     }
 }

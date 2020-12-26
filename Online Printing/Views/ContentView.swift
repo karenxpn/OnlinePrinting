@@ -9,7 +9,7 @@ import SwiftUI
 import AlertX
 
 enum ActiveAlert {
-    case error, dialog, placeCompleted
+    case error, dialog, placementCompleted
 }
 
 struct ContentView: View {
@@ -57,7 +57,8 @@ struct ContentView: View {
                     .frame(width: 15, height: 15)
                     .offset(x: ( ( 2 * 2) - 1 ) * ( UIScreen.main.bounds.size.width / ( 2 * 2 ) ), y: -30)
                     .opacity(2 == 0 ? 0 : 1)
-                }.navigationBarTitle( self.selectedTab == 0 ? Text( "Home" ) : Text( "Cart" ), displayMode: .inline)
+                }
+                .navigationBarTitle( self.selectedTab == 0 ? Text( "Home" ) : Text( "Cart" ), displayMode: .inline)
                 .navigationBarItems(trailing: self.selectedTab == 1 ?
                                     AnyView( Button(action: {
                                         self.authVM.logOutUser()
@@ -92,7 +93,7 @@ struct ContentView: View {
                             animation: .defaultEffect())
                 
                 
-            } else if self.uploadVM.activeAlert == .placeCompleted {
+            } else if self.uploadVM.activeAlert == .placementCompleted {
                 return AlertX(title: Text( "Շնորհակալություն" ), message: Text( self.uploadVM.alertMessage ), primaryButton: .default(Text( "OK" ), action: {
                     self.uploadVM.activeAlert = nil
                     self.uploadVM.alertMessage = ""

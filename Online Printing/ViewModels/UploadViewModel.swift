@@ -78,7 +78,7 @@ class UploadViewModel : ObservableObject {
                     if orderPlacementResponse == true {
                         self.orderList.removeAll(keepingCapacity: false)
                         self.loading = false
-                        self.activeAlert = .placeCompleted
+                        self.activeAlert = .placementCompleted
                         self.alertMessage = "Շնորհավորում ենք Ձեր պատվերը գրանցված է:"
                         self.showAlert = true
                     } else {

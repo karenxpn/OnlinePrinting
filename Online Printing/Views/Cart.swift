@@ -8,11 +8,13 @@
 import SwiftUI
 import FirebaseAuth
 import SDWebImageSwiftUI
+import IdramMerchantPayment
 
 struct Cart: View {
     
     @EnvironmentObject var uploadVM: UploadViewModel
     @EnvironmentObject var authVM: AuthViewModel
+    @ObservedObject var paymentVM = PaymentViewModel()
     
     var body: some View {
         
@@ -48,7 +50,9 @@ struct Cart: View {
                     self.uploadVM.alertMessage = "Զամբյուղը դատարկ է:"
                     self.uploadVM.showAlert = true
                 } else {
-                    self.dialog()
+//                    self.dialog()
+                    self.paymentVM.calculateTotalAmount(products: self.uploadVM.orderList)
+                    self.paymentVM.payWithIdram()
                 }
             }, label: {
                 Text( "Գրանցել Պատվեր" )
