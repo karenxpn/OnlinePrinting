@@ -17,72 +17,28 @@ struct SelectedCategory: View {
     
     var body: some View {
         
-        
         Form {
             
-                        
-            SizeScroller(category: self.category).environmentObject( self.uploadVM )
+            Section(header: Text("Չափեր"), footer: Text(self.uploadVM.sizeMessage).foregroundColor(.red)) {
+                SizeScroller(category: self.category).environmentObject( self.uploadVM )
+            }
             
             Section(header: Text( "Քանակ" ) ,footer: Text(self.uploadVM.countMessage).foregroundColor(.red)) {
                 TextField("Նշեք քանակը", text: self.$uploadVM.count)
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)
-//                    .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
             }
             
             Section(header: Text( "Հավելյալ նշումներ" ), footer: Text("(Optional)").foregroundColor(.gray)) {
                 TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
             }
- 
+            
             
             Section( footer: Text( self.uploadVM.fileMessage).foregroundColor(Color.red)) {
-                Button {
-                    self.openFile.toggle()
-                } label: {
-                    
-                    HStack {
-                        Spacer()
-                        if self.uploadVM.fileName == "" {
-                            VStack {
-                                Image("upload")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 150, height: 150)
-                                
-                                Text( "Ներբեռնել ֆայլը" )
-                            }
-                        } else {
-                            Text( self.uploadVM.fileName )
-                        }
-                        Spacer()
-                    }
-                }
+                ImportFile(openFile: self.$openFile)
+                    .environmentObject(self.uploadVM)
             }
-
-            Section {
-                Button {
-                    self.uploadVM.activeAlert = .dialog
-                    self.uploadVM.alertMessage = "\(UploadService().countPrice(count: Int( self.uploadVM.count )!, price: Int( self.uploadVM.sizePrice )!))"
-                    self.uploadVM.selectedCategory = self.category
-                    self.uploadVM.showAlert = true
-                } label: {
-                    
-                    HStack {
-                        Spacer()
-                        Text( "Հաշվարկել Գումարը" )
-                            .foregroundColor(Color.white)
-                            .padding()
-                            .background(self.uploadVM.buttonClickable ? Color.blue : Color.gray)
-                            .cornerRadius(30)
-                        Spacer()
-                    }
-
-                }.disabled(!self.uploadVM.buttonClickable)
-                
-            }
- 
+            
+            CalculatePriceButton(category: self.category).environmentObject( self.uploadVM )
         }
         .fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
             do {
@@ -136,7 +92,6 @@ struct SizeScroller : View {
     
     var body: some View {
         
-        Section(header: Text("Չափեր"), footer: Text(self.uploadVM.sizeMessage).foregroundColor(.red)) {
             ScrollView(.horizontal) {
                 HStack {
                     ForEach( self.category.dimensions, id : \.id) { dimension in
@@ -158,8 +113,62 @@ struct SizeScroller : View {
                     }
                 }
             }
+    }
+}
+
+struct ImportFile: View {
+    
+    @EnvironmentObject var uploadVM: UploadViewModel
+    @Binding var openFile: Bool
+    
+    var body: some View {
+        Button {
+            self.openFile.toggle()
+        } label: {
+            
+            HStack {
+                Spacer()
+                if self.uploadVM.fileName == "" {
+                    VStack {
+                        Image("upload")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 150, height: 150)
+                        
+                        Text( "Ներբեռնել ֆայլը" )
+                    }
+                } else {
+                    Text( self.uploadVM.fileName )
+                }
+                Spacer()
+            }
         }
     }
 }
 
-
+struct CalculatePriceButton: View {
+    
+    @EnvironmentObject var uploadVM: UploadViewModel
+    let category: CategoryModel
+    
+    var body: some View {
+        Button {
+            self.uploadVM.activeAlert = .dialog
+            self.uploadVM.alertMessage = "\(UploadService().countPrice(count: Int( self.uploadVM.count )!, price: Int( self.uploadVM.sizePrice )!))"
+            self.uploadVM.selectedCategory = self.category
+            self.uploadVM.showAlert = true
+        } label: {
+            
+            HStack {
+                Spacer()
+                Text( "Հաշվարկել Գումարը" )
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .background(self.uploadVM.buttonClickable ? Color.blue : Color.gray)
+                    .cornerRadius(30)
+                Spacer()
+            }
+            
+        }.disabled(!self.uploadVM.buttonClickable)
+    }
+}

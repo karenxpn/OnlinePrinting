@@ -122,7 +122,6 @@ class UploadViewModel : ObservableObject {
     private var isButtonClickable: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest3( isCountPublisherValid, isFileNamePublisherValid, isSizePublisherValid)
             .map { count, file, size in
-                print(count && file && size)
                 return count && file && size
             }
             .eraseToAnyPublisher()
