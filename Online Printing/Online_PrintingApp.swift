@@ -28,6 +28,7 @@ struct Online_PrintingApp: App {
                 .environmentObject(self.uploadVM)
                 .environmentObject(self.authVM)
                 .onOpenURL(perform: { (url) in
+                    print(url)
                     if let urlComponents = URLComponents(string: url.absoluteString), let _ = urlComponents.host, let queryItems = urlComponents.queryItems {
 
                         if let errorCode = queryItems[0].value {

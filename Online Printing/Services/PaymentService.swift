@@ -10,7 +10,7 @@ import IdramMerchantPayment
 
 class PaymentService {
     func payWithIdram(amount: Int) {
-        IdramPaymentManager.pay(withReceiverName: "Online Printing", receiverId: Credentials().idramID, title: UUID().uuidString, amount: amount as NSNumber, hasTip: false, callbackURLScheme: "onlineprinting://")
+        IdramPaymentManager.pay(withReceiverName: "Online Printing", receiverId: Credentials().idramID, title: UUID().uuidString, amount: amount as NSNumber, hasTip: false, callbackURLScheme: "onlineprinting")
     }
     
     func calculateTotalAmount( products: [CartItemModel], completion: @escaping( Int ) -> () ) {

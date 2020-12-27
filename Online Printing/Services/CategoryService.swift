@@ -9,32 +9,28 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import CombineFirebaseFirestore
+import Combine
+
+protocol CategoryServiceProtocol {
+    func fetchCategories() -> AnyPublisher<[CategoryModel], Error>
+}
 
 class CategoryService {
-    let db = Firestore.firestore()
+    static let shared: CategoryServiceProtocol = CategoryService()
     
-    func fetchCategories(completion: @escaping([CategoryModel]?) -> ()) {
+    private init() { }
+}
+
+extension CategoryService: CategoryServiceProtocol {
+    func fetchCategories() -> AnyPublisher<[CategoryModel], Error> {
+        let db = Firestore.firestore()
+
+        return db.collection("Categories")
+            .publisher(as: CategoryModel.self)
+            .mapError { $0 as Error }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
         
-        db.collection("Categories").addSnapshotListener { (snapshot, error) in
-            if error != nil {
-                DispatchQueue.main.async {
-                    completion( nil )
-                }
-                return
-            }
-            
-            if snapshot?.isEmpty != true {
-                var categories = [CategoryModel]()
-                for document in snapshot!.documents {
-                    if let model = try? document.data(as: CategoryModel.self) {
-                        categories.append(model)
-                    }
-                }
-                
-                DispatchQueue.main.async {
-                    completion( categories )
-                }
-            }
-        }
     }
 }

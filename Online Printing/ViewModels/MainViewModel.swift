@@ -6,21 +6,37 @@
 //
 
 import Foundation
+import Combine
+
+protocol MainViewModelProtocol {
+    var categories: [CategoryModel] { get }
+}
+
 class MainViewModel: ObservableObject {
     @Published var categories = [CategoryModel]()
     @Published var loading: Bool = false
     
-    init() {
+    var cancelBag = Set<AnyCancellable>()
+    var dataManager: CategoryServiceProtocol
+    
+    init(dataManager: CategoryServiceProtocol = CategoryService.shared) {
+        self.dataManager = dataManager
         getAllCategories()
     }
-    
+}
+
+extension MainViewModel: MainViewModelProtocol {
     func getAllCategories() {
         self.loading = true
-        CategoryService().fetchCategories { (response) in
-            if let response = response {
+        dataManager.fetchCategories()
+            .sink { (completion) in
+                switch completion {
+                    case .finished:
+                        self.loading = false
+                    case .failure(let error): print("❗️ failure: \(error)")
+                }
+            } receiveValue: { (response) in
                 self.categories = response
-                self.loading = false
-            }
-        }
+            }.store(in: &cancelBag)
     }
 }
