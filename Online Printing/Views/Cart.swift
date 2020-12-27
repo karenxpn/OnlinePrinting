@@ -78,7 +78,6 @@ struct Cart: View {
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
         
-        
         let saveAction = UIAlertAction(title: "Done", style: .default, handler: { alert -> Void in
             
             let secondTextField = alertController.textFields![0] as UITextField
@@ -89,6 +88,7 @@ struct Cart: View {
             } else {
                 self.uploadVM.address = secondTextField.text ?? "Invalid Address"
                 
+                // Navigate to payment view to choose payment method
                 self.paymentVM.products = self.uploadVM.orderList
                 self.paymentVM.payWithIdram()
             }

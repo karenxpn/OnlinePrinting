@@ -40,6 +40,7 @@
 		FFDFC711251FCFF40088190E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC710251FCFF40088190E /* GoogleService-Info.plist */; };
 		FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE019B2597D78B009B614C /* PaymentService.swift */; };
 		FFEE01A22597D819009B614C /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE01A12597D819009B614C /* PaymentViewModel.swift */; };
+		FFEE01C52598920A009B614C /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE01C42598920A009B614C /* Credentials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		FFDFC710251FCFF40088190E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFEE019B2597D78B009B614C /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		FFEE01A12597D819009B614C /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		FFEE01C42598920A009B614C /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 				FFDFC6E5251FCEBB0088190E /* Preview Content */,
 				FF6405D8251FD1FB0062DA9B /* AppDelegate.swift */,
 				FF11E53C257EC7D300ED4389 /* LaunchScreen.storyboard */,
+				FFEE01C42598920A009B614C /* Credentials.swift */,
 			);
 			path = "Online Printing";
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */,
 				FF6405EA251FD6070062DA9B /* CategoryModel.swift in Sources */,
 				FF69EBFA2567F34900939256 /* UploadService.swift in Sources */,
+				FFEE01C52598920A009B614C /* Credentials.swift in Sources */,
 				FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */,
 				FF4136DC252FAFFF00345FF7 /* MainViewModel.swift in Sources */,
 				FF7FADFE257FE6B900FDB32E /* Cart.swift in Sources */,
