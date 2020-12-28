@@ -154,7 +154,7 @@ struct CalculatePriceButton: View {
     var body: some View {
         Button {
             self.uploadVM.activeAlert = .dialog
-            self.uploadVM.alertMessage = "\(UploadService().countPrice(count: Int( self.uploadVM.count )!, price: Int( self.uploadVM.sizePrice )!))"
+            self.uploadVM.alertMessage = String( self.uploadVM.calculatePrice() )
             self.uploadVM.selectedCategory = self.category
             self.uploadVM.showAlert = true
         } label: {

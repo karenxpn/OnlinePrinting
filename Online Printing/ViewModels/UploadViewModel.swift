@@ -35,9 +35,12 @@ class UploadViewModel : ObservableObject {
     @Published var fileMessage: String = ""
     
     private var cancellableSet: Set<AnyCancellable> = []
+    var dataManager: UploadServiceProtocol
 
     
-    init() {
+    init(dataManager: UploadServiceProtocol = UploadService.shared) {
+        self.dataManager = dataManager
+        
         isCountPublisherValid
             .receive(on: RunLoop.main)
             .map { count in
@@ -67,30 +70,6 @@ class UploadViewModel : ObservableObject {
             .receive(on: RunLoop.main)
             .assign(to: \.buttonClickable, on: self)
             .store(in: &cancellableSet)
-    }
-
-    
-    func placeOrder() {
-        self.loading = true
-        UploadService().uploadFileToStorage(cartItems: self.orderList, completion: { (response) in
-            if let response = response {
-                UploadService().placeOrder(orderList: self.orderList, address: self.address, fileURLS: response) { (orderPlacementResponse) in
-                    if orderPlacementResponse == true {
-                        self.orderList.removeAll(keepingCapacity: false)
-                        self.loading = false
-                        self.activeAlert = .placementCompleted
-                        self.alertMessage = "Շնորհավորում ենք Ձեր պատվերը գրանցված է:"
-                        self.showAlert = true
-                    } else {
-                        
-                        self.loading = false
-                        self.activeAlert = .error
-                        self.alertMessage = "Ցավոք տեղի է ունեցել սխալ"
-                        self.showAlert = true
-                    }
-                }
-            }
-        })
     }
     
     private var isCountPublisherValid: AnyPublisher<Bool, Never> {
@@ -125,5 +104,40 @@ class UploadViewModel : ObservableObject {
                 return count && file && size
             }
             .eraseToAnyPublisher()
+    }
+}
+
+
+extension UploadViewModel {
+    func placeOrder() {
+        self.loading = true
+        dataManager.uploadFileToStorage(cartItems: self.orderList) { (response) in
+            if let response = response {
+                self.dataManager.placeOrder(orderList: self.orderList, address: self.address, fileURLS: response)
+                    .sink { (completion) in
+                        switch completion {
+                            case .finished:
+                                self.orderList.removeAll(keepingCapacity: false)
+                                self.loading = false
+                                self.activeAlert = .placementCompleted
+                                self.alertMessage = "Շնորհավորում ենք Ձեր պատվերը գրանցված է:"
+                                self.showAlert = true
+                            case .failure( _ ):
+                                self.loading = false
+                                self.activeAlert = .error
+                                self.alertMessage = "Ցավոք տեղի է ունեցել սխալ"
+                                self.showAlert = true
+                        }
+                    } receiveValue: { (docRef) in
+                        print(docRef)
+                    }
+                    .store(in: &self.cancellableSet)
+
+            }
+        }
+    }
+    
+    func calculatePrice() -> Int {
+        return dataManager.countPrice(count: Int( self.count )!, price: Int( self.sizePrice )! )
     }
 }

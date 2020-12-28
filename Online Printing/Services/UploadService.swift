@@ -11,14 +11,27 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseStorage
 import FirebaseAuth
+import Combine
+import CombineFirebaseFirestore
+
+protocol UploadServiceProtocol {
+    func uploadFileToStorage( cartItems: [CartItemModel], completion: @escaping ( [String]? ) -> () )
+    func countPrice( count: Int, price: Int ) -> Int
+    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String]) -> AnyPublisher<DocumentReference, Error>
+}
+
 
 class UploadService {
-    let storageRef = Storage.storage().reference()
-    let db = Firestore.firestore()
+    static let shared: UploadServiceProtocol = UploadService()
     
+    private init() { }
+}
+
+extension UploadService : UploadServiceProtocol{
     
     func uploadFileToStorage( cartItems: [CartItemModel], completion: @escaping ( [String]? ) -> () ) {
-        
+        let storageRef = Storage.storage().reference()
+
         let mediaFolder = storageRef.child("uploaded")
         
         var count = 0
@@ -75,8 +88,9 @@ class UploadService {
         
     }
     
-    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], completion: @escaping ( Bool ) -> ()) {
-        
+    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String]) -> AnyPublisher<DocumentReference, Error> {
+        let db = Firestore.firestore()
+
         var orders = [[String: Any]]()
         var totalPrice = 0
         for i in 0..<orderList.count {
@@ -97,18 +111,10 @@ class UploadService {
             "address" : address
         ] as [String : Any]
         
-        db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).collection("orders").addDocument(data: ["orderDetails" : orderDetails, "order" : orders]) { error in
-            if error != nil {
-                DispatchQueue.main.async {
-                    completion( false )
-                }
-                return
-            }
-            
-            DispatchQueue.main.async {
-                completion( true )
-            }
-        }
+        return ( db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).collection("orders").addDocument(data: ["orderDetails" : orderDetails, "order" : orders]) as AnyPublisher<DocumentReference, Error>)
+            .mapError{ $0 as Error }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
     
     func countPrice( count: Int, price: Int ) -> Int {
