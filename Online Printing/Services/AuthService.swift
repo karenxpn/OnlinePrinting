@@ -9,28 +9,31 @@ import Foundation
 import FirebaseAuth
 
 class AuthService {
-    func signUp( phoneNumber: String ) {
+    func signUp( phoneNumber: String, completion: @escaping ( String? ) -> () ) {
                 
         PhoneAuthProvider.provider().verifyPhoneNumber("+374\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
             if error != nil {
-                print(error?.localizedDescription ?? "Error occured")
+                DispatchQueue.main.async {
+                    completion( nil )
+                }
                 return
             }
             
-            UserDefaults.standard.set( verificationID!, forKey: "authVerificationID")
+            DispatchQueue.main.async {
+                completion( verificationID )
+            }
         }
     }
     
-    func signIn( verificationCode: String, completion: @escaping ( Bool ) -> () ) {
-        let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
-        if verificationID == nil {
+    func signIn( verificationID: String, verificationCode: String, completion: @escaping ( Bool ) -> () ) {
+        if verificationID == "" {
             DispatchQueue.main.async {
                 completion( false )
             }
             return
         }
         
-        let credential =  PhoneAuthProvider.provider().credential(withVerificationID: verificationID!, verificationCode: verificationCode)
+        let credential =  PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: verificationCode)
 
         
         Auth.auth().signIn(with: credential) { (result, error) in
@@ -45,7 +48,6 @@ class AuthService {
             DispatchQueue.main.async {
                 completion( true )
             }
-
         }
     }
     

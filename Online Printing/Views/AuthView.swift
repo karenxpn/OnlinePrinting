@@ -11,6 +11,7 @@ import AlertX
 struct AuthView: View {
     
     @EnvironmentObject var authVM: AuthViewModel
+    @State private var showWaiting: Bool = false
     
     var body: some View {
         if self.authVM.showLoading {
@@ -31,7 +32,12 @@ struct AuthView: View {
                         .font(.system(size: 25))
                         .foregroundColor(Color.white)
 
-                    NumberInput().environmentObject(self.authVM)
+                    NumberInput(showWaiting: self.$showWaiting).environmentObject(self.authVM)
+                    
+                    if showWaiting && self.authVM.verificationID == "" {
+                        Text( "Please wait..." )
+                            .font(.system(size: 12))
+                    }
                     
                     VStack {
                         
@@ -87,7 +93,6 @@ struct AuthView: View {
             })
         }
     }
-    
 }
 
 struct AuthView_Previews: PreviewProvider {
@@ -99,6 +104,7 @@ struct AuthView_Previews: PreviewProvider {
 struct NumberInput: View {
     
     @EnvironmentObject var authVM: AuthViewModel
+    @Binding var showWaiting: Bool
     
     var body: some View {
         HStack{
@@ -124,6 +130,7 @@ struct NumberInput: View {
                 // send verification code
                 .onTapGesture {
                     self.authVM.signUp()
+                    self.showWaiting = true
                 }
             
             Spacer()

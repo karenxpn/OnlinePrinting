@@ -31,7 +31,6 @@ extension UploadService : UploadServiceProtocol{
     
     func uploadFileToStorage( cartItems: [CartItemModel], completion: @escaping ( [String]? ) -> () ) {
         let storageRef = Storage.storage().reference()
-
         let mediaFolder = storageRef.child("uploaded")
         
         var count = 0
