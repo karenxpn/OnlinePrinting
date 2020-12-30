@@ -14,11 +14,14 @@ class UploadViewModel : ObservableObject {
     @Published var info: String = ""
     @Published var count: String = ""
     @Published var size: String = ""
-    @Published var sizePrice: String = ""
+    @Published var price: Int = 0
+    @Published var typeOfPrinting: String = ""
     @Published var fileName: String = ""
     @Published var address: String = ""
     @Published var path: URL? = nil
     @Published var selectedCategory: CategoryModel? = nil
+    @Published var selectedCategorySpec: Specs? = nil
+    @Published var additionalFunctionality: String = ""
     @Published var orderList = [CartItemModel]()
     
     // Alert
@@ -31,7 +34,7 @@ class UploadViewModel : ObservableObject {
     @Published var buttonClickable: Bool = false
     
     @Published var countMessage: String = ""
-    @Published var sizeMessage: String = ""
+    @Published var specsMessage: String = ""
     @Published var fileMessage: String = ""
     
     private var cancellableSet: Set<AnyCancellable> = []
@@ -44,18 +47,18 @@ class UploadViewModel : ObservableObject {
         isCountPublisherValid
             .receive(on: RunLoop.main)
             .map { count in
-                count ? "" : "Քանակը պարտադիր է"
+                count ? "" : "Այս դաշտը պարտադիր են"
             }
             .assign(to: \.countMessage, on: self)
             .store(in: &cancellableSet)
 
         
-        isSizePublisherValid
+        isSpecsPublisherValid
             .receive(on: RunLoop.main)
             .map { size in
                 size ? "" : "Չափը պարտադիր է"
             }
-            .assign(to: \.sizeMessage, on: self)
+            .assign(to: \.specsMessage, on: self)
             .store(in: &cancellableSet)
         
         isFileNamePublisherValid
@@ -98,8 +101,24 @@ class UploadViewModel : ObservableObject {
             .eraseToAnyPublisher()
     }
     
+    private var isTypePublisherValid: AnyPublisher<Bool, Never> {
+        $typeOfPrinting
+            .map { type in
+                return type != ""
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    private var isSpecsPublisherValid: AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest(isSizePublisherValid, isTypePublisherValid)
+            .map {type, size in
+                return type && size
+            }
+            .eraseToAnyPublisher()
+    }
+    
     private var isButtonClickable: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest3( isCountPublisherValid, isFileNamePublisherValid, isSizePublisherValid)
+        Publishers.CombineLatest3( isCountPublisherValid, isFileNamePublisherValid, isSpecsPublisherValid)
             .map { count, file, size in
                 return count && file && size
             }
@@ -137,7 +156,14 @@ extension UploadViewModel {
         }
     }
     
-    func calculatePrice() -> Int {
-        return dataManager.countPrice(count: Int( self.count )!, price: Int( self.sizePrice )! )
+    func calculatePrice( category: CategoryModel ){
+        
+        dataManager.calculateAmount(selectedCategorySpecs: self.selectedCategorySpec!, count: Int( self.count )!, typeOfPrinting: self.typeOfPrinting, additionalFunctionalityTitle: self.additionalFunctionality) { (amount) in
+            
+            self.activeAlert = .dialog
+            self.alertMessage = String( amount )
+            self.selectedCategory = category
+            self.showAlert = true
+        }
     }
 }

@@ -14,13 +14,19 @@ struct SelectedCategory: View {
     
     let category: CategoryModel
     @State private var openFile: Bool = false
+    @State private var categorySpecsSelected: Int?
     
     var body: some View {
         
         Form {
             
-            Section(header: Text("Չափեր"), footer: Text(self.uploadVM.sizeMessage).foregroundColor(.red)) {
+            Section(header: Text("Չափեր"), footer: Text(self.uploadVM.specsMessage).foregroundColor(.red)) {
                 SizeScroller(category: self.category).environmentObject( self.uploadVM )
+                
+                Picker(self.uploadVM.typeOfPrinting == "" ? "Select The type of Your Printing" : self.uploadVM.typeOfPrinting, selection: self.$uploadVM.typeOfPrinting) {
+                    Text( "One Side" ).tag( "One Side" )
+                    Text( "Two Side" ).tag( "Two Side" )
+                }.pickerStyle(MenuPickerStyle())
             }
             
             Section(header: Text( "Քանակ" ) ,footer: Text(self.uploadVM.countMessage).foregroundColor(.red)) {
@@ -30,6 +36,14 @@ struct SelectedCategory: View {
             
             Section(header: Text( "Հավելյալ նշումներ" ), footer: Text("(Optional)").foregroundColor(.gray)) {
                 TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
+                
+                if self.uploadVM.selectedCategorySpec != nil {
+                    Picker( "Additional Functionality", selection: self.$uploadVM.additionalFunctionality) {
+                        ForEach( self.uploadVM.selectedCategorySpec!.additionalFunctionality, id: \.id ) { functionality in
+                            Text( functionality.functionalityTitle ).tag( functionality.functionalityTitle )
+                        }
+                    }
+                }
             }
             
             
@@ -92,27 +106,32 @@ struct SizeScroller : View {
     
     var body: some View {
         
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach( self.category.dimensions, id : \.id) { dimension in
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach( self.category.specs, id : \.id) { spec in
+                    
+                    Button {
                         
-                        Button {
-                            self.uploadVM.size = dimension.size
-                            self.uploadVM.sizePrice = dimension.price
-                        } label: {
-                            VStack {
-                                Image("dimens")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 100, height: 100)
-                                    .foregroundColor( self.uploadVM.size == dimension.size ? Color.black : Color.gray)
-                                
-                                Text( dimension.size )
-                            }
+                        self.uploadVM.size = spec.name
+                        // count the price including additionalFunctionality, and count
+                        // TODO the one size.color price checkbox
+                        withAnimation{
+                            self.uploadVM.selectedCategorySpec = spec
+                        }
+                    } label: {
+                        VStack {
+                            Image("dimens")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 100, height: 100)
+                                .foregroundColor( self.uploadVM.size == spec.name ? Color.black : Color.gray)
+                            
+                            Text( spec.name )
                         }
                     }
                 }
             }
+        }
     }
 }
 
@@ -153,10 +172,7 @@ struct CalculatePriceButton: View {
     
     var body: some View {
         Button {
-            self.uploadVM.activeAlert = .dialog
-            self.uploadVM.alertMessage = String( self.uploadVM.calculatePrice() )
-            self.uploadVM.selectedCategory = self.category
-            self.uploadVM.showAlert = true
+            self.uploadVM.calculatePrice(category: self.category)
         } label: {
             
             Text( "Հաշվարկել Գումարը" )

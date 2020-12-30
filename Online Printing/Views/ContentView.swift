@@ -81,7 +81,12 @@ struct ContentView: View {
                     self.uploadVM.info = ""
                     self.uploadVM.count = ""
                     self.uploadVM.size = ""
-                    self.uploadVM.sizePrice = ""
+                    self.uploadVM.price = 0
+                    self.uploadVM.typeOfPrinting = ""
+                    self.uploadVM.selectedCategorySpec = nil
+                    self.uploadVM.selectedCategory = nil
+                    self.uploadVM.additionalFunctionality = ""
+                    
                 }), secondaryButton: .cancel(), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 17/255, green: 83/255, blue: 252/255, alpha: 0.5)),
                                                                            alertTextColor: Color.white,
                                                                            enableShadow: true,

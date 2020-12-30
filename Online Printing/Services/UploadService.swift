@@ -16,8 +16,8 @@ import CombineFirebaseFirestore
 
 protocol UploadServiceProtocol {
     func uploadFileToStorage( cartItems: [CartItemModel], completion: @escaping ( [String]? ) -> () )
-    func countPrice( count: Int, price: Int ) -> Int
     func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String]) -> AnyPublisher<DocumentReference, Error>
+    func calculateAmount( selectedCategorySpecs: Specs, count: Int, typeOfPrinting: String, additionalFunctionalityTitle: String, completion: @escaping ( Int ) -> () )
 }
 
 
@@ -116,8 +116,33 @@ extension UploadService : UploadServiceProtocol{
             .eraseToAnyPublisher()
     }
     
-    func countPrice( count: Int, price: Int ) -> Int {
-        return count * price
+    func calculateAmount(selectedCategorySpecs: Specs, count: Int, typeOfPrinting: String, additionalFunctionalityTitle: String, completion: @escaping (Int) -> ()) {
+        
+        var pricePerUnit: Int
+        var amount: Int = 0
+        var additionalFunctionality: AdditionalFunctionality?
+        
+        for searchAdditionalFunctionality in selectedCategorySpecs.additionalFunctionality {
+            if additionalFunctionalityTitle == searchAdditionalFunctionality.functionalityTitle {
+                additionalFunctionality = searchAdditionalFunctionality
+            }
+        }
+        
+        if typeOfPrinting == "One Side" || typeOfPrinting == "OneColor" { pricePerUnit = selectedCategorySpecs.oneSide_ColorPrice }
+        else                                                            { pricePerUnit = selectedCategorySpecs.bothSide_ColorPrice }
+        
+        print( additionalFunctionality )
+        
+        if 0...selectedCategorySpecs.minCount ~= count {
+            amount = count * pricePerUnit + ( additionalFunctionality == nil ? 0 : count * additionalFunctionality!.functionalityAdditionalPrice )
+        } else if selectedCategorySpecs.minCount...selectedCategorySpecs.maxCount ~= count {
+            amount = count * pricePerUnit - count * selectedCategorySpecs.minCountDiscount + ( additionalFunctionality == nil ? 0 : count * additionalFunctionality!.functionalityAdditionalPrice )
+        } else {
+            amount = count * pricePerUnit - count * selectedCategorySpecs.maxCountDiscount + ( additionalFunctionality == nil ? 0 : count * additionalFunctionality!.functionalityAdditionalPrice )
+        }
+        
+        DispatchQueue.main.async {
+            completion( amount )
+        }
     }
-    
 }

@@ -10,5 +10,5 @@ struct CategoryModel: Codable, Identifiable {
     let id = UUID()
     var name: String
     var image: String
-    var dimensions: [Dimensions]
+    var specs: [Specs]
 }

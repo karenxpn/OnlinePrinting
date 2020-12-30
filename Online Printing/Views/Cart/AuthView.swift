@@ -37,6 +37,7 @@ struct AuthView: View {
                     if showWaiting && self.authVM.verificationID == "" {
                         Text( "Please wait..." )
                             .font(.system(size: 12))
+                            .foregroundColor(.white)
                     }
                     
                     VStack {
