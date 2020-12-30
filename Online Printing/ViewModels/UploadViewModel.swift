@@ -80,7 +80,7 @@ class UploadViewModel : ObservableObject {
             .debounce(for: 0.1, scheduler: RunLoop.main)
             .removeDuplicates()
             .map { input in
-                return input != ""
+                return input != "" && Int( input ) ?? 0 >= self.selectedCategorySpec!.minBorderCount
             }
             .eraseToAnyPublisher()
     }

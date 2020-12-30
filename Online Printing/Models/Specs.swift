@@ -17,4 +17,6 @@ struct Specs: Codable, Identifiable {
     var maxCountDiscount: Int
     var additionalFunctionality: [AdditionalFunctionality]
     var minBorderCount: Int
+    var typeUnit: String
+    var measurementUnit: String
 }

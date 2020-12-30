@@ -15,4 +15,6 @@ struct CartItemModel: Codable, Identifiable {
     var category: String
     var image: String
     var filePath: URL
+    var additionalFunctionality: String
+    var oneSide_Color_bothSide_ColorPrinting: String
 }

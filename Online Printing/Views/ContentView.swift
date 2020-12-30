@@ -72,7 +72,7 @@ struct ContentView: View {
             if self.uploadVM.activeAlert == .dialog {
                 
                 return AlertX(title: Text( "Amount is" ), message: Text( "\(self.uploadVM.alertMessage) AMD" ), primaryButton: .default(Text("Ավելացնել Զամբյուղ"), action: {
-                    let cartModel = CartItemModel(dimensions: self.uploadVM.size, count: Int( self.uploadVM.count )!, totalPrice: Int( self.uploadVM.alertMessage )!, info: self.uploadVM.info, category: self.uploadVM.selectedCategory!.name, image: self.uploadVM.selectedCategory!.image, filePath: self.uploadVM.path!)
+                    let cartModel = CartItemModel(dimensions: self.uploadVM.size, count: Int( self.uploadVM.count )!, totalPrice: Int( self.uploadVM.alertMessage )!, info: self.uploadVM.info, category: self.uploadVM.selectedCategory!.name, image: self.uploadVM.selectedCategory!.image, filePath: self.uploadVM.path!, additionalFunctionality: self.uploadVM.additionalFunctionality, oneSide_Color_bothSide_ColorPrinting: self.uploadVM.typeOfPrinting)
                     
                     self.uploadVM.orderList.append(cartModel)
                     

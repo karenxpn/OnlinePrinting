@@ -23,14 +23,22 @@ struct SelectedCategory: View {
             Section(header: Text("Չափեր"), footer: Text(self.uploadVM.specsMessage).foregroundColor(.red)) {
                 SizeScroller(category: self.category).environmentObject( self.uploadVM )
                 
-                Picker(self.uploadVM.typeOfPrinting == "" ? "Select The type of Your Printing" : self.uploadVM.typeOfPrinting, selection: self.$uploadVM.typeOfPrinting) {
-                    Text( "One Side" ).tag( "One Side" )
-                    Text( "Two Side" ).tag( "Two Side" )
-                }.pickerStyle(MenuPickerStyle())
+                if self.uploadVM.selectedCategorySpec != nil {
+                    Picker(self.uploadVM.typeOfPrinting == "" ? "Ընտրել Տպաքրության տեսակը" : self.uploadVM.typeOfPrinting, selection: self.$uploadVM.typeOfPrinting) {
+                        
+                        Text( self.uploadVM.selectedCategorySpec!.typeUnit == "Color" ? "Մի գույն" : "Մի կողմանի" )
+                            .tag( self.uploadVM.selectedCategorySpec!.typeUnit == "Color" ? "Մի գույն" : "Մի կողմանի" )
+                        
+                        Text( self.uploadVM.selectedCategorySpec!.typeUnit == "Color" ? "Երկու գույն" : "Երկու կողմանի" )
+                            .tag( self.uploadVM.selectedCategorySpec!.typeUnit == "Color" ? "Երկու գույն" : "Երկու կողմանի" )
+                        
+                    }.pickerStyle(MenuPickerStyle())
+                    .foregroundColor(Color.gray)
+                }
             }
             
             Section(header: Text( "Քանակ" ) ,footer: Text(self.uploadVM.countMessage).foregroundColor(.red)) {
-                TextField("Նշեք քանակը", text: self.$uploadVM.count)
+                TextField(self.uploadVM.selectedCategorySpec == nil ? "Նշեք քանակը" : self.uploadVM.selectedCategorySpec!.measurementUnit, text: self.$uploadVM.count)
                     .keyboardType(.numberPad)
             }
             
@@ -38,11 +46,11 @@ struct SelectedCategory: View {
                 TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
                 
                 if self.uploadVM.selectedCategorySpec != nil {
-                    Picker( "Additional Functionality", selection: self.$uploadVM.additionalFunctionality) {
+                    Picker( "Հավելյալ պահանջներ", selection: self.$uploadVM.additionalFunctionality) {
                         ForEach( self.uploadVM.selectedCategorySpec!.additionalFunctionality, id: \.id ) { functionality in
                             Text( functionality.functionalityTitle ).tag( functionality.functionalityTitle )
                         }
-                    }
+                    }.foregroundColor(Color.gray)
                 }
             }
             

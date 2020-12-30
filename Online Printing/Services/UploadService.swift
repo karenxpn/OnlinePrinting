@@ -101,7 +101,9 @@ extension UploadService : UploadServiceProtocol{
                 "count" : orderList[i].count,
                 "price" : orderList[i].totalPrice,
                 "file" : fileURLS[i],
-                "additionalInformation" : orderList[i].info
+                "additionalInformation" : orderList[i].info,
+                "additionalFunctionality": orderList[i].additionalFunctionality,
+                "typeOfPrinting": orderList[i].oneSide_Color_bothSide_ColorPrinting
             ])
         }
         
