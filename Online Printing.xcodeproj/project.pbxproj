@@ -18,6 +18,14 @@
 		FF1B4529258280C500A6E639 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B4528258280C500A6E639 /* AuthViewModel.swift */; };
 		FF1B45312582974C00A6E639 /* AuthBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B45302582974C00A6E639 /* AuthBackground.swift */; };
 		FF3FDA79259CB39C005DEE31 /* AdditionalFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA78259CB39C005DEE31 /* AdditionalFunctionality.swift */; };
+		FF3FDA8D259D4E05005DEE31 /* ConfirmPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA8C259D4E05005DEE31 /* ConfirmPaymentRequest.swift */; };
+		FF3FDA92259D4E09005DEE31 /* ConfirmPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA91259D4E09005DEE31 /* ConfirmPaymentResponse.swift */; };
+		FF3FDA97259D4E0E005DEE31 /* InitPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA96259D4E0E005DEE31 /* InitPaymentRequest.swift */; };
+		FF3FDA9C259D4E10005DEE31 /* InitPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA9B259D4E10005DEE31 /* InitPaymentResponse.swift */; };
+		FF3FDAA1259D4E15005DEE31 /* PaymentDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDAA0259D4E15005DEE31 /* PaymentDetailsRequest.swift */; };
+		FF3FDAA6259D4E18005DEE31 /* PaymentDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDAA5259D4E18005DEE31 /* PaymentDetailsResponse.swift */; };
+		FF3FDAAB259D4E1D005DEE31 /* RedirectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDAAA259D4E1D005DEE31 /* RedirectResponse.swift */; };
+		FF3FDAB0259D4E22005DEE31 /* URLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDAAF259D4E22005DEE31 /* URLS.swift */; };
 		FF4136DC252FAFFF00345FF7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136DB252FAFFF00345FF7 /* MainViewModel.swift */; };
 		FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136E3252FB14500345FF7 /* SingleCategoryPreview.swift */; };
 		FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6405D8251FD1FB0062DA9B /* AppDelegate.swift */; };
@@ -79,6 +87,14 @@
 		FF1B4528258280C500A6E639 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		FF1B45302582974C00A6E639 /* AuthBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBackground.swift; sourceTree = "<group>"; };
 		FF3FDA78259CB39C005DEE31 /* AdditionalFunctionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFunctionality.swift; sourceTree = "<group>"; };
+		FF3FDA8C259D4E05005DEE31 /* ConfirmPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentRequest.swift; sourceTree = "<group>"; };
+		FF3FDA91259D4E09005DEE31 /* ConfirmPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentResponse.swift; sourceTree = "<group>"; };
+		FF3FDA96259D4E0E005DEE31 /* InitPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentRequest.swift; sourceTree = "<group>"; };
+		FF3FDA9B259D4E10005DEE31 /* InitPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentResponse.swift; sourceTree = "<group>"; };
+		FF3FDAA0259D4E15005DEE31 /* PaymentDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsRequest.swift; sourceTree = "<group>"; };
+		FF3FDAA5259D4E18005DEE31 /* PaymentDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsResponse.swift; sourceTree = "<group>"; };
+		FF3FDAAA259D4E1D005DEE31 /* RedirectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectResponse.swift; sourceTree = "<group>"; };
+		FF3FDAAF259D4E22005DEE31 /* URLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLS.swift; sourceTree = "<group>"; };
 		FF4136DB252FAFFF00345FF7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FF4136E3252FB14500345FF7 /* SingleCategoryPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCategoryPreview.swift; sourceTree = "<group>"; };
 		FF6405D8251FD1FB0062DA9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +179,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FF3FDA86259D4D82005DEE31 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FDA8C259D4E05005DEE31 /* ConfirmPaymentRequest.swift */,
+				FF3FDA91259D4E09005DEE31 /* ConfirmPaymentResponse.swift */,
+				FF3FDA96259D4E0E005DEE31 /* InitPaymentRequest.swift */,
+				FF3FDA9B259D4E10005DEE31 /* InitPaymentResponse.swift */,
+				FF3FDAA0259D4E15005DEE31 /* PaymentDetailsRequest.swift */,
+				FF3FDAA5259D4E18005DEE31 /* PaymentDetailsResponse.swift */,
+				FF3FDAAA259D4E1D005DEE31 /* RedirectResponse.swift */,
+				FF3FDAAF259D4E22005DEE31 /* URLS.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
 		FF6405DD251FD58C0062DA9B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +208,7 @@
 		FF6405DE251FD5970062DA9B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF3FDA86259D4D82005DEE31 /* Payment */,
 				FF6405E9251FD6070062DA9B /* CategoryModel.swift */,
 				FF11E52F257E8E4B00ED4389 /* Specs.swift */,
 				FF7FAE0D2580052A00FDB32E /* CartItemModel.swift */,
@@ -552,6 +584,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3FDAA6259D4E18005DEE31 /* PaymentDetailsResponse.swift in Sources */,
+				FF3FDA97259D4E0E005DEE31 /* InitPaymentRequest.swift in Sources */,
 				FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */,
 				FF69EBF52567F33000939256 /* UploadViewModel.swift in Sources */,
 				FF046548252FB96300D7460D /* SelectedCategory.swift in Sources */,
@@ -564,16 +598,22 @@
 				FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */,
 				FF7FAE0E2580052A00FDB32E /* CartItemModel.swift in Sources */,
 				FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */,
+				FF3FDAAB259D4E1D005DEE31 /* RedirectResponse.swift in Sources */,
 				FF6405EA251FD6070062DA9B /* CategoryModel.swift in Sources */,
 				FF69EBFA2567F34900939256 /* UploadService.swift in Sources */,
 				FFEE01C52598920A009B614C /* Credentials.swift in Sources */,
 				FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */,
 				FF4136DC252FAFFF00345FF7 /* MainViewModel.swift in Sources */,
 				FF7FADFE257FE6B900FDB32E /* Cart.swift in Sources */,
+				FF3FDAB0259D4E22005DEE31 /* URLS.swift in Sources */,
 				FF1B451F2582809100A6E639 /* AuthView.swift in Sources */,
+				FF3FDA9C259D4E10005DEE31 /* InitPaymentResponse.swift in Sources */,
+				FF3FDA8D259D4E05005DEE31 /* ConfirmPaymentRequest.swift in Sources */,
 				FF11E530257E8E4B00ED4389 /* Specs.swift in Sources */,
+				FF3FDAA1259D4E15005DEE31 /* PaymentDetailsRequest.swift in Sources */,
 				FFEE01A22597D819009B614C /* PaymentViewModel.swift in Sources */,
 				FF6405E2251FD5C10062DA9B /* CategoryService.swift in Sources */,
+				FF3FDA92259D4E09005DEE31 /* ConfirmPaymentResponse.swift in Sources */,
 				FF3FDA79259CB39C005DEE31 /* AdditionalFunctionality.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +773,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Online Printing/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
@@ -742,6 +783,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.001;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-xpn.store.Online-Printing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -756,6 +798,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Online Printing/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
@@ -765,6 +808,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.001;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-xpn.store.Online-Printing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

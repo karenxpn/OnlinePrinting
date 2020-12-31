@@ -15,13 +15,13 @@ class UploadViewModel : ObservableObject {
     @Published var count: String = ""
     @Published var size: String = ""
     @Published var price: Int = 0
-    @Published var typeOfPrinting: String = ""
+    @Published var typeOfPrinting: String = ""  //oneSide or twoSide --- oneColor or twoColor
     @Published var fileName: String = ""
     @Published var address: String = ""
     @Published var path: URL? = nil
     @Published var selectedCategory: CategoryModel? = nil
     @Published var selectedCategorySpec: Specs? = nil
-    @Published var additionalFunctionality: String = ""
+    @Published var additionalFunctionality: String = ""     //Lamination etc.
     @Published var orderList = [CartItemModel]()
     
     // Alert
@@ -161,7 +161,7 @@ extension UploadViewModel {
         dataManager.calculateAmount(selectedCategorySpecs: self.selectedCategorySpec!, count: Int( self.count )!, typeOfPrinting: self.typeOfPrinting, additionalFunctionalityTitle: self.additionalFunctionality) { (amount) in
             
             self.activeAlert = .dialog
-            self.alertMessage = String( amount )
+            self.alertMessage = "\(amount)AMD"
             self.selectedCategory = category
             self.showAlert = true
         }

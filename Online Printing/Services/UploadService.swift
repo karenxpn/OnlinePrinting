@@ -124,6 +124,7 @@ extension UploadService : UploadServiceProtocol{
         var amount: Int = 0
         var additionalFunctionality: AdditionalFunctionality?
         
+        // search additionalFunctionality in selectedCategorySpecs by title
         for searchAdditionalFunctionality in selectedCategorySpecs.additionalFunctionality {
             if additionalFunctionalityTitle == searchAdditionalFunctionality.functionalityTitle {
                 additionalFunctionality = searchAdditionalFunctionality
@@ -132,9 +133,7 @@ extension UploadService : UploadServiceProtocol{
         
         if typeOfPrinting == "One Side" || typeOfPrinting == "OneColor" { pricePerUnit = selectedCategorySpecs.oneSide_ColorPrice }
         else                                                            { pricePerUnit = selectedCategorySpecs.bothSide_ColorPrice }
-        
-        print( additionalFunctionality )
-        
+                
         if 0...selectedCategorySpecs.minCount ~= count {
             amount = count * pricePerUnit + ( additionalFunctionality == nil ? 0 : count * additionalFunctionality!.functionalityAdditionalPrice )
         } else if selectedCategorySpecs.minCount...selectedCategorySpecs.maxCount ~= count {

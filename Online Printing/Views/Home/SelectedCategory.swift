@@ -33,7 +33,7 @@ struct SelectedCategory: View {
                             .tag( self.uploadVM.selectedCategorySpec!.typeUnit == "Color" ? "Երկու գույն" : "Երկու կողմանի" )
                         
                     }.pickerStyle(MenuPickerStyle())
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color( UIColor.systemGray2 ).opacity(0.7))
                 }
             }
             
@@ -50,7 +50,7 @@ struct SelectedCategory: View {
                         ForEach( self.uploadVM.selectedCategorySpec!.additionalFunctionality, id: \.id ) { functionality in
                             Text( functionality.functionalityTitle ).tag( functionality.functionalityTitle )
                         }
-                    }.foregroundColor(Color.gray)
+                    }.foregroundColor(Color( UIColor.systemGray2 ).opacity(0.7))
                 }
             }
             
@@ -61,6 +61,17 @@ struct SelectedCategory: View {
             }
             
             CalculatePriceButton(category: self.category).environmentObject( self.uploadVM )
+        }.onAppear{
+            self.uploadVM.path = nil
+            self.uploadVM.fileName = ""
+            self.uploadVM.info = ""
+            self.uploadVM.count = ""
+            self.uploadVM.size = ""
+            self.uploadVM.price = 0
+            self.uploadVM.typeOfPrinting = ""
+            self.uploadVM.selectedCategorySpec = nil
+            self.uploadVM.selectedCategory = nil
+            self.uploadVM.additionalFunctionality = ""
         }
         .fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
             do {
