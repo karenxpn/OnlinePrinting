@@ -46,11 +46,12 @@ struct SelectedCategory: View {
                 TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
                 
                 if self.uploadVM.selectedCategorySpec != nil {
-                    Picker( "Հավելյալ պահանջներ", selection: self.$uploadVM.additionalFunctionality) {
+                    Picker( self.uploadVM.additionalFunctionality == "" ? "Հավելյալ պահանջներ" : self.uploadVM.additionalFunctionality, selection: self.$uploadVM.additionalFunctionality) {
                         ForEach( self.uploadVM.selectedCategorySpec!.additionalFunctionality, id: \.id ) { functionality in
                             Text( functionality.functionalityTitle ).tag( functionality.functionalityTitle )
                         }
-                    }.foregroundColor(Color( UIColor.systemGray2 ).opacity(0.7))
+                    }.pickerStyle(MenuPickerStyle())
+                    .foregroundColor(Color( UIColor.systemGray2 ).opacity(0.7))
                 }
             }
             
@@ -61,6 +62,7 @@ struct SelectedCategory: View {
             }
             
             CalculatePriceButton(category: self.category).environmentObject( self.uploadVM )
+            
         }.onAppear{
             self.uploadVM.path = nil
             self.uploadVM.fileName = ""
@@ -72,8 +74,7 @@ struct SelectedCategory: View {
             self.uploadVM.selectedCategorySpec = nil
             self.uploadVM.selectedCategory = nil
             self.uploadVM.additionalFunctionality = ""
-        }
-        .fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
+        }.fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
             do {
                 
                 let fileURL = try res.get()
@@ -132,8 +133,6 @@ struct SizeScroller : View {
                     Button {
                         
                         self.uploadVM.size = spec.name
-                        // count the price including additionalFunctionality, and count
-                        // TODO the one size.color price checkbox
                         withAnimation{
                             self.uploadVM.selectedCategorySpec = spec
                         }

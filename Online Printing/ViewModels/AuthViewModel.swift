@@ -14,7 +14,7 @@ class AuthViewModel: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var verificationID: String = ""
     @Published var changeSendVerificationIconColor: Bool = false
-    @Published var showAuth: Bool = false
+    @Published var showSeet: Bool = false
     
     func signUp() {
         AuthService().signUp(phoneNumber: self.number) { verificationID in
@@ -27,7 +27,7 @@ class AuthViewModel: ObservableObject {
         AuthService().signIn(verificationID: self.verificationID, verificationCode: self.confirmationCode) { (result) in
             if result == true {
                 self.showLoading = false
-                self.showAuth = false
+                self.showSeet = false
             } else {
                 self.showLoading = false
                 self.showAlert = true

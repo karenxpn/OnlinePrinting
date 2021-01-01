@@ -12,6 +12,7 @@ import Alamofire
 
 class PaymentService {
     func payWithIdram(amount: Int) {
+        print(amount)
         IdramPaymentManager.pay(withReceiverName: "Online Printing", receiverId: Credentials().idramID, title: UUID().uuidString, amount: amount as NSNumber, hasTip: false, callbackURLScheme: "onlineprinting")
     }
     
@@ -93,6 +94,7 @@ class PaymentService {
                     }
         }
     }
+    
     
     func calculateTotalAmount( products: [CartItemModel], completion: @escaping( Int ) -> () ) {
         var amount: Int = 0

@@ -16,6 +16,7 @@ struct ContentView: View {
     
     @EnvironmentObject var uploadVM: UploadViewModel
     @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var paymentVM: PaymentViewModel
     @State private var selectedTab = 0
     
     var body: some View {
@@ -39,6 +40,7 @@ struct ContentView: View {
                         Cart()
                             .environmentObject(self.uploadVM)
                             .environmentObject( self.authVM )
+                            .environmentObject( self.paymentVM)
                             .tabItem {
                                 Image(systemName: "cart")
                                 Text("Cart")

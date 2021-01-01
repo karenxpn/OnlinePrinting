@@ -161,7 +161,7 @@ extension UploadViewModel {
         dataManager.calculateAmount(selectedCategorySpecs: self.selectedCategorySpec!, count: Int( self.count )!, typeOfPrinting: self.typeOfPrinting, additionalFunctionalityTitle: self.additionalFunctionality) { (amount) in
             
             self.activeAlert = .dialog
-            self.alertMessage = "\(amount)AMD"
+            self.alertMessage = String( amount )
             self.selectedCategory = category
             self.showAlert = true
         }

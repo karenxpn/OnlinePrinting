@@ -13,6 +13,8 @@ struct Online_PrintingApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var uploadVM = UploadViewModel()
     @ObservedObject var authVM = AuthViewModel()
+    @ObservedObject var paymentVM = PaymentViewModel()
+
     
     init() {
         let newAppearance = UINavigationBarAppearance()
@@ -27,7 +29,11 @@ struct Online_PrintingApp: App {
             ContentView()
                 .environmentObject(self.uploadVM)
                 .environmentObject(self.authVM)
+                .environmentObject(self.paymentVM)
                 .onOpenURL(perform: { (url) in
+                    
+                    // check if redirected from idram or ameria
+                    // get the response and place order
                     print(url)
                     if let urlComponents = URLComponents(string: url.absoluteString), let _ = urlComponents.host, let queryItems = urlComponents.queryItems {
 

@@ -10,11 +10,16 @@ import FirebaseAuth
 import SDWebImageSwiftUI
 import IdramMerchantPayment
 
+enum ActiveSheet {
+    case auth, payment
+}
+
 struct Cart: View {
     
     @EnvironmentObject var uploadVM: UploadViewModel
     @EnvironmentObject var authVM: AuthViewModel
-    @ObservedObject var paymentVM = PaymentViewModel()
+    @EnvironmentObject var paymentVM: PaymentViewModel
+    @State private var activeSheet: ActiveSheet? = nil
     
     var body: some View {
         
@@ -44,7 +49,8 @@ struct Cart: View {
             
             Button(action: {
                 if Auth.auth().currentUser == nil {
-                    self.authVM.showAuth.toggle()
+                    self.activeSheet = .auth
+                    self.authVM.showSeet.toggle()
                 } else if self.uploadVM.orderList.isEmpty {
                     self.uploadVM.activeAlert = .error
                     self.uploadVM.alertMessage = "Զամբյուղը դատարկ է:"
@@ -59,10 +65,24 @@ struct Cart: View {
                     .background(Color.blue)
                     .cornerRadius(30)
             }).padding(.bottom, 10)
-        }.sheet(isPresented: self.$authVM.showAuth, content: {
-            AuthView()
-                .environmentObject(self.authVM)
+            
+            NavigationLink(destination: Checkout().environmentObject(self.paymentVM), isActive: self.$paymentVM.navigateToCheckoutView) {
+                EmptyView()
+            }
+            
+            NavigationLink(destination: BankPayment().environmentObject(self.paymentVM), isActive: self.$paymentVM.openPayment) {
+                EmptyView()
+            }
+        }.alert(isPresented: self.$paymentVM.showAlert) {
+            
+            // Customize alert
+            Alert(title: Text( self.paymentVM.alertTitle), message: Text( self.paymentVM.alertMessage ), dismissButton: .default(Text( "OK" )))
+        }
+        .sheet(isPresented: self.$authVM.showSeet, content: {
+                AuthView()
+                    .environmentObject(self.authVM)
         })
+
     }
     
     func delete(at offsets: IndexSet) {
@@ -88,9 +108,8 @@ struct Cart: View {
             } else {
                 self.uploadVM.address = secondTextField.text ?? "Invalid Address"
                 
-                // Navigate to payment view to choose payment method
                 self.paymentVM.products = self.uploadVM.orderList
-                self.paymentVM.payWithIdram()
+                self.paymentVM.navigateToCheckoutView.toggle()
             }
         })
         
@@ -98,11 +117,5 @@ struct Cart: View {
         alertController.addAction(saveAction)
 
         UIApplication.shared.windows.first?.rootViewController?.present(alertController, animated: true, completion: nil)
-    }
-}
-
-struct Checkout_Previews: PreviewProvider {
-    static var previews: some View {
-        Cart()
     }
 }

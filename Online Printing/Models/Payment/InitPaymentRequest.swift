@@ -15,7 +15,7 @@ struct InitPaymentRequest: Codable {
     var Description: String
     var OrderID: Int
     var Amount: Decimal
-    var BackURL: String?
+    var BackURL: String
     var Opaque: String?
     var CardHolderID: Int?    
 }
