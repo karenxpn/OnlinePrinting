@@ -71,5 +71,10 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+    
+    <key>LSApplicationQueriesSchemes</key>
+     <array>
+       <string>idramapp</string>
+     </array>
 </dict>
 </plist>

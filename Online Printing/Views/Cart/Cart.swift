@@ -73,16 +73,16 @@ struct Cart: View {
             NavigationLink(destination: BankPayment().environmentObject(self.paymentVM), isActive: self.$paymentVM.openPayment) {
                 EmptyView()
             }
+            
         }.alert(isPresented: self.$paymentVM.showAlert) {
             
             // Customize alert
             Alert(title: Text( self.paymentVM.alertTitle), message: Text( self.paymentVM.alertMessage ), dismissButton: .default(Text( "OK" )))
         }
         .sheet(isPresented: self.$authVM.showSeet, content: {
-                AuthView()
-                    .environmentObject(self.authVM)
+            AuthView()
+                .environmentObject(self.authVM)
         })
-
     }
     
     func delete(at offsets: IndexSet) {
@@ -115,7 +115,7 @@ struct Cart: View {
         
         alertController.addAction(cancelAction)
         alertController.addAction(saveAction)
-
+        
         UIApplication.shared.windows.first?.rootViewController?.present(alertController, animated: true, completion: nil)
     }
 }

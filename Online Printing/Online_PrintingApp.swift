@@ -33,13 +33,17 @@ struct Online_PrintingApp: App {
                 .onOpenURL(perform: { (url) in
                     
                     // check if redirected from idram or ameria
-                    // get the response and place order
+                    // get the response and place order if success
                     print(url)
                     if let urlComponents = URLComponents(string: url.absoluteString), let _ = urlComponents.host, let queryItems = urlComponents.queryItems {
 
                         if let errorCode = queryItems[0].value {
                             if errorCode == "0" {
                                 self.uploadVM.placeOrder()
+                            } else {
+                                self.uploadVM.activeAlert = .error
+                                self.uploadVM.alertMessage = "Sorry something went wrong"
+                                self.uploadVM.showAlert.toggle()
                             }
                             print(errorCode)
                         }

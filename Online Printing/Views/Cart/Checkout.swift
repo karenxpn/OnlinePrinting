@@ -30,6 +30,7 @@ struct Checkout: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 50, height: 50)
+                        .cornerRadius(8)
                     
                     Text( "IDram" )
                         .padding(.horizontal)
@@ -58,9 +59,13 @@ struct Checkout: View {
                         .padding(.horizontal)
                         .foregroundColor(Color.black)
                     
+                    Text("Շուտով")
+                        .foregroundColor(.gray)
+                        .font(.system(size: 20))
+                    
                     Spacer()
                 }
-            })
+            }).disabled(true)
             
             Spacer()
             
@@ -79,7 +84,12 @@ struct Checkout: View {
                 
             }, label: {
                 Text("Վճարել")
-            })
+                    .foregroundColor(Color.white)
+                    .padding()
+
+            }).background(self.paymentVM.paymentMethod != "" ? Color.blue : Color.gray)
+            .cornerRadius(30)
+            .disabled(self.paymentVM.paymentMethod == "")
         }.padding()
     }
 }

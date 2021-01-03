@@ -9,7 +9,7 @@ import SwiftUI
 import AlertX
 
 enum ActiveAlert {
-    case error, dialog, placementCompleted
+    case error, dialog, placementCompleted, paymentError, paymentSuccess
 }
 
 struct ContentView: View {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-    @ObservedObject var mainVM = MainViewModel()
+    @StateObject var mainVM = MainViewModel()
     @EnvironmentObject var uploadVM: UploadViewModel
     
     var body: some View {

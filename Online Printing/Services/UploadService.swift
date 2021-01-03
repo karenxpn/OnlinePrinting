@@ -16,7 +16,7 @@ import CombineFirebaseFirestore
 
 protocol UploadServiceProtocol {
     func uploadFileToStorage( cartItems: [CartItemModel], completion: @escaping ( [String]? ) -> () )
-    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String]) -> AnyPublisher<DocumentReference, Error>
+    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], completion: @escaping ( Bool ) -> ())
     func calculateAmount( selectedCategorySpecs: Specs, count: Int, typeOfPrinting: String, additionalFunctionalityTitle: String, completion: @escaping ( Int ) -> () )
 }
 
@@ -54,7 +54,6 @@ extension UploadService : UploadServiceProtocol{
                         DispatchQueue.main.async {
                             completion( nil )
                         }
-
                         return
                     }
                     
@@ -63,7 +62,6 @@ extension UploadService : UploadServiceProtocol{
                             DispatchQueue.main.async {
                                 completion( nil )
                             }
-                            
                             return
                         }
                         
@@ -76,22 +74,19 @@ extension UploadService : UploadServiceProtocol{
                                 completion( fileURLS )
                             }
                         }
-                        
-
                     }
                 }
                 semaphore.wait()
             }
-            
         }
-        
     }
     
-    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String]) -> AnyPublisher<DocumentReference, Error> {
+    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], completion: @escaping ( Bool ) -> () ) {
         let db = Firestore.firestore()
 
         var orders = [[String: Any]]()
         var totalPrice = 0
+        
         for i in 0..<orderList.count {
             totalPrice += orderList[i].totalPrice
             
@@ -112,10 +107,19 @@ extension UploadService : UploadServiceProtocol{
             "address" : address
         ] as [String : Any]
         
-        return ( db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).collection("orders").addDocument(data: ["orderDetails" : orderDetails, "order" : orders]) as AnyPublisher<DocumentReference, Error>)
-            .mapError{ $0 as Error }
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+        db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).collection("orders").addDocument( data: [ "orderDetails" : orderDetails, "order" : orders ]) { (error) in
+            if error != nil {
+                DispatchQueue.main.async {
+                    completion( false )
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completion( true )
+            }
+        }
+
     }
     
     func calculateAmount(selectedCategorySpecs: Specs, count: Int, typeOfPrinting: String, additionalFunctionalityTitle: String, completion: @escaping (Int) -> ()) {

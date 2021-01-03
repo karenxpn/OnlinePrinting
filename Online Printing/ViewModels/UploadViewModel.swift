@@ -128,30 +128,25 @@ class UploadViewModel : ObservableObject {
 
 
 extension UploadViewModel {
+    
     func placeOrder() {
         self.loading = true
         dataManager.uploadFileToStorage(cartItems: self.orderList) { (response) in
             if let response = response {
-                self.dataManager.placeOrder(orderList: self.orderList, address: self.address, fileURLS: response)
-                    .sink { (completion) in
-                        switch completion {
-                            case .finished:
-                                self.orderList.removeAll(keepingCapacity: false)
-                                self.loading = false
-                                self.activeAlert = .placementCompleted
-                                self.alertMessage = "Շնորհավորում ենք Ձեր պատվերը գրանցված է:"
-                                self.showAlert = true
-                            case .failure( _ ):
-                                self.loading = false
-                                self.activeAlert = .error
-                                self.alertMessage = "Ցավոք տեղի է ունեցել սխալ"
-                                self.showAlert = true
-                        }
-                    } receiveValue: { (docRef) in
-                        print(docRef)
+                self.dataManager.placeOrder(orderList: self.orderList, address: self.address, fileURLS: response) { (uploadResponse) in
+                    if uploadResponse == true {
+                        self.orderList.removeAll(keepingCapacity: false)
+                        self.loading = false
+                        self.activeAlert = .placementCompleted
+                        self.alertMessage = "Շնորհավորում ենք Ձեր պատվերը գրանցված է:"
+                        self.showAlert = true
+                    } else {
+                        self.loading = false
+                        self.activeAlert = .error
+                        self.alertMessage = "Ցավոք տեղի է ունեցել սխալ"
+                        self.showAlert = true
                     }
-                    .store(in: &self.cancellableSet)
-
+                }
             }
         }
     }
