@@ -14,23 +14,22 @@ enum ActiveAlert {
 
 struct ContentView: View {
     
-    @EnvironmentObject var uploadVM: UploadViewModel
+    @EnvironmentObject var mainVM: MainViewModel
     @EnvironmentObject var authVM: AuthViewModel
-    @EnvironmentObject var paymentVM: PaymentViewModel
     @State private var selectedTab = 0
     
     var body: some View {
 
         NavigationView {
             
-            if self.uploadVM.loading {
+            if self.mainVM.loading {
                 Loading()
             } else {
                 ZStack ( alignment: .bottomLeading) {
                     TabView( selection: $selectedTab) {
                         
                         Home()
-                            .environmentObject(self.uploadVM)
+                            .environmentObject(self.mainVM)
                             .tabItem {
                                 Image(systemName: "house")
                                 Text("Home")
@@ -38,9 +37,8 @@ struct ContentView: View {
                             .tag( 0 )
                         
                         Cart()
-                            .environmentObject(self.uploadVM)
+                            .environmentObject(self.mainVM)
                             .environmentObject( self.authVM )
-                            .environmentObject( self.paymentVM)
                             .tabItem {
                                 Image(systemName: "cart")
                                 Text("Cart")
@@ -52,7 +50,7 @@ struct ContentView: View {
                         Circle()
                             .foregroundColor(.red)
                         
-                        Text("\(self.uploadVM.orderList.count)")
+                        Text("\(self.mainVM.orderList.count)")
                             .foregroundColor(.white)
                             .font(Font.system(size: 12))
                     }
@@ -70,24 +68,24 @@ struct ContentView: View {
                                     })) : AnyView( EmptyView() ))
             }
             
-        }.alertX(isPresented: self.$uploadVM.showAlert) {
-            if self.uploadVM.activeAlert == .dialog {
+        }.alertX(isPresented: self.$mainVM.showAlert) {
+            if self.mainVM.activeAlert == .dialog {
                 
-                return AlertX(title: Text( "Amount is" ), message: Text( "\(self.uploadVM.alertMessage) AMD" ), primaryButton: .default(Text("Ավելացնել Զամբյուղ"), action: {
-                    let cartModel = CartItemModel(dimensions: self.uploadVM.size, count: Int( self.uploadVM.count )!, totalPrice: Int( self.uploadVM.alertMessage )!, info: self.uploadVM.info, category: self.uploadVM.selectedCategory!.name, image: self.uploadVM.selectedCategory!.image, filePath: self.uploadVM.path!, additionalFunctionality: self.uploadVM.additionalFunctionality, oneSide_Color_bothSide_ColorPrinting: self.uploadVM.typeOfPrinting)
+                return AlertX(title: Text( "Amount is" ), message: Text( "\(self.mainVM.alertMessage) AMD" ), primaryButton: .default(Text("Ավելացնել Զամբյուղ"), action: {
+                    let cartModel = CartItemModel(dimensions: self.mainVM.size, count: Int( self.mainVM.count )!, totalPrice: Int( self.mainVM.alertMessage )!, info: self.mainVM.info, category: self.mainVM.selectedCategory!.name, image: self.mainVM.selectedCategory!.image, filePath: self.mainVM.path!, additionalFunctionality: self.mainVM.additionalFunctionality, oneSide_Color_bothSide_ColorPrinting: self.mainVM.typeOfPrinting)
                     
-                    self.uploadVM.orderList.append(cartModel)
+                    self.mainVM.orderList.append(cartModel)
                     
-                    self.uploadVM.path = nil
-                    self.uploadVM.fileName = ""
-                    self.uploadVM.info = ""
-                    self.uploadVM.count = ""
-                    self.uploadVM.size = ""
-                    self.uploadVM.price = 0
-                    self.uploadVM.typeOfPrinting = ""
-                    self.uploadVM.selectedCategorySpec = nil
-                    self.uploadVM.selectedCategory = nil
-                    self.uploadVM.additionalFunctionality = ""
+                    self.mainVM.path = nil
+                    self.mainVM.fileName = ""
+                    self.mainVM.info = ""
+                    self.mainVM.count = ""
+                    self.mainVM.size = ""
+                    self.mainVM.price = 0
+                    self.mainVM.typeOfPrinting = ""
+                    self.mainVM.selectedCategorySpec = nil
+                    self.mainVM.selectedCategory = nil
+                    self.mainVM.additionalFunctionality = ""
                     
                 }), secondaryButton: .cancel(), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 17/255, green: 83/255, blue: 252/255, alpha: 0.5)),
                                                                            alertTextColor: Color.white,
@@ -100,10 +98,10 @@ struct ContentView: View {
                             animation: .defaultEffect())
                 
                 
-            } else if self.uploadVM.activeAlert == .placementCompleted {
-                return AlertX(title: Text( "Շնորհակալություն" ), message: Text( self.uploadVM.alertMessage ), primaryButton: .default(Text( "OK" ), action: {
-                    self.uploadVM.activeAlert = nil
-                    self.uploadVM.alertMessage = ""
+            } else if self.mainVM.activeAlert == .placementCompleted {
+                return AlertX(title: Text( "Շնորհակալություն" ), message: Text( self.mainVM.alertMessage ), primaryButton: .default(Text( "OK" ), action: {
+                    self.mainVM.activeAlert = nil
+                    self.mainVM.alertMessage = ""
                 }), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 17/255, green: 83/255, blue: 252/255, alpha: 0.5)),
                                                alertTextColor: Color.white,
                                                enableShadow: true,
@@ -115,7 +113,7 @@ struct ContentView: View {
                             animation: .defaultEffect())
                 
             } else {
-                return AlertX(title: Text( "Սխալ" ), message: Text( self.uploadVM.alertMessage ), primaryButton: .default(Text( "Լավ" )), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 17/255, green: 83/255, blue: 252/255, alpha: 0.5)),
+                return AlertX(title: Text( "Սխալ" ), message: Text( self.mainVM.alertMessage ), primaryButton: .default(Text( "Լավ" )), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 17/255, green: 83/255, blue: 252/255, alpha: 0.5)),
                                         alertTextColor: Color.white,
                                         enableShadow: true,
                                         enableRoundedCorners: true,

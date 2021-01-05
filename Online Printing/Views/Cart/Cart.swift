@@ -16,9 +16,8 @@ enum ActiveSheet {
 
 struct Cart: View {
     
-    @EnvironmentObject var uploadVM: UploadViewModel
+    @EnvironmentObject var mainVM: MainViewModel
     @EnvironmentObject var authVM: AuthViewModel
-    @EnvironmentObject var paymentVM: PaymentViewModel
     @State private var activeSheet: ActiveSheet? = nil
     
     var body: some View {
@@ -26,7 +25,7 @@ struct Cart: View {
         VStack {
             
             List {
-                ForEach( self.uploadVM.orderList, id: \.id ) { order in
+                ForEach( self.mainVM.orderList, id: \.id ) { order in
                     
                     HStack {
                         WebImage(url: URL(string: order.image))
@@ -51,10 +50,10 @@ struct Cart: View {
                 if Auth.auth().currentUser == nil {
                     self.activeSheet = .auth
                     self.authVM.showSeet.toggle()
-                } else if self.uploadVM.orderList.isEmpty {
-                    self.uploadVM.activeAlert = .error
-                    self.uploadVM.alertMessage = "Զամբյուղը դատարկ է:"
-                    self.uploadVM.showAlert = true
+                } else if self.mainVM.orderList.isEmpty {
+                    self.mainVM.activeAlert = .error
+                    self.mainVM.alertMessage = "Զամբյուղը դատարկ է:"
+                    self.mainVM.showAlert = true
                 } else {
                     self.dialog()
                 }
@@ -66,27 +65,22 @@ struct Cart: View {
                     .cornerRadius(30)
             }).padding(.bottom, 10)
             
-            NavigationLink(destination: Checkout().environmentObject(self.paymentVM), isActive: self.$paymentVM.navigateToCheckoutView) {
+            NavigationLink(destination: Checkout().environmentObject(self.mainVM), isActive: self.$mainVM.navigateToCheckoutView) {
                 EmptyView()
             }
             
-            NavigationLink(destination: BankPayment().environmentObject(self.paymentVM), isActive: self.$paymentVM.openPayment) {
+            NavigationLink(destination: BankPayment().environmentObject(self.mainVM), isActive: self.$mainVM.openPayment) {
                 EmptyView()
             }
             
-        }.alert(isPresented: self.$paymentVM.showAlert) {
-            
-            // Customize alert
-            Alert(title: Text( self.paymentVM.alertTitle), message: Text( self.paymentVM.alertMessage ), dismissButton: .default(Text( "OK" )))
-        }
-        .sheet(isPresented: self.$authVM.showSeet, content: {
+        }.sheet(isPresented: self.$authVM.showSeet, content: {
             AuthView()
                 .environmentObject(self.authVM)
         })
     }
     
     func delete(at offsets: IndexSet) {
-        self.uploadVM.orderList.remove(atOffsets: offsets)
+        self.mainVM.orderList.remove(atOffsets: offsets)
     }
     
     func dialog(){
@@ -102,14 +96,13 @@ struct Cart: View {
             
             let secondTextField = alertController.textFields![0] as UITextField
             if secondTextField.text == "" {
-                self.uploadVM.activeAlert = .error
-                self.uploadVM.alertMessage = "Մուտքագրեք հասցեն"
-                self.uploadVM.showAlert = true
+                self.mainVM.activeAlert = .error
+                self.mainVM.alertMessage = "Մուտքագրեք հասցեն"
+                self.mainVM.showAlert = true
             } else {
-                self.uploadVM.address = secondTextField.text ?? "Invalid Address"
+                self.mainVM.address = secondTextField.text ?? "Invalid Address"
                 
-                self.paymentVM.products = self.uploadVM.orderList
-                self.paymentVM.navigateToCheckoutView.toggle()
+                self.mainVM.navigateToCheckoutView.toggle()
             }
         })
         

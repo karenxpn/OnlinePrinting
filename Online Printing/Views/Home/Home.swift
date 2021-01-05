@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct Home: View {
-    @StateObject var mainVM = MainViewModel()
-    @EnvironmentObject var uploadVM: UploadViewModel
+    @StateObject var categoryVM = CategoryViewModel()
+    @EnvironmentObject var mainVM: MainViewModel
     
     var body: some View {
         
         ScrollView {
             
             LazyVStack {
-                ForEach( self.mainVM.categories) { category in
+                ForEach( self.categoryVM.categories) { category in
                     
                     NavigationLink(
-                        destination: SelectedCategory(category: category).environmentObject(self.uploadVM),
+                        destination: SelectedCategory(category: category).environmentObject(self.mainVM),
                         label: {
                             SingleCategoryPreview(category: category)
                         })

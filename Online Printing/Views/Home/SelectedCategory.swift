@@ -11,44 +11,43 @@ import SDWebImageSwiftUI
 
 struct SelectedCategory: View {
     
-    @EnvironmentObject var uploadVM: UploadViewModel
+    @EnvironmentObject var mainVM: MainViewModel
     
     let category: CategoryModel
     @State private var openFile: Bool = false
-    @State private var categorySpecsSelected: Int?
     
     var body: some View {
         
         Form {
             
-            Section(header: Text("Չափեր"), footer: Text(self.uploadVM.specsMessage).foregroundColor(.red)) {
-                SizeScroller(category: self.category).environmentObject( self.uploadVM )
+            Section(header: Text("Չափեր"), footer: Text(self.mainVM.specsMessage).foregroundColor(.red)) {
+                SizeScroller(category: self.category).environmentObject( self.mainVM )
                 
-                if self.uploadVM.selectedCategorySpec != nil {
-                    Picker(self.uploadVM.typeOfPrinting == "" ? "Ընտրել Տպաքրության տեսակը" : self.uploadVM.typeOfPrinting, selection: self.$uploadVM.typeOfPrinting) {
+                if self.mainVM.selectedCategorySpec != nil {
+                    Picker(self.mainVM.typeOfPrinting == "" ? "Ընտրել Տպաքրության տեսակը" : self.mainVM.typeOfPrinting, selection: self.$mainVM.typeOfPrinting) {
                         
-                        Text( self.uploadVM.selectedCategorySpec!.typeUnit == "Color" ? "Մի գույն" : "Մի կողմանի" )
-                            .tag( self.uploadVM.selectedCategorySpec!.typeUnit == "Color" ? "Մի գույն" : "Մի կողմանի" )
+                        Text( self.mainVM.selectedCategorySpec!.typeUnit == "Color" ? "Մի գույն" : "Մի կողմանի" )
+                            .tag( self.mainVM.selectedCategorySpec!.typeUnit == "Color" ? "Մի գույն" : "Մի կողմանի" )
                         
-                        Text( self.uploadVM.selectedCategorySpec!.typeUnit == "Color" ? "Երկու գույն" : "Երկու կողմանի" )
-                            .tag( self.uploadVM.selectedCategorySpec!.typeUnit == "Color" ? "Երկու գույն" : "Երկու կողմանի" )
+                        Text( self.mainVM.selectedCategorySpec!.typeUnit == "Color" ? "Երկու գույն" : "Երկու կողմանի" )
+                            .tag( self.mainVM.selectedCategorySpec!.typeUnit == "Color" ? "Երկու գույն" : "Երկու կողմանի" )
                         
                     }.pickerStyle(MenuPickerStyle())
                     .foregroundColor(Color( UIColor.systemGray2 ).opacity(0.7))
                 }
             }
             
-            Section(header: Text( "Քանակ" ) ,footer: Text(self.uploadVM.countMessage).foregroundColor(.red)) {
-                TextField(self.uploadVM.selectedCategorySpec == nil ? "Նշեք քանակը" : self.uploadVM.selectedCategorySpec!.measurementUnit, text: self.$uploadVM.count)
+            Section(header: Text( "Քանակ" ) ,footer: Text(self.mainVM.countMessage).foregroundColor(.red)) {
+                TextField(self.mainVM.selectedCategorySpec == nil ? "Նշեք քանակը" : self.mainVM.selectedCategorySpec!.measurementUnit, text: self.$mainVM.count)
                     .keyboardType(.numberPad)
             }
             
             Section(header: Text( "Հավելյալ նշումներ" ), footer: Text("(Optional)").foregroundColor(.gray)) {
-                TextField("Հավելյալ Նշումներ", text: self.$uploadVM.info)
+                TextField("Հավելյալ Նշումներ", text: self.$mainVM.info)
                 
-                if self.uploadVM.selectedCategorySpec != nil {
-                    Picker( self.uploadVM.additionalFunctionality == "" ? "Հավելյալ պահանջներ" : self.uploadVM.additionalFunctionality, selection: self.$uploadVM.additionalFunctionality) {
-                        ForEach( self.uploadVM.selectedCategorySpec!.additionalFunctionality, id: \.id ) { functionality in
+                if self.mainVM.selectedCategorySpec != nil {
+                    Picker( self.mainVM.additionalFunctionality == "" ? "Հավելյալ պահանջներ" : self.mainVM.additionalFunctionality, selection: self.$mainVM.additionalFunctionality) {
+                        ForEach( self.mainVM.selectedCategorySpec!.additionalFunctionality, id: \.id ) { functionality in
                             Text( functionality.functionalityTitle ).tag( functionality.functionalityTitle )
                         }
                     }.pickerStyle(MenuPickerStyle())
@@ -57,29 +56,29 @@ struct SelectedCategory: View {
             }
             
             
-            Section( footer: Text( self.uploadVM.fileMessage).foregroundColor(Color.red)) {
+            Section( footer: Text( self.mainVM.fileMessage).foregroundColor(Color.red)) {
                 ImportFile(openFile: self.$openFile)
-                    .environmentObject(self.uploadVM)
+                    .environmentObject(self.mainVM)
             }
             
-            CalculatePriceButton(category: self.category).environmentObject( self.uploadVM )
+            CalculatePriceButton(category: self.category).environmentObject( self.mainVM )
             
         }.onAppear{
-            self.uploadVM.path = nil
-            self.uploadVM.fileName = ""
-            self.uploadVM.info = ""
-            self.uploadVM.count = ""
-            self.uploadVM.size = ""
-            self.uploadVM.price = 0
-            self.uploadVM.typeOfPrinting = ""
-            self.uploadVM.selectedCategorySpec = nil
-            self.uploadVM.selectedCategory = nil
-            self.uploadVM.additionalFunctionality = ""
+            self.mainVM.path = nil
+            self.mainVM.fileName = ""
+            self.mainVM.info = ""
+            self.mainVM.count = ""
+            self.mainVM.size = ""
+            self.mainVM.price = 0
+            self.mainVM.typeOfPrinting = ""
+            self.mainVM.selectedCategorySpec = nil
+            self.mainVM.selectedCategory = nil
+            self.mainVM.additionalFunctionality = ""
         }.fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
             do {
                 
                 let fileURL = try res.get()
-                self.uploadVM.fileName = fileURL.lastPathComponent
+                self.mainVM.fileName = fileURL.lastPathComponent
                 
                 saveFile(url: fileURL)
                 
@@ -108,7 +107,7 @@ struct SelectedCategory: View {
                 if ( fileData == nil ) {
                     print("Permission error!")
                 } else {
-                    self.uploadVM.path = actualPath
+                    self.mainVM.path = actualPath
                 }
             } catch {
                 print(error.localizedDescription)
@@ -123,7 +122,7 @@ struct SelectedCategory: View {
 struct SizeScroller : View {
     
     let category: CategoryModel
-    @EnvironmentObject var uploadVM: UploadViewModel
+    @EnvironmentObject var uploadVM: MainViewModel
     
     var body: some View {
         
@@ -161,7 +160,7 @@ struct SizeScroller : View {
 
 struct ImportFile: View {
     
-    @EnvironmentObject var uploadVM: UploadViewModel
+    @EnvironmentObject var uploadVM: MainViewModel
     @Binding var openFile: Bool
     
     var body: some View {
@@ -191,7 +190,7 @@ struct ImportFile: View {
 
 struct CalculatePriceButton: View {
     
-    @EnvironmentObject var uploadVM: UploadViewModel
+    @EnvironmentObject var uploadVM: MainViewModel
     let category: CategoryModel
     
     var body: some View {

@@ -7,12 +7,28 @@
 
 import Foundation
 import IdramMerchantPayment
+import FirebaseFirestoreSwift
 import Firebase
 import Alamofire
 
+protocol PaymentServiceProtocol {
+    func payWithIdram(amount: Int)
+    func updateOrderID( completion: @escaping( Int? ) -> () )
+    func initPayment( model: InitPaymentRequest ,completion: @escaping ( InitPaymentResponse? ) -> () )
+    func getPaymentDetails(model: PaymentDetailsRequest, completion: @escaping( PaymentDetailsResponse?) -> () )
+    func calculateTotalAmount( products: [CartItemModel], completion: @escaping( Int ) -> () )
+}
+
 class PaymentService {
+    static let shared: PaymentServiceProtocol = PaymentService()
+    
+    private init() { }
+}
+
+// make protocol
+extension PaymentService: PaymentServiceProtocol {
+    
     func payWithIdram(amount: Int) {
-        print(amount)
         IdramPaymentManager.pay(withReceiverName: "Online Printing", receiverId: Credentials().idramID, title: UUID().uuidString, amount: amount as NSNumber, hasTip: false, callbackURLScheme: "onlineprinting")
     }
     

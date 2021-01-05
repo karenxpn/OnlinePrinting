@@ -9,10 +9,10 @@ import SwiftUI
 
 struct BankPayment: View {
     
-    @EnvironmentObject var paymentVM: PaymentViewModel
+    @EnvironmentObject var mainVM: MainViewModel
     
     var body: some View {
-        WebView(url: "https://servicestest.ameriabank.am/VPOS/Payments/Pay?id=\(self.paymentVM.paymentID)")
+        WebView(url: "https://servicestest.ameriabank.am/VPOS/Payments/Pay?id=\(self.mainVM.paymentID)")
     }
 }
 

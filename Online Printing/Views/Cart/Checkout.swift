@@ -10,20 +10,20 @@ import SwiftUI
 struct Checkout: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var paymentVM: PaymentViewModel
+    @EnvironmentObject var mainVM: MainViewModel
     
     var body: some View {
         
         VStack {
             
             Button(action: {
-                self.paymentVM.paymentMethod = "IDram"
+                self.mainVM.paymentMethod = "IDram"
             }, label: {
                 HStack {
                     
                     Circle()
                         .strokeBorder(Color.black, lineWidth: 1)
-                        .background(Circle().foregroundColor(self.paymentVM.paymentMethod == "IDram" ? Color.green : Color.white))
+                        .background(Circle().foregroundColor(self.mainVM.paymentMethod == "IDram" ? Color.green : Color.white))
                         .frame(width: 16, height: 16)
                     
                     Image( "idram" )
@@ -42,13 +42,13 @@ struct Checkout: View {
             })
             
             Button(action: {
-                self.paymentVM.paymentMethod = "Bank Card"
+                self.mainVM.paymentMethod = "Bank Card"
             }, label: {
                 HStack {
                     
                     Circle()
                         .strokeBorder(Color.black, lineWidth: 1)
-                        .background(Circle().foregroundColor(self.paymentVM.paymentMethod == "Bank Card" ? Color.green : Color.white))
+                        .background(Circle().foregroundColor(self.mainVM.paymentMethod == "Bank Card" ? Color.green : Color.white))
                         .frame(width: 16, height: 16)
                     
                     Image( "card" )
@@ -73,13 +73,13 @@ struct Checkout: View {
                 
                 // check paymentmethod is empty or no
                 
-                if self.paymentVM.paymentMethod == "IDram" {
-                    self.paymentVM.payWithIdram()
+                if self.mainVM.paymentMethod == "IDram" {
+                    self.mainVM.payWithIdram()
                 } else {
                     // pay with bark card
-                    self.paymentVM.initPayment()
+                    self.mainVM.initPayment()
                 }
-                self.paymentVM.navigateToCheckoutView.toggle()
+                self.mainVM.navigateToCheckoutView.toggle()
                 self.presentationMode.wrappedValue.dismiss()
                 
             }, label: {
@@ -87,9 +87,9 @@ struct Checkout: View {
                     .foregroundColor(Color.white)
                     .padding()
 
-            }).background(self.paymentVM.paymentMethod != "" ? Color.blue : Color.gray)
+            }).background(self.mainVM.paymentMethod != "" ? Color.blue : Color.gray)
             .cornerRadius(30)
-            .disabled(self.paymentVM.paymentMethod == "")
+            .disabled(self.mainVM.paymentMethod == "")
         }.padding()
     }
 }
