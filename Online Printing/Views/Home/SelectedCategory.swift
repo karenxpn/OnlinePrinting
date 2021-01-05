@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AlertX
+import SDWebImageSwiftUI
 
 struct SelectedCategory: View {
     
@@ -131,6 +132,10 @@ struct SizeScroller : View {
                 ForEach( self.category.specs, id : \.id) { spec in
                     
                     Button {
+                        self.uploadVM.count = ""
+                        self.uploadVM.typeOfPrinting = ""
+                        self.uploadVM.selectedCategorySpec = nil
+                        self.uploadVM.additionalFunctionality = ""
                         
                         self.uploadVM.size = spec.name
                         withAnimation{
@@ -138,9 +143,10 @@ struct SizeScroller : View {
                         }
                     } label: {
                         VStack {
+                            
                             Image("dimens")
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 100, height: 100)
                                 .foregroundColor( self.uploadVM.size == spec.name ? Color.black : Color.gray)
                             

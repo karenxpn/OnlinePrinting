@@ -33,7 +33,7 @@ class PaymentViewModel: ObservableObject {
     
     func payWithIdram() {
         PaymentService().calculateTotalAmount(products: products, completion: { amount in
-            PaymentService().payWithIdram(amount: 10)
+            PaymentService().payWithIdram(amount: amount)
         })
     }
     

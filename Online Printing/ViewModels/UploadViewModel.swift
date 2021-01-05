@@ -44,21 +44,25 @@ class UploadViewModel : ObservableObject {
     init(dataManager: UploadServiceProtocol = UploadService.shared) {
         self.dataManager = dataManager
         
-        isCountPublisherValid
-            .receive(on: RunLoop.main)
-            .map { count in
-                count ? "" : "Այս դաշտը պարտադիր են"
-            }
-            .assign(to: \.countMessage, on: self)
-            .store(in: &cancellableSet)
-
-        
         isSpecsPublisherValid
             .receive(on: RunLoop.main)
             .map { size in
-                size ? "" : "Չափը պարտադիր է"
+                size ? "" : "Այս դաշտերը պարտադիր են"
             }
             .assign(to: \.specsMessage, on: self)
+            .store(in: &cancellableSet)
+        
+        
+        isCountPublisherValid
+            .receive(on: RunLoop.main)
+            .map { count in
+                if self.selectedCategorySpec != nil {
+                    return count ? "" : "Մինիմալ պատվերի քանակը: \(self.selectedCategorySpec!.minBorderCount)"
+                } else {
+                    return count ? "" : "Քանակը պարտադիր է"
+                }
+            }
+            .assign(to: \.countMessage, on: self)
             .store(in: &cancellableSet)
         
         isFileNamePublisherValid
@@ -75,15 +79,16 @@ class UploadViewModel : ObservableObject {
             .store(in: &cancellableSet)
     }
     
+    
     private var isCountPublisherValid: AnyPublisher<Bool, Never> {
         $count
             .debounce(for: 0.1, scheduler: RunLoop.main)
-            .removeDuplicates()
             .map { input in
                 return input != "" && Int( input ) ?? 0 >= self.selectedCategorySpec!.minBorderCount
             }
             .eraseToAnyPublisher()
     }
+    
     
     private var isFileNamePublisherValid: AnyPublisher<Bool, Never> {
         $fileName

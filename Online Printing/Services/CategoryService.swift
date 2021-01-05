@@ -31,6 +31,5 @@ extension CategoryService: CategoryServiceProtocol {
             .mapError { $0 as Error }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
-        
     }
 }
