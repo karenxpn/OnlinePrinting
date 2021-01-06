@@ -65,7 +65,7 @@ struct Checkout: View {
                     
                     Spacer()
                 }
-            }).disabled(true)
+            })
             
             Spacer()
             

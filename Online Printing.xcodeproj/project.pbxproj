@@ -50,6 +50,8 @@
 		FFDFC6FD251FCEBC0088190E /* Online_PrintingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6FC251FCEBC0088190E /* Online_PrintingUITests.swift */; };
 		FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE019B2597D78B009B614C /* PaymentService.swift */; };
 		FFEE01C52598920A009B614C /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE01C42598920A009B614C /* Credentials.swift */; };
+		FFF692E825A53EE70087B640 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF692E725A53EE70087B640 /* WebView.swift */; };
+		FFF692ED25A540410087B640 /* BankPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF692EC25A540410087B640 /* BankPayment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		FFDFC6FE251FCEBC0088190E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFEE019B2597D78B009B614C /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		FFEE01C42598920A009B614C /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		FFF692E725A53EE70087B640 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		FFF692EC25A540410087B640 /* BankPayment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankPayment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,8 @@
 			children = (
 				FF7FADFD257FE6B900FDB32E /* Cart.swift */,
 				FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */,
+				FFF692EC25A540410087B640 /* BankPayment.swift */,
+				FFF692E725A53EE70087B640 /* WebView.swift */,
 				FF1B451E2582809100A6E639 /* AuthView.swift */,
 				FF1B45302582974C00A6E639 /* AuthBackground.swift */,
 			);
@@ -585,6 +591,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF3FDAA6259D4E18005DEE31 /* PaymentDetailsResponse.swift in Sources */,
+				FFF692E825A53EE70087B640 /* WebView.swift in Sources */,
+				FFF692ED25A540410087B640 /* BankPayment.swift in Sources */,
 				FF3FDA97259D4E0E005DEE31 /* InitPaymentRequest.swift in Sources */,
 				FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */,
 				FF69EBF52567F33000939256 /* MainViewModel.swift in Sources */,

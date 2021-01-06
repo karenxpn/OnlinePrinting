@@ -14,7 +14,6 @@ struct Online_PrintingApp: App {
     @ObservedObject var mainVM = MainViewModel()
     @ObservedObject var authVM = AuthViewModel()
     
-    // Redirection to the app from safari without permission is only allowed with universal-Links
     
     init() {
         let newAppearance = UINavigationBarAppearance()
@@ -30,28 +29,21 @@ struct Online_PrintingApp: App {
                 .environmentObject(self.authVM)
                 .onOpenURL(perform: { (url) in
                     
-                    // next stage
-                    // check if redirected from idram or ameria
-                    // get the response and place order if success
-                    
                     print(url)
                     
-                    if url.absoluteString.contains("idram") {
-                        if let urlComponents = URLComponents(string: url.absoluteString), let _ = urlComponents.host, let queryItems = urlComponents.queryItems {
+                    if let urlComponents = URLComponents(string: url.absoluteString), let _ = urlComponents.host, let queryItems = urlComponents.queryItems {
 
-                            if let errorCode = queryItems[0].value {
-                                if errorCode == "0" {
-                                    self.mainVM.placeOrder()
-                                } else {
-                                    self.mainVM.activeAlert = .error
-                                    self.mainVM.alertMessage = "Sorry something went wrong"
-                                    self.mainVM.showAlert.toggle()
-                                }
+                        if let errorCode = queryItems[0].value {
+                            if errorCode == "0" {
+                                self.mainVM.placeOrder()
+                            } else {
+                                self.mainVM.activeAlert = .error
+                                self.mainVM.alertMessage = "Sorry something went wrong"
+                                self.mainVM.showAlert.toggle()
                             }
                         }
-                    } else {
-                        // this was redirected from bank payment system
                     }
+
                 })
         }
     }

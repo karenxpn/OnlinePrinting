@@ -50,6 +50,7 @@ struct Cart: View {
                 if Auth.auth().currentUser == nil {
                     self.activeSheet = .auth
                     self.authVM.showSeet.toggle()
+                    
                 } else if self.mainVM.orderList.isEmpty {
                     self.mainVM.activeAlert = .error
                     self.mainVM.alertMessage = "Զամբյուղը դատարկ է:"
@@ -66,6 +67,10 @@ struct Cart: View {
             }).padding(.bottom, 10)
             
             NavigationLink(destination: Checkout().environmentObject(self.mainVM), isActive: self.$mainVM.navigateToCheckoutView) {
+                EmptyView()
+            }
+            
+            NavigationLink(destination: BankPayment().environmentObject(self.mainVM), isActive: self.$mainVM.showWeb) {
                 EmptyView()
             }
             

@@ -11,8 +11,6 @@ import SwiftUI
 
 class MainViewModel : ObservableObject {
     
-    @Environment(\.openURL) var openURL
-
     // Order Details
     @Published var info: String = ""
     @Published var count: String = ""
@@ -40,7 +38,8 @@ class MainViewModel : ObservableObject {
     
     @Published var navigateToCheckoutView: Bool = false     // view to chose payment method
     @Published var paymentMethod: String = ""               // IDram or Bank Card
-    
+    @Published var showWeb: Bool = false
+ 
     // Alert
     @Published var activeAlert: ActiveAlert? = nil
     @Published var alertMessage: String = ""
@@ -193,17 +192,16 @@ extension MainViewModel {
                 self.paymentDataManager.calculateTotalAmount(products: self.orderList) { (amount) in
                     self.totalAmount = Decimal(amount)
                     
-                    let model = InitPaymentRequest(ClientID: self.clientID, Username: self.username, Password: self.password, Currency: nil, Description: self.description, OrderID: self.orderID, Amount: 10, BackURL: "onlineprinting://", Opaque: nil, CardHolderID: nil)
+                    let model = InitPaymentRequest(ClientID: self.clientID, Username: self.username, Password: self.password, Currency: nil, Description: self.description, OrderID: self.orderID, Amount: 10, BackURL: nil, Opaque: nil, CardHolderID: nil)
                     
                     self.paymentDataManager.initPayment(model: model) { [self] (initPaymentResponse) in
                         if let response = initPaymentResponse {
                             if response.ResponseCode == 1 {
                                 self.paymentID = response.PaymentID
+                                self.showWeb.toggle()
                                 // open payment webpage
                                 // open url can only called on tap
                                 // on condition it is called only from viewmodel
-                                self.openURL(URL(string: "https://servicestest.ameriabank.am/VPOS/Payments/Pay?id=\(self.paymentID)")!)
-
                                 // open payment webpage
 
                             } else {
@@ -223,6 +221,7 @@ extension MainViewModel {
         let model = PaymentDetailsRequest(PaymentID: self.paymentID, Username: self.username, Password: self.password)
         paymentDataManager.getPaymentDetails(model: model) { (response) in
             if let response = response {
+                print(response)
                 self.paymentDetails = response
                 
                 if response.ResponseCode == "00" {
@@ -232,7 +231,7 @@ extension MainViewModel {
 
                 } else {
                     self.activeAlert = .error
-                    self.alertMessage = "Something went wrong"
+                    self.alertMessage = response.Description
                     self.showAlert.toggle()
                 }
             }
