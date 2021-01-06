@@ -69,10 +69,6 @@ struct Cart: View {
                 EmptyView()
             }
             
-            NavigationLink(destination: BankPayment().environmentObject(self.mainVM), isActive: self.$mainVM.openPayment) {
-                EmptyView()
-            }
-            
         }.sheet(isPresented: self.$authVM.showSeet, content: {
             AuthView()
                 .environmentObject(self.authVM)

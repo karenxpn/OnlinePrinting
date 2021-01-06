@@ -7,9 +7,12 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class MainViewModel : ObservableObject {
     
+    @Environment(\.openURL) var openURL
+
     // Order Details
     @Published var info: String = ""
     @Published var count: String = ""
@@ -35,9 +38,8 @@ class MainViewModel : ObservableObject {
     @Published var totalAmount: Decimal = 0
     @Published var paymentDetails: PaymentDetailsResponse? = nil
     
-    @Published var paymentMethod: String = ""
-    @Published var navigateToCheckoutView: Bool = false
-    @Published var openPayment: Bool = false
+    @Published var navigateToCheckoutView: Bool = false     // view to chose payment method
+    @Published var paymentMethod: String = ""               // IDram or Bank Card
     
     // Alert
     @Published var activeAlert: ActiveAlert? = nil
@@ -57,7 +59,9 @@ class MainViewModel : ObservableObject {
     var dataManager: UploadServiceProtocol
     var paymentDataManager: PaymentServiceProtocol
     
-    init(dataManager: UploadServiceProtocol = UploadService.shared, paymentDataManager: PaymentServiceProtocol = PaymentService.shared) {
+    init(dataManager: UploadServiceProtocol = UploadService.shared,
+         paymentDataManager: PaymentServiceProtocol = PaymentService.shared) {
+        
         self.dataManager = dataManager
         self.paymentDataManager = paymentDataManager
         
@@ -188,13 +192,18 @@ extension MainViewModel {
                 
                 self.paymentDataManager.calculateTotalAmount(products: self.orderList) { (amount) in
                     self.totalAmount = Decimal(amount)
-                    let model = InitPaymentRequest(ClientID: self.clientID, Username: self.username, Password: self.password, Currency: nil, Description: self.description, OrderID: self.orderID, Amount: self.totalAmount, BackURL: "onlineprinting", Opaque: nil, CardHolderID: nil)
                     
-                    self.paymentDataManager.initPayment(model: model) { (initPaymentResponse) in
+                    let model = InitPaymentRequest(ClientID: self.clientID, Username: self.username, Password: self.password, Currency: nil, Description: self.description, OrderID: self.orderID, Amount: 10, BackURL: "onlineprinting://", Opaque: nil, CardHolderID: nil)
+                    
+                    self.paymentDataManager.initPayment(model: model) { [self] (initPaymentResponse) in
                         if let response = initPaymentResponse {
                             if response.ResponseCode == 1 {
                                 self.paymentID = response.PaymentID
-                                self.openPayment.toggle()
+                                // open payment webpage
+                                // open url can only called on tap
+                                // on condition it is called only from viewmodel
+                                self.openURL(URL(string: "https://servicestest.ameriabank.am/VPOS/Payments/Pay?id=\(self.paymentID)")!)
+
                                 // open payment webpage
 
                             } else {
@@ -219,8 +228,7 @@ extension MainViewModel {
                 if response.ResponseCode == "00" {
                 
                     // Place order here
-//                    self.placeOrder()
-                    
+                    self.placeOrder()
 
                 } else {
                     self.activeAlert = .error
@@ -231,11 +239,9 @@ extension MainViewModel {
         }
     }
     
-    //
-    
     
     // calculate single category order price when user clickes to calculate order button
-    func calculatePrice( category: CategoryModel ){
+    func calculatePrice( category: CategoryModel ) {
         
         dataManager.calculateAmount(selectedCategorySpecs: self.selectedCategorySpec!, count: Int( self.count )!, typeOfPrinting: self.typeOfPrinting, additionalFunctionalityTitle: self.additionalFunctionality) { (amount) in
             

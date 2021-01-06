@@ -42,8 +42,6 @@
 		FFBCD092259542C600339448 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FFBCD091259542C600339448 /* AlertX */; };
 		FFBEE38E253CE419001EF94F /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE38D253CE419001EF94F /* Loading.swift */; };
 		FFDA65E5259E5A3F00C6EF97 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */; };
-		FFDA65ED259F7E7F00C6EF97 /* BankPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA65EC259F7E7F00C6EF97 /* BankPayment.swift */; };
-		FFDA65F5259FB20600C6EF97 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA65F4259FB20600C6EF97 /* WebView.swift */; };
 		FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */; };
 		FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6E1251FCEBA0088190E /* ContentView.swift */; };
 		FFDFC6E4251FCEBB0088190E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC6E3251FCEBB0088190E /* Assets.xcassets */; };
@@ -113,8 +111,6 @@
 		FFBEE38D253CE419001EF94F /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		FFBEF80A259A64B3006A21E0 /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
-		FFDA65EC259F7E7F00C6EF97 /* BankPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankPayment.swift; sourceTree = "<group>"; };
-		FFDA65F4259FB20600C6EF97 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		FFDFC6DC251FCEBA0088190E /* Online Printing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Printing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingApp.swift; sourceTree = "<group>"; };
 		FFDFC6E1251FCEBA0088190E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -257,8 +253,6 @@
 			children = (
 				FF7FADFD257FE6B900FDB32E /* Cart.swift */,
 				FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */,
-				FFDA65EC259F7E7F00C6EF97 /* BankPayment.swift */,
-				FFDA65F4259FB20600C6EF97 /* WebView.swift */,
 				FF1B451E2582809100A6E639 /* AuthView.swift */,
 				FF1B45302582974C00A6E639 /* AuthBackground.swift */,
 			);
@@ -592,7 +586,6 @@
 			files = (
 				FF3FDAA6259D4E18005DEE31 /* PaymentDetailsResponse.swift in Sources */,
 				FF3FDA97259D4E0E005DEE31 /* InitPaymentRequest.swift in Sources */,
-				FFDA65ED259F7E7F00C6EF97 /* BankPayment.swift in Sources */,
 				FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */,
 				FF69EBF52567F33000939256 /* MainViewModel.swift in Sources */,
 				FF046548252FB96300D7460D /* SelectedCategory.swift in Sources */,
@@ -601,7 +594,6 @@
 				FF1B45312582974C00A6E639 /* AuthBackground.swift in Sources */,
 				FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */,
 				FF1B4529258280C500A6E639 /* AuthViewModel.swift in Sources */,
-				FFDA65F5259FB20600C6EF97 /* WebView.swift in Sources */,
 				FF7FAE16258006FD00FDB32E /* Home.swift in Sources */,
 				FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */,
 				FF7FAE0E2580052A00FDB32E /* CartItemModel.swift in Sources */,
