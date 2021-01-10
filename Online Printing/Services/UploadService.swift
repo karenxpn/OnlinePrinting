@@ -34,22 +34,27 @@ extension UploadService : UploadServiceProtocol{
         let mediaFolder = storageRef.child("uploaded")
         
         var count = 0
-        var fileURLS = [String]()
-
-        let semaphore = DispatchSemaphore(value: 0)
+        var fileURLS = [(String, Int)]()
         
         // On background thread perform upload file function
         // semaphore helps us to notify which session should be completed
         // so semaphone.signal() gives a signal that perform an action
         // semaphone.wait() does not allow to pass the next line of the code until it is not completed
         
-        DispatchQueue.global().async {
+        
+        for (index, item) in cartItems.enumerated() {
             
-            for item in cartItems {
-
-                let fileRef = mediaFolder.child("\(UUID().uuidString).pdf")
+            let fileRef = mediaFolder.child("\(UUID().uuidString).pdf")
+            
+            fileRef.putFile(from: item.filePath, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        completion( nil )
+                    }
+                    return
+                }
                 
-                fileRef.putFile(from: item.filePath, metadata: nil) { (metadata, error) in
+                fileRef.downloadURL { (url, error) in
                     if error != nil {
                         DispatchQueue.main.async {
                             completion( nil )
@@ -57,33 +62,23 @@ extension UploadService : UploadServiceProtocol{
                         return
                     }
                     
-                    fileRef.downloadURL { (url, error) in
-                        if error != nil {
-                            DispatchQueue.main.async {
-                                completion( nil )
-                            }
-                            return
-                        }
-                        
-                        semaphore.signal()
-                        fileURLS.append(url?.absoluteString ?? "")
-                        count += 1
-                        
-                        if count == cartItems.count {
-                            DispatchQueue.main.async {
-                                completion( fileURLS )
-                            }
+                    fileURLS.append(( url?.absoluteString ?? "", index))
+                    count += 1
+                    
+                    if count == cartItems.count {
+                        DispatchQueue.main.async {
+                            
+                            completion( fileURLS.sorted(by: {$0.1 < $1.1 }).map { tuple in tuple.0 } )
                         }
                     }
                 }
-                semaphore.wait()
             }
         }
     }
     
     func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], completion: @escaping ( Bool ) -> () ) {
         let db = Firestore.firestore()
-
+        
         var orders = [[String: Any]]()
         var totalPrice = 0
         
@@ -119,7 +114,7 @@ extension UploadService : UploadServiceProtocol{
                 completion( true )
             }
         }
-
+        
     }
     
     func calculateAmount(selectedCategorySpecs: Specs, count: Int, typeOfPrinting: String, additionalFunctionalityTitle: String, completion: @escaping (Int) -> ()) {
@@ -137,7 +132,7 @@ extension UploadService : UploadServiceProtocol{
         
         if typeOfPrinting == "One Side" || typeOfPrinting == "OneColor" { pricePerUnit = selectedCategorySpecs.oneSide_ColorPrice }
         else                                                            { pricePerUnit = selectedCategorySpecs.bothSide_ColorPrice }
-                
+        
         if 0...selectedCategorySpecs.minCount ~= count {
             amount = count * pricePerUnit + ( additionalFunctionality == nil ? 0 : count * additionalFunctionality!.functionalityAdditionalPrice )
         } else if selectedCategorySpecs.minCount...selectedCategorySpecs.maxCount ~= count {

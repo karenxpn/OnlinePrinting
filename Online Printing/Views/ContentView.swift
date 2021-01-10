@@ -71,7 +71,7 @@ struct ContentView: View {
         }.alertX(isPresented: self.$mainVM.showAlert) {
             if self.mainVM.activeAlert == .dialog {
                 
-                return AlertX(title: Text( "Amount is" ), message: Text( "\(self.mainVM.alertMessage) AMD" ), primaryButton: .default(Text("Ավելացնել Զամբյուղ"), action: {
+                return AlertX(title: Text( "Շնորհակալություն" ), message: Text( "Ձեր ընտրված ապրանքի գումարը կազմում է: \(self.mainVM.alertMessage) AMD" ), primaryButton: .default(Text("Ավելացնել Զամբյուղ"), action: {
                     let cartModel = CartItemModel(dimensions: self.mainVM.size, count: Int( self.mainVM.count )!, totalPrice: Int( self.mainVM.alertMessage )!, info: self.mainVM.info, category: self.mainVM.selectedCategory!.name, image: self.mainVM.selectedCategory!.image, filePath: self.mainVM.path!, additionalFunctionality: self.mainVM.additionalFunctionality, oneSide_Color_bothSide_ColorPrinting: self.mainVM.typeOfPrinting)
                     
                     self.mainVM.orderList.append(cartModel)

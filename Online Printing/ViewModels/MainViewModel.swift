@@ -39,6 +39,7 @@ class MainViewModel : ObservableObject {
     @Published var navigateToCheckoutView: Bool = false     // view to chose payment method
     @Published var paymentMethod: String = ""               // IDram or Bank Card
     @Published var showWeb: Bool = false
+    @Published var payButtonClickable: Bool = false
  
     // Alert
     @Published var activeAlert: ActiveAlert? = nil
@@ -97,6 +98,11 @@ class MainViewModel : ObservableObject {
             .receive(on: RunLoop.main)
             .assign(to: \.buttonClickable, on: self)
             .store(in: &cancellableSet)
+        
+        isPayButtonClickable
+            .receive(on: RunLoop.main)
+            .assign(to: \.payButtonClickable, on: self)
+            .store(in: &cancellableSet)
     }
     
     
@@ -146,6 +152,14 @@ class MainViewModel : ObservableObject {
         Publishers.CombineLatest3( isCountPublisherValid, isFileNamePublisherValid, isSpecsPublisherValid)
             .map { count, file, size in
                 return count && file && size
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    private var isPayButtonClickable: AnyPublisher<Bool, Never> {
+        $paymentMethod
+            .map { paymentMethod in
+                return paymentMethod != ""
             }
             .eraseToAnyPublisher()
     }

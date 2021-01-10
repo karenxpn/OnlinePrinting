@@ -65,15 +65,14 @@ struct Checkout: View {
                     
                     Spacer()
                 }
-            })
+            }).disabled(true)
             
             Spacer()
             
             Button(action: {
-                
-                // check paymentmethod is empty or no
-                
+                                
                 if self.mainVM.paymentMethod == "IDram" {
+                    // pay with idram
                     self.mainVM.payWithIdram()
                 } else {
                     // pay with bark card
@@ -87,9 +86,10 @@ struct Checkout: View {
                     .foregroundColor(Color.white)
                     .padding()
 
-            }).background(self.mainVM.paymentMethod != "" ? Color.blue : Color.gray)
+            }).background(self.mainVM.payButtonClickable ? Color.blue : Color.gray)
             .cornerRadius(30)
-            .disabled(self.mainVM.paymentMethod == "")
-        }.padding()
+            .disabled(!self.mainVM.payButtonClickable)
+        }.padding(.horizontal, 20)
+        .padding(.vertical)
     }
 }
