@@ -74,7 +74,10 @@ struct SelectedCategory: View {
             self.mainVM.selectedCategorySpec = nil
             self.mainVM.selectedCategory = nil
             self.mainVM.additionalFunctionality = ""
-        }.fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
+        }.gesture(DragGesture().onChanged { _ in
+            UIApplication.shared.windows.forEach { $0.endEditing(false) }
+        })
+        .fileImporter(isPresented: self.$openFile, allowedContentTypes: [.pdf], onCompletion: { (res) in
             do {
                 
                 let fileURL = try res.get()

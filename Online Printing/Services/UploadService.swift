@@ -33,14 +33,7 @@ extension UploadService : UploadServiceProtocol{
         let storageRef = Storage.storage().reference()
         let mediaFolder = storageRef.child("uploaded")
         
-        var count = 0
         var fileURLS = [(String, Int)]()
-        
-        // On background thread perform upload file function
-        // semaphore helps us to notify which session should be completed
-        // so semaphone.signal() gives a signal that perform an action
-        // semaphone.wait() does not allow to pass the next line of the code until it is not completed
-        
         
         for (index, item) in cartItems.enumerated() {
             
@@ -63,12 +56,10 @@ extension UploadService : UploadServiceProtocol{
                     }
                     
                     fileURLS.append(( url?.absoluteString ?? "", index))
-                    count += 1
                     
-                    if count == cartItems.count {
+                    if fileURLS.count == cartItems.count {
                         DispatchQueue.main.async {
-                            
-                            completion( fileURLS.sorted(by: {$0.1 < $1.1 }).map { tuple in tuple.0 } )
+                            completion( fileURLS.sorted(by: { $0.1 < $1.1 }).map { tuple in tuple.0 } )
                         }
                     }
                 }

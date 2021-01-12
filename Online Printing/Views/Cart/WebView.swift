@@ -25,9 +25,7 @@ struct WebView: UIViewRepresentable {
         guard let url = URL(string: self.url ) else {
             return WKWebView()
         }
-        
-        print(url)
-        
+                
         let request = URLRequest(url: url)
         let wkWebview = WKWebView()
         wkWebview.uiDelegate = context.coordinator
@@ -57,9 +55,7 @@ struct WebView: UIViewRepresentable {
         
         
         func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-            
-            print(webView.url?.absoluteString)
-            
+                        
             if webView.url?.absoluteString.contains("/ArcaResponse") == true {
                 decisionHandler( .cancel )
                 self.webView.mainVM.showWeb = false
