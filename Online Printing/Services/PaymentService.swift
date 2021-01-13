@@ -25,7 +25,6 @@ class PaymentService {
     private init() { }
 }
 
-// make protocol
 extension PaymentService: PaymentServiceProtocol {
     
     func payWithIdram(amount: Int) {

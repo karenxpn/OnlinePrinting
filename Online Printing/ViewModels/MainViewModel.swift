@@ -73,7 +73,6 @@ class MainViewModel : ObservableObject {
             .assign(to: \.specsMessage, on: self)
             .store(in: &cancellableSet)
         
-        
         isCountPublisherValid
             .receive(on: RunLoop.main)
             .map { count in

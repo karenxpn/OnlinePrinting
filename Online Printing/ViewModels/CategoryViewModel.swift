@@ -8,10 +8,6 @@
 import Foundation
 import Combine
 
-protocol CategoryViewModelProtocol {
-    var categories: [CategoryModel] { get }
-}
-
 class CategoryViewModel: ObservableObject {
     @Published var categories = [CategoryModel]()
     @Published var loading: Bool = false
@@ -25,7 +21,7 @@ class CategoryViewModel: ObservableObject {
     }
 }
 
-extension CategoryViewModel: CategoryViewModelProtocol {
+extension CategoryViewModel {
     func getAllCategories() {
         self.loading = true
         dataManager.fetchCategories()

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43BD3E0A876476E8B46FC1C9 /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769AA0F5869DDFBA4E06E884 /* Pods_Online_Printing_Online_PrintingUITests.framework */; };
 		8F9E5DAC4B8A7EBA77277496 /* Pods_Online_PrintingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF225BEBC8B4861FB5E73DB /* Pods_Online_PrintingTests.framework */; };
 		C50D0887C560CD1427353BBD /* Pods_Online_Printing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14430420797D92E9F4A82CCF /* Pods_Online_Printing.framework */; };
 		FF046548252FB96300D7460D /* SelectedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF046547252FB96300D7460D /* SelectedCategory.swift */; };
@@ -41,12 +40,16 @@
 		FFBCD092259542C600339448 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FFBCD091259542C600339448 /* AlertX */; };
 		FFBEE38E253CE419001EF94F /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE38D253CE419001EF94F /* Loading.swift */; };
 		FFDA65E5259E5A3F00C6EF97 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */; };
+		FFDE43BC25AF43D200286B40 /* CategoryViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43BB25AF43D200286B40 /* CategoryViewModelTest.swift */; };
+		FFDE43C225AF443900286B40 /* MockCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43C125AF443900286B40 /* MockCategoryService.swift */; };
+		FFDE43C625AF726800286B40 /* MainViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43C525AF726800286B40 /* MainViewModelTest.swift */; };
+		FFDE43CA25AF7C2E00286B40 /* TestPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43C925AF7C2E00286B40 /* TestPaymentService.swift */; };
+		FFDE43CE25AF7FDA00286B40 /* MockPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43CD25AF7FDA00286B40 /* MockPaymentService.swift */; };
 		FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */; };
 		FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6E1251FCEBA0088190E /* ContentView.swift */; };
 		FFDFC6E4251FCEBB0088190E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC6E3251FCEBB0088190E /* Assets.xcassets */; };
 		FFDFC6E7251FCEBB0088190E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC6E6251FCEBB0088190E /* Preview Assets.xcassets */; };
 		FFDFC6F2251FCEBC0088190E /* Online_PrintingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */; };
-		FFDFC6FD251FCEBC0088190E /* Online_PrintingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6FC251FCEBC0088190E /* Online_PrintingUITests.swift */; };
 		FFEAC26825AE3AFA00FC94EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFEAC26725AE3AFA00FC94EB /* GoogleService-Info.plist */; };
 		FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE019B2597D78B009B614C /* PaymentService.swift */; };
 		FFEE01C52598920A009B614C /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE01C42598920A009B614C /* Credentials.swift */; };
@@ -56,13 +59,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		FFDFC6EE251FCEBC0088190E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FFDFC6D4251FCEBA0088190E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FFDFC6DB251FCEBA0088190E;
-			remoteInfo = "Online Printing";
-		};
-		FFDFC6F9251FCEBC0088190E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FFDFC6D4251FCEBA0088190E /* Project object */;
 			proxyType = 1;
@@ -112,6 +108,11 @@
 		FFBEE38D253CE419001EF94F /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		FFBEF80A259A64B3006A21E0 /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
+		FFDE43BB25AF43D200286B40 /* CategoryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModelTest.swift; sourceTree = "<group>"; };
+		FFDE43C125AF443900286B40 /* MockCategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryService.swift; sourceTree = "<group>"; };
+		FFDE43C525AF726800286B40 /* MainViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTest.swift; sourceTree = "<group>"; };
+		FFDE43C925AF7C2E00286B40 /* TestPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPaymentService.swift; sourceTree = "<group>"; };
+		FFDE43CD25AF7FDA00286B40 /* MockPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentService.swift; sourceTree = "<group>"; };
 		FFDFC6DC251FCEBA0088190E /* Online Printing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Printing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingApp.swift; sourceTree = "<group>"; };
 		FFDFC6E1251FCEBA0088190E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,9 +122,6 @@
 		FFDFC6ED251FCEBC0088190E /* Online PrintingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Online PrintingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingTests.swift; sourceTree = "<group>"; };
 		FFDFC6F3251FCEBC0088190E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFDFC6F8251FCEBC0088190E /* Online PrintingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Online PrintingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFDFC6FC251FCEBC0088190E /* Online_PrintingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingUITests.swift; sourceTree = "<group>"; };
-		FFDFC6FE251FCEBC0088190E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFEAC26725AE3AFA00FC94EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFEE019B2597D78B009B614C /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		FFEE01C42598920A009B614C /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -146,14 +144,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F9E5DAC4B8A7EBA77277496 /* Pods_Online_PrintingTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FFDFC6F5251FCEBC0088190E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				43BD3E0A876476E8B46FC1C9 /* Pods_Online_Printing_Online_PrintingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +269,6 @@
 				FF7FAE3D25815B0600FDB32E /* .gitignore */,
 				FFDFC6DE251FCEBA0088190E /* Online Printing */,
 				FFDFC6F0251FCEBC0088190E /* Online PrintingTests */,
-				FFDFC6FB251FCEBC0088190E /* Online PrintingUITests */,
 				FFDFC6DD251FCEBA0088190E /* Products */,
 				9C31D7ACCF45030B2106C1B4 /* Pods */,
 				1DE93ACC306B96E4AB6B4C0F /* Frameworks */,
@@ -291,7 +280,6 @@
 			children = (
 				FFDFC6DC251FCEBA0088190E /* Online Printing.app */,
 				FFDFC6ED251FCEBC0088190E /* Online PrintingTests.xctest */,
-				FFDFC6F8251FCEBC0088190E /* Online PrintingUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,17 +318,13 @@
 			children = (
 				FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */,
 				FFDFC6F3251FCEBC0088190E /* Info.plist */,
+				FFDE43BB25AF43D200286B40 /* CategoryViewModelTest.swift */,
+				FFDE43C125AF443900286B40 /* MockCategoryService.swift */,
+				FFDE43C525AF726800286B40 /* MainViewModelTest.swift */,
+				FFDE43C925AF7C2E00286B40 /* TestPaymentService.swift */,
+				FFDE43CD25AF7FDA00286B40 /* MockPaymentService.swift */,
 			);
 			path = "Online PrintingTests";
-			sourceTree = "<group>";
-		};
-		FFDFC6FB251FCEBC0088190E /* Online PrintingUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FFDFC6FC251FCEBC0088190E /* Online_PrintingUITests.swift */,
-				FFDFC6FE251FCEBC0088190E /* Info.plist */,
-			);
-			path = "Online PrintingUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,26 +371,6 @@
 			productReference = FFDFC6ED251FCEBC0088190E /* Online PrintingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FFDFC6F7251FCEBC0088190E /* Online PrintingUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FFDFC707251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingUITests" */;
-			buildPhases = (
-				1907B4F36E84F76620F853A5 /* [CP] Check Pods Manifest.lock */,
-				FFDFC6F4251FCEBC0088190E /* Sources */,
-				FFDFC6F5251FCEBC0088190E /* Frameworks */,
-				FFDFC6F6251FCEBC0088190E /* Resources */,
-				371E220E35E91726899F6ED5 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FFDFC6FA251FCEBC0088190E /* PBXTargetDependency */,
-			);
-			name = "Online PrintingUITests";
-			productName = "Online PrintingUITests";
-			productReference = FFDFC6F8251FCEBC0088190E /* Online PrintingUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -420,10 +384,6 @@
 						CreatedOnToolsVersion = 12.0;
 					};
 					FFDFC6EC251FCEBC0088190E = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = FFDFC6DB251FCEBA0088190E;
-					};
-					FFDFC6F7251FCEBC0088190E = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = FFDFC6DB251FCEBA0088190E;
 					};
@@ -447,7 +407,6 @@
 			targets = (
 				FFDFC6DB251FCEBA0088190E /* Online Printing */,
 				FFDFC6EC251FCEBC0088190E /* Online PrintingTests */,
-				FFDFC6F7251FCEBC0088190E /* Online PrintingUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -473,55 +432,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FFDFC6F6251FCEBC0088190E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1907B4F36E84F76620F853A5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Online Printing-Online PrintingUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		371E220E35E91726899F6ED5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		71C76F5E166F5C5341FC22FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -630,15 +543,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDE43C225AF443900286B40 /* MockCategoryService.swift in Sources */,
+				FFDE43CA25AF7C2E00286B40 /* TestPaymentService.swift in Sources */,
+				FFDE43CE25AF7FDA00286B40 /* MockPaymentService.swift in Sources */,
+				FFDE43BC25AF43D200286B40 /* CategoryViewModelTest.swift in Sources */,
 				FFDFC6F2251FCEBC0088190E /* Online_PrintingTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FFDFC6F4251FCEBC0088190E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FFDFC6FD251FCEBC0088190E /* Online_PrintingUITests.swift in Sources */,
+				FFDE43C625AF726800286B40 /* MainViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,11 +559,6 @@
 			isa = PBXTargetDependency;
 			target = FFDFC6DB251FCEBA0088190E /* Online Printing */;
 			targetProxy = FFDFC6EE251FCEBC0088190E /* PBXContainerItemProxy */;
-		};
-		FFDFC6FA251FCEBC0088190E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FFDFC6DB251FCEBA0088190E /* Online Printing */;
-			targetProxy = FFDFC6F9251FCEBC0088190E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -870,48 +775,6 @@
 			};
 			name = Release;
 		};
-		FFDFC708251FCEBC0088190E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31AEF846C1CF20DCC8DD1868 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GVVA24YR6;
-				INFOPLIST_FILE = "Online PrintingUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.store.Online-PrintingUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Online Printing";
-			};
-			name = Debug;
-		};
-		FFDFC709251FCEBC0088190E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E4C4237C3F3F91B21216133 /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GVVA24YR6;
-				INFOPLIST_FILE = "Online PrintingUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.store.Online-PrintingUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Online Printing";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -938,15 +801,6 @@
 			buildConfigurations = (
 				FFDFC705251FCEBC0088190E /* Debug */,
 				FFDFC706251FCEBC0088190E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FFDFC707251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FFDFC708251FCEBC0088190E /* Debug */,
-				FFDFC709251FCEBC0088190E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
