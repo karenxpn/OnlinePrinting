@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 @testable import Online_Printing
 
 class MockPaymentService {
@@ -27,8 +28,9 @@ class MockPaymentService {
         self.shouldReturnError = shouldReturnError
     }
     
-    let mockInitPaymentResponse = InitPaymentResponse(PaymentID: "PaymentID", ResponseCode: 1, ResponseMessage: "Response Message")
-    let mockGetPaymentResponse = PaymentDetailsResponse(Amount: 120, ApprovedAmount: 120, ApprovalCode: "90", CardNumber: "000000", ClientName: "Karen Mirakyan", ClientEmail: "", Currency: "", DateTime: "", DepositedAmount: 120, Description: "", MerchantId: "", Opaque: "", OrderID: "123000", PaymentState: "", PaymentType: 1, ResponseCode: "", rrn: "", TerminalId: "", TrxnDescription: "", OrderStatus: "", RefundedAmount: 0, CardHolderID: "", MDOrderID: "", PrimaryRC: "", ExpDate: "", ProcessingIP: "", BindingID: "", ActionCode: "", ExchangeRate: 123)
+   let mockInitPaymentRequest = InitPaymentRequest(ClientID: "", Username: "", Password: "", Currency: nil, Description: "", OrderID: 123, Amount: 12, BackURL: nil, Opaque: nil, CardHolderID: nil)
+    
+    let mockGetPaymentResponseRequest = PaymentDetailsRequest(PaymentID: "", Username: "", Password: "")
 }
 
 extension MockPaymentService: PaymentServiceProtocol {
@@ -41,23 +43,38 @@ extension MockPaymentService: PaymentServiceProtocol {
     }
     
     func initPayment(model: InitPaymentRequest, completion: @escaping (InitPaymentResponse?) -> ()) {
-        initPaymentWasCalled = true
-        
-        if shouldReturnError {
+        guard let pathString = Bundle(for: type(of: self)).path(forResource: "InitPaymentJson", ofType: "json") else {
             completion( nil )
-        } else {
-            completion( mockInitPaymentResponse )
+            fatalError("json not found")
         }
+        
+        guard let json = try? String(contentsOfFile: pathString, encoding: .utf8) else {
+            completion( nil )
+            fatalError("Unable to convert json to string")
+        }
+        
+        let jsonData = json.data(using: .utf8)!
+        let initPaymentData = try! JSONDecoder().decode(InitPaymentResponse.self, from: jsonData)
+        
+        completion( initPaymentData )
     }
     
     func getPaymentDetails(model: PaymentDetailsRequest, completion: @escaping (PaymentDetailsResponse?) -> ()) {
-        getPaymentDetailsCalled = true
-        
-        if shouldReturnError {
+
+        guard let pathString = Bundle(for: type(of: self)).path(forResource: "GetPaymentDetailsJson", ofType: "json") else {
             completion( nil )
-        } else {
-            completion( mockGetPaymentResponse )
+            fatalError("json not found")
         }
+        
+        guard let json = try? String(contentsOfFile: pathString, encoding: .utf8) else {
+            completion( nil )
+            fatalError("Unable to convert json to string")
+        }
+        
+        let jsonData = json.data(using: .utf8)!
+        let initPaymentData = try? JSONDecoder().decode(PaymentDetailsResponse.self, from: jsonData)
+        
+        completion( initPaymentData )
     }
     
     func calculateTotalAmount(products: [CartItemModel], completion: @escaping (Int) -> ()) {

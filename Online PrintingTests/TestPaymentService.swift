@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Alamofire
 @testable import Online_Printing
 
 class TestPaymentService: XCTestCase {
@@ -15,39 +16,21 @@ class TestPaymentService: XCTestCase {
     override func setUp() {
     }
     
-    func testInitPayment() {
+    func testInitPaymentModel() {
         
-        paymentService.shouldReturnError = false
-        
-        paymentService.initPayment(model: InitPaymentRequest(ClientID: "ClientID", Username: "Username", Password: "Password", Currency: nil, Description: "Desctiption", OrderID: 2342605, Amount: 120, BackURL: nil, Opaque: nil, CardHolderID: nil)) { (response) in
-            guard let response = response else {
-                XCTFail()
-                return
-            }
-            
-            do {
-                print(response)
-                XCTAssertNotNil(response)
-            } catch {
-                XCTFail(error.localizedDescription)
-            }
+        paymentService.initPayment(model: paymentService.mockInitPaymentRequest) { (response ) in
+            XCTAssertNotNil(response)
+            XCTAssertEqual(response?.PaymentID, "EEA93DEB-7D9A-492B-895F-CB12B0A47F49")
         }
     }
     
-    func testGetPaymentResponse() {
-        paymentService.shouldReturnError = false
-        
-        paymentService.getPaymentDetails(model: PaymentDetailsRequest(PaymentID: "PaymentID", Username: "Username", Password: "Password")) { (response) in
-            guard let response = response else {
-                XCTFail()
-                return
-            }
-            
-            do {
-                print(response)
-                XCTAssertNotNil(response)
-            }
+    func testGetPaymentDetailsModel() {
+        paymentService.getPaymentDetails(model: paymentService.mockGetPaymentResponseRequest) { (response) in
+            XCTAssertNotNil(response)
+            XCTAssertEqual(response?.Amount, 10)
         }
+
     }
+    
 
 }

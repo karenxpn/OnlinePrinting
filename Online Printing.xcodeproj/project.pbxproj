@@ -45,6 +45,8 @@
 		FFDE43C625AF726800286B40 /* MainViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43C525AF726800286B40 /* MainViewModelTest.swift */; };
 		FFDE43CA25AF7C2E00286B40 /* TestPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43C925AF7C2E00286B40 /* TestPaymentService.swift */; };
 		FFDE43CE25AF7FDA00286B40 /* MockPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43CD25AF7FDA00286B40 /* MockPaymentService.swift */; };
+		FFDE43D825B0955D00286B40 /* InitPaymentJson.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDE43D725B0955D00286B40 /* InitPaymentJson.json */; };
+		FFDE43DE25B0EFE100286B40 /* GetPaymentDetailsJson.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDE43DD25B0EFE100286B40 /* GetPaymentDetailsJson.json */; };
 		FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */; };
 		FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6E1251FCEBA0088190E /* ContentView.swift */; };
 		FFDFC6E4251FCEBB0088190E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC6E3251FCEBB0088190E /* Assets.xcassets */; };
@@ -113,6 +115,8 @@
 		FFDE43C525AF726800286B40 /* MainViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTest.swift; sourceTree = "<group>"; };
 		FFDE43C925AF7C2E00286B40 /* TestPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPaymentService.swift; sourceTree = "<group>"; };
 		FFDE43CD25AF7FDA00286B40 /* MockPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentService.swift; sourceTree = "<group>"; };
+		FFDE43D725B0955D00286B40 /* InitPaymentJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InitPaymentJson.json; sourceTree = "<group>"; };
+		FFDE43DD25B0EFE100286B40 /* GetPaymentDetailsJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetPaymentDetailsJson.json; sourceTree = "<group>"; };
 		FFDFC6DC251FCEBA0088190E /* Online Printing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Printing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingApp.swift; sourceTree = "<group>"; };
 		FFDFC6E1251FCEBA0088190E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -263,6 +267,15 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		FFDE43D425B094F600286B40 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE43D725B0955D00286B40 /* InitPaymentJson.json */,
+				FFDE43DD25B0EFE100286B40 /* GetPaymentDetailsJson.json */,
+			);
+			path = fixtures;
+			sourceTree = "<group>";
+		};
 		FFDFC6D3251FCEBA0088190E = {
 			isa = PBXGroup;
 			children = (
@@ -316,10 +329,11 @@
 		FFDFC6F0251FCEBC0088190E /* Online PrintingTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFDE43D425B094F600286B40 /* fixtures */,
 				FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */,
 				FFDFC6F3251FCEBC0088190E /* Info.plist */,
-				FFDE43BB25AF43D200286B40 /* CategoryViewModelTest.swift */,
 				FFDE43C125AF443900286B40 /* MockCategoryService.swift */,
+				FFDE43BB25AF43D200286B40 /* CategoryViewModelTest.swift */,
 				FFDE43C525AF726800286B40 /* MainViewModelTest.swift */,
 				FFDE43C925AF7C2E00286B40 /* TestPaymentService.swift */,
 				FFDE43CD25AF7FDA00286B40 /* MockPaymentService.swift */,
@@ -429,6 +443,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDE43DE25B0EFE100286B40 /* GetPaymentDetailsJson.json in Resources */,
+				FFDE43D825B0955D00286B40 /* InitPaymentJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
