@@ -176,15 +176,14 @@ extension MainViewModel {
                         self.orderList.removeAll(keepingCapacity: false)
                         self.loading = false
                         self.activeAlert = .placementCompleted
-                        self.alertMessage = "Շնորհավորում ենք Ձեր պատվերը գրանցված է:"
+                        self.alertMessage = AlertMessages().uploadSuccessMessage
                         self.showAlert = true
                     } else {
-                        self.loading = false
-                        self.activeAlert = .error
-                        self.alertMessage = "Ցավոք տեղի է ունեցել սխալ"
-                        self.showAlert = true
+                        self.displayError()
                     }
                 }
+            } else {
+                self.displayError()
             }
         }
     }
@@ -262,5 +261,12 @@ extension MainViewModel {
             self.selectedCategory = category
             self.showAlert = true
         }
+    }
+    
+    func displayError() {
+        self.loading = false
+        self.activeAlert = .error
+        self.alertMessage = AlertMessages().uploadErrorMessage
+        self.showAlert = true
     }
 }

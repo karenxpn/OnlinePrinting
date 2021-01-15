@@ -11,25 +11,44 @@ import XCTest
 
 class MainViewModelTest: XCTestCase {
     
+    var uploadService: MockUploadService!
     var viewModel: MainViewModel!
 
+    
     override func setUp() {
-        viewModel = .init()
+        self.uploadService = MockUploadService()
+        viewModel = .init(dataManager: self.uploadService)
     }
     
-    func testPlaceOrderButtonClickable() {
-        viewModel.selectedCategory = CategoryModel(name: "", image: "", specs: [Specs(name: "A4", oneSide_ColorPrice: 120, bothSide_ColorPrice: 220, minCount: 100, minCountDiscount: 10, maxCount: 1000, maxCountDiscount: 20, additionalFunctionality: [], minBorderCount: 20, typeUnit: "Side", measurementUnit: "hat")])
+    func testUploadFilesWithFailResponse() {
+        self.uploadService.returnErrorUpload = true
         
-        viewModel.selectedCategorySpec = Specs(name: "A4", oneSide_ColorPrice: 120, bothSide_ColorPrice: 220, minCount: 100, minCountDiscount: 10, maxCount: 1000, maxCountDiscount: 20, additionalFunctionality: [], minBorderCount: 20, typeUnit: "Side", measurementUnit: "hat")
-
-        viewModel.size = "A4"
-        viewModel.fileName = "klfdjg"
-        viewModel.typeOfPrinting = "One Side"
-        viewModel.count = "100"
-
-
-        XCTAssertTrue(viewModel.buttonClickable)
-        // test fails cause of receive( on: RunLoop.main ) in view model
+        let expectation = self.expectation(description: "Started")
+        
+        self.viewModel.placeOrder()
+        expectation.fulfill()
+        
+        XCTAssertTrue(self.viewModel.activeAlert == .error)
+        XCTAssertFalse(self.viewModel.loading)
+        XCTAssertEqual(self.viewModel.alertMessage, "Ցավոք տեղի է ունեցել սխալ")
+        XCTAssertTrue(self.viewModel.showAlert)
+        
+        wait(for: [expectation], timeout: 10)
         
     }
+    
+    func testUploadFilesWithSuccessResponse() {
+        self.uploadService.returnErrorUpload = false
+        
+        let expectation = self.expectation(description: "Started")
+        
+        self.viewModel.placeOrder()
+        expectation.fulfill()
+        
+        XCTAssertTrue(self.viewModel.orderList.isEmpty)
+        
+        wait(for: [expectation], timeout: 10)
+        
+    }
+    
 }
