@@ -179,11 +179,11 @@ extension MainViewModel {
                         self.alertMessage = AlertMessages().uploadSuccessMessage
                         self.showAlert = true
                     } else {
-                        self.displayError()
+                        self.displayError(with: AlertMessages().defaultErrorMessage)
                     }
                 }
             } else {
-                self.displayError()
+                self.displayError(with: AlertMessages().defaultErrorMessage)
             }
         }
     }
@@ -206,24 +206,22 @@ extension MainViewModel {
                     
                     let model = InitPaymentRequest(ClientID: self.clientID, Username: self.username, Password: self.password, Currency: nil, Description: self.description, OrderID: self.orderID, Amount: 10, BackURL: nil, Opaque: nil, CardHolderID: nil)
                     
-                    self.paymentDataManager.initPayment(model: model) { [self] (initPaymentResponse) in
+                    self.paymentDataManager.initPayment(model: model) { (initPaymentResponse) in
                         if let response = initPaymentResponse {
                             if response.ResponseCode == 1 {
                                 self.paymentID = response.PaymentID
                                 self.showWeb.toggle()
-                                // open payment webpage
-                                // open url can only called on tap
-                                // on condition it is called only from viewmodel
-                                // open payment webpage
 
                             } else {
-                                self.activeAlert = .error
-                                self.alertMessage = response.ResponseMessage
-                                self.showAlert.toggle()
+                                self.displayError(with: response.ResponseMessage)
                             }
+                        } else {
+                            self.displayError(with: AlertMessages().defaultErrorMessage)
                         }
                     }
                 }
+            } else {
+                self.displayError(with: AlertMessages().defaultErrorMessage)
             }
         }
     }
@@ -233,7 +231,6 @@ extension MainViewModel {
         let model = PaymentDetailsRequest(PaymentID: self.paymentID, Username: self.username, Password: self.password)
         paymentDataManager.getPaymentDetails(model: model) { (response) in
             if let response = response {
-                print(response)
                 self.paymentDetails = response
                 
                 if response.ResponseCode == "00" {
@@ -242,10 +239,10 @@ extension MainViewModel {
                     self.placeOrder()
 
                 } else {
-                    self.activeAlert = .error
-                    self.alertMessage = response.Description
-                    self.showAlert.toggle()
+                    self.displayError(with: response.Description)
                 }
+            } else {
+                self.displayError(with: AlertMessages().defaultErrorMessage)
             }
         }
     }
@@ -263,10 +260,10 @@ extension MainViewModel {
         }
     }
     
-    func displayError() {
+    func displayError(with message: String) {
         self.loading = false
         self.activeAlert = .error
-        self.alertMessage = AlertMessages().uploadErrorMessage
+        self.alertMessage = message
         self.showAlert = true
     }
 }

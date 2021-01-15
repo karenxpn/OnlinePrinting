@@ -43,13 +43,12 @@
 		FFBEE38E253CE419001EF94F /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE38D253CE419001EF94F /* Loading.swift */; };
 		FFDA65E5259E5A3F00C6EF97 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */; };
 		FFDE43C625AF726800286B40 /* MainViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43C525AF726800286B40 /* MainViewModelTest.swift */; };
-		FFDE43D825B0955D00286B40 /* InitPaymentJson.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDE43D725B0955D00286B40 /* InitPaymentJson.json */; };
-		FFDE43DE25B0EFE100286B40 /* GetPaymentDetailsJson.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDE43DD25B0EFE100286B40 /* GetPaymentDetailsJson.json */; };
 		FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */; };
 		FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6E1251FCEBA0088190E /* ContentView.swift */; };
 		FFDFC6E4251FCEBB0088190E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC6E3251FCEBB0088190E /* Assets.xcassets */; };
 		FFDFC6E7251FCEBB0088190E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC6E6251FCEBB0088190E /* Preview Assets.xcassets */; };
 		FFDFC6F2251FCEBC0088190E /* Online_PrintingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */; };
+		FFE7BAD725B1D91000979AA7 /* MockPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE7BAD625B1D91000979AA7 /* MockPaymentService.swift */; };
 		FFEAC26825AE3AFA00FC94EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFEAC26725AE3AFA00FC94EB /* GoogleService-Info.plist */; };
 		FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE019B2597D78B009B614C /* PaymentService.swift */; };
 		FFEE01C52598920A009B614C /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE01C42598920A009B614C /* Credentials.swift */; };
@@ -111,8 +110,6 @@
 		FFBEF80A259A64B3006A21E0 /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 		FFDE43C525AF726800286B40 /* MainViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTest.swift; sourceTree = "<group>"; };
-		FFDE43D725B0955D00286B40 /* InitPaymentJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InitPaymentJson.json; sourceTree = "<group>"; };
-		FFDE43DD25B0EFE100286B40 /* GetPaymentDetailsJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetPaymentDetailsJson.json; sourceTree = "<group>"; };
 		FFDFC6DC251FCEBA0088190E /* Online Printing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Printing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingApp.swift; sourceTree = "<group>"; };
 		FFDFC6E1251FCEBA0088190E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +119,7 @@
 		FFDFC6ED251FCEBC0088190E /* Online PrintingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Online PrintingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingTests.swift; sourceTree = "<group>"; };
 		FFDFC6F3251FCEBC0088190E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFE7BAD625B1D91000979AA7 /* MockPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentService.swift; sourceTree = "<group>"; };
 		FFEAC26725AE3AFA00FC94EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFEE019B2597D78B009B614C /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		FFEE01C42598920A009B614C /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -264,15 +262,6 @@
 			path = font;
 			sourceTree = "<group>";
 		};
-		FFDE43D425B094F600286B40 /* fixtures */ = {
-			isa = PBXGroup;
-			children = (
-				FFDE43D725B0955D00286B40 /* InitPaymentJson.json */,
-				FFDE43DD25B0EFE100286B40 /* GetPaymentDetailsJson.json */,
-			);
-			path = fixtures;
-			sourceTree = "<group>";
-		};
 		FFDFC6D3251FCEBA0088190E = {
 			isa = PBXGroup;
 			children = (
@@ -326,11 +315,11 @@
 		FFDFC6F0251FCEBC0088190E /* Online PrintingTests */ = {
 			isa = PBXGroup;
 			children = (
-				FFDE43D425B094F600286B40 /* fixtures */,
 				FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */,
 				FFDFC6F3251FCEBC0088190E /* Info.plist */,
 				FFDE43C525AF726800286B40 /* MainViewModelTest.swift */,
 				FF1413F725B11F9200134343 /* MockUploadService.swift */,
+				FFE7BAD625B1D91000979AA7 /* MockPaymentService.swift */,
 			);
 			path = "Online PrintingTests";
 			sourceTree = "<group>";
@@ -437,8 +426,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFDE43DE25B0EFE100286B40 /* GetPaymentDetailsJson.json in Resources */,
-				FFDE43D825B0955D00286B40 /* InitPaymentJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE7BAD725B1D91000979AA7 /* MockPaymentService.swift in Sources */,
 				FF1413F825B11F9200134343 /* MockUploadService.swift in Sources */,
 				FFDFC6F2251FCEBC0088190E /* Online_PrintingTests.swift in Sources */,
 				FFDE43C625AF726800286B40 /* MainViewModelTest.swift in Sources */,

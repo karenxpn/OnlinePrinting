@@ -7,6 +7,6 @@
 
 import Foundation
 struct AlertMessages {
-    let uploadErrorMessage = "Ցավոք տեղի է ունեցել սխալ"
+    let defaultErrorMessage = "Ցավոք տեղի է ունեցել սխալ"
     let uploadSuccessMessage = "Շնորհավորում ենք Ձեր պատվերը գրանցված է:"
 }
