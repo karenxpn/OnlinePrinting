@@ -49,6 +49,8 @@
 		FFDFC6E7251FCEBB0088190E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFC6E6251FCEBB0088190E /* Preview Assets.xcassets */; };
 		FFDFC6F2251FCEBC0088190E /* Online_PrintingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */; };
 		FFE7BAD725B1D91000979AA7 /* MockPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE7BAD625B1D91000979AA7 /* MockPaymentService.swift */; };
+		FFE7BB2125B26F8C00979AA7 /* StubAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE7BB2025B26F8C00979AA7 /* StubAuthService.swift */; };
+		FFE7BB2525B26FBA00979AA7 /* AuthViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE7BB2425B26FBA00979AA7 /* AuthViewModelTest.swift */; };
 		FFEAC26825AE3AFA00FC94EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFEAC26725AE3AFA00FC94EB /* GoogleService-Info.plist */; };
 		FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE019B2597D78B009B614C /* PaymentService.swift */; };
 		FFEE01C52598920A009B614C /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE01C42598920A009B614C /* Credentials.swift */; };
@@ -120,6 +122,8 @@
 		FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_PrintingTests.swift; sourceTree = "<group>"; };
 		FFDFC6F3251FCEBC0088190E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFE7BAD625B1D91000979AA7 /* MockPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentService.swift; sourceTree = "<group>"; };
+		FFE7BB2025B26F8C00979AA7 /* StubAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAuthService.swift; sourceTree = "<group>"; };
+		FFE7BB2425B26FBA00979AA7 /* AuthViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelTest.swift; sourceTree = "<group>"; };
 		FFEAC26725AE3AFA00FC94EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFEE019B2597D78B009B614C /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		FFEE01C42598920A009B614C /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -315,13 +319,31 @@
 		FFDFC6F0251FCEBC0088190E /* Online PrintingTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFE7BB1D25B23AC000979AA7 /* Services */,
+				FFE7BB1C25B23AB600979AA7 /* ViewModels */,
 				FFDFC6F1251FCEBC0088190E /* Online_PrintingTests.swift */,
 				FFDFC6F3251FCEBC0088190E /* Info.plist */,
-				FFDE43C525AF726800286B40 /* MainViewModelTest.swift */,
-				FF1413F725B11F9200134343 /* MockUploadService.swift */,
-				FFE7BAD625B1D91000979AA7 /* MockPaymentService.swift */,
 			);
 			path = "Online PrintingTests";
+			sourceTree = "<group>";
+		};
+		FFE7BB1C25B23AB600979AA7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE43C525AF726800286B40 /* MainViewModelTest.swift */,
+				FFE7BB2425B26FBA00979AA7 /* AuthViewModelTest.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FFE7BB1D25B23AC000979AA7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFE7BAD625B1D91000979AA7 /* MockPaymentService.swift */,
+				FF1413F725B11F9200134343 /* MockUploadService.swift */,
+				FFE7BB2025B26F8C00979AA7 /* StubAuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,8 +563,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE7BB2525B26FBA00979AA7 /* AuthViewModelTest.swift in Sources */,
 				FFE7BAD725B1D91000979AA7 /* MockPaymentService.swift in Sources */,
 				FF1413F825B11F9200134343 /* MockUploadService.swift in Sources */,
+				FFE7BB2125B26F8C00979AA7 /* StubAuthService.swift in Sources */,
 				FFDFC6F2251FCEBC0088190E /* Online_PrintingTests.swift in Sources */,
 				FFDE43C625AF726800286B40 /* MainViewModelTest.swift in Sources */,
 			);

@@ -8,6 +8,13 @@
 import SwiftUI
 import AlertX
 
+enum AuthActiveAlert {
+    case verificationIDError
+    case signInError
+    case inputError
+    case signOutError
+}
+
 struct AuthView: View {
     
     @EnvironmentObject var authVM: AuthViewModel
@@ -72,6 +79,7 @@ struct AuthView: View {
                         if self.authVM.number != "" && self.authVM.confirmationCode != "" {
                             self.authVM.logTheUser()
                         } else {
+                            self.authVM.placeError(with: AlertMessages.authPhoneOrCodeEmptyError, for: .inputError)
                             self.authVM.showAlert = true
                         }
                     }
@@ -90,7 +98,7 @@ struct AuthView: View {
                 }.padding()
                 .animation(.spring())
             }.alert(isPresented: self.$authVM.showAlert, content: {
-                Alert(title: Text( "Սխալ" ), message: Text( "Մուտքագրեք հեռախոսահամարը և հաստատման կոդը" ), dismissButton: .default(Text( "Լավ" )))
+                Alert(title: Text( "Սխալ" ), message: Text( self.authVM.alertMessage ), dismissButton: .default(Text( "Լավ" )))
             })
         }
     }

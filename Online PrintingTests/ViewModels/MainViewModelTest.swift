@@ -34,7 +34,7 @@ class MainViewModelTest: XCTestCase {
         
         XCTAssertTrue(self.viewModel.activeAlert == .error)
         XCTAssertFalse(self.viewModel.loading)
-        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages().defaultErrorMessage)
+        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages.defaultErrorMessage)
         XCTAssertTrue(self.viewModel.showAlert)
                 
     }
@@ -66,7 +66,7 @@ class MainViewModelTest: XCTestCase {
         XCTAssertFalse(self.viewModel.loading)
         XCTAssertEqual(self.viewModel.activeAlert, .placementCompleted)
         XCTAssertTrue(self.viewModel.orderList.isEmpty)
-        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages().uploadSuccessMessage)
+        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages.uploadSuccessMessage)
     }
     
     // payment test
@@ -77,7 +77,7 @@ class MainViewModelTest: XCTestCase {
         self.viewModel.initPayment()
         
         XCTAssertEqual(self.viewModel.activeAlert, .error)
-        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages().defaultErrorMessage)
+        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages.defaultErrorMessage)
     }
     
     func testInitPaymentWithSuccessOnUpdateID() {
@@ -95,7 +95,7 @@ class MainViewModelTest: XCTestCase {
         
         
         XCTAssertEqual(self.viewModel.activeAlert, .error)
-        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages().defaultErrorMessage)
+        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages.defaultErrorMessage)
         
     }
     
@@ -112,7 +112,7 @@ class MainViewModelTest: XCTestCase {
         self.viewModel.getResponse()
                 
         XCTAssertEqual(self.viewModel.activeAlert, .error)
-        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages().defaultErrorMessage)
+        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages.defaultErrorMessage)
     }
     
     
@@ -130,7 +130,7 @@ class MainViewModelTest: XCTestCase {
         XCTAssertFalse(self.viewModel.loading)
         XCTAssertEqual(self.viewModel.activeAlert, .placementCompleted)
         XCTAssertTrue(self.viewModel.orderList.isEmpty)
-        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages().uploadSuccessMessage)
+        XCTAssertEqual(self.viewModel.alertMessage, AlertMessages.uploadSuccessMessage)
         
     }
 }

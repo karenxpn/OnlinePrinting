@@ -7,6 +7,7 @@
 
 import Foundation
 struct AlertMessages {
-    let defaultErrorMessage = "Ցավոք տեղի է ունեցել սխալ"
-    let uploadSuccessMessage = "Շնորհավորում ենք Ձեր պատվերը գրանցված է:"
+    static let defaultErrorMessage = "Ցավոք տեղի է ունեցել սխալ"
+    static let uploadSuccessMessage = "Շնորհավորում ենք Ձեր պատվերը գրանցված է:"
+    static let authPhoneOrCodeEmptyError = "Մուտքագրեք հեռախոսահամարը և հաստատման կոդը"
 }

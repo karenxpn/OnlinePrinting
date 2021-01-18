@@ -174,16 +174,13 @@ extension MainViewModel {
                 self.dataManager.placeOrder(orderList: self.orderList, address: self.address, fileURLS: response) { (uploadResponse) in
                     if uploadResponse == true {
                         self.orderList.removeAll(keepingCapacity: false)
-                        self.loading = false
-                        self.activeAlert = .placementCompleted
-                        self.alertMessage = AlertMessages().uploadSuccessMessage
-                        self.showAlert = true
+                        self.displayError(with: AlertMessages.uploadSuccessMessage, for: .placementCompleted)
                     } else {
-                        self.displayError(with: AlertMessages().defaultErrorMessage)
+                        self.displayError(with: AlertMessages.defaultErrorMessage)
                     }
                 }
             } else {
-                self.displayError(with: AlertMessages().defaultErrorMessage)
+                self.displayError(with: AlertMessages.defaultErrorMessage)
             }
         }
     }
@@ -216,12 +213,12 @@ extension MainViewModel {
                                 self.displayError(with: response.ResponseMessage)
                             }
                         } else {
-                            self.displayError(with: AlertMessages().defaultErrorMessage)
+                            self.displayError()
                         }
                     }
                 }
             } else {
-                self.displayError(with: AlertMessages().defaultErrorMessage)
+                self.displayError()
             }
         }
     }
@@ -242,7 +239,7 @@ extension MainViewModel {
                     self.displayError(with: response.Description)
                 }
             } else {
-                self.displayError(with: AlertMessages().defaultErrorMessage)
+                self.displayError()
             }
         }
     }
@@ -260,9 +257,9 @@ extension MainViewModel {
         }
     }
     
-    func displayError(with message: String) {
+    func displayError(with message: String = AlertMessages.defaultErrorMessage, for alertType: ActiveAlert = .error) {
         self.loading = false
-        self.activeAlert = .error
+        self.activeAlert = alertType
         self.alertMessage = message
         self.showAlert = true
     }

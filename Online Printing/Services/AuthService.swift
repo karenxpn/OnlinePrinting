@@ -8,7 +8,19 @@
 import Foundation
 import FirebaseAuth
 
+protocol AuthServiceProtocol {
+    func signUp( phoneNumber: String, completion: @escaping ( String? ) -> () )
+    func signIn( verificationID: String, verificationCode: String, completion: @escaping ( Bool ) -> () )
+    func signOut(completion: @escaping ( Bool ) -> () )
+}
+
 class AuthService {
+    static let shared: AuthServiceProtocol = AuthService()
+    
+    private init() { }
+}
+
+extension AuthService: AuthServiceProtocol {
     func signUp( phoneNumber: String, completion: @escaping ( String? ) -> () ) {
                 
         PhoneAuthProvider.provider().verifyPhoneNumber("+374\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
