@@ -15,7 +15,7 @@ struct SelectedCategory: View {
     
     let category: CategoryModel
     @State private var openFile: Bool = false
-    
+        
     var body: some View {
         
         Form {
@@ -90,9 +90,8 @@ struct SelectedCategory: View {
             }
         })
         .navigationBarTitle(Text(self.category.name), displayMode: .inline)
-        
     }
-    
+        
     func getDocumentsDirectory() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
@@ -125,7 +124,7 @@ struct SelectedCategory: View {
 struct SizeScroller : View {
     
     let category: CategoryModel
-    @EnvironmentObject var uploadVM: MainViewModel
+    @EnvironmentObject var mainVM: MainViewModel
     
     var body: some View {
         
@@ -134,14 +133,14 @@ struct SizeScroller : View {
                 ForEach( self.category.specs, id : \.id) { spec in
                     
                     Button {
-                        self.uploadVM.count = ""
-                        self.uploadVM.typeOfPrinting = ""
-                        self.uploadVM.selectedCategorySpec = nil
-                        self.uploadVM.additionalFunctionality = ""
+                        self.mainVM.count = ""
+                        self.mainVM.typeOfPrinting = ""
+                        self.mainVM.selectedCategorySpec = nil
+                        self.mainVM.additionalFunctionality = ""
                         
-                        self.uploadVM.size = spec.name
+                        self.mainVM.size = spec.name
                         withAnimation{
-                            self.uploadVM.selectedCategorySpec = spec
+                            self.mainVM.selectedCategorySpec = spec
                         }
                     } label: {
                         VStack {
@@ -150,7 +149,7 @@ struct SizeScroller : View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 100, height: 100)
-                                .foregroundColor( self.uploadVM.size == spec.name ? Color.black : Color.gray)
+                                .foregroundColor( self.mainVM.size == spec.name ? Color.black : Color.gray)
                             
                             Text( spec.name )
                         }
@@ -163,7 +162,7 @@ struct SizeScroller : View {
 
 struct ImportFile: View {
     
-    @EnvironmentObject var uploadVM: MainViewModel
+    @EnvironmentObject var mainVM: MainViewModel
     @Binding var openFile: Bool
     
     var body: some View {
@@ -173,7 +172,7 @@ struct ImportFile: View {
             
             HStack {
                 Spacer()
-                if self.uploadVM.fileName == "" {
+                if self.mainVM.fileName == "" {
                     VStack {
                         Image("upload")
                             .resizable()
@@ -183,7 +182,7 @@ struct ImportFile: View {
                         Text( "Ներբեռնել ֆայլը" )
                     }
                 } else {
-                    Text( self.uploadVM.fileName )
+                    Text( self.mainVM.fileName )
                 }
                 Spacer()
             }
@@ -193,12 +192,12 @@ struct ImportFile: View {
 
 struct CalculatePriceButton: View {
     
-    @EnvironmentObject var uploadVM: MainViewModel
+    @EnvironmentObject var mainVM: MainViewModel
     let category: CategoryModel
     
     var body: some View {
         Button {
-            self.uploadVM.calculatePrice(category: self.category)
+            self.mainVM.calculatePrice(category: self.category)
         } label: {
             
             Text( "Հաշվարկել Գումարը" )
@@ -207,8 +206,8 @@ struct CalculatePriceButton: View {
             
         }
         .frame(minWidth: 0, maxWidth: .infinity)
-        .background(self.uploadVM.buttonClickable ? Color.blue : Color.gray)
+        .background(self.mainVM.buttonClickable ? Color.blue : Color.gray)
         .cornerRadius(10)
-        .disabled(!self.uploadVM.buttonClickable)
+        .disabled(!self.mainVM.buttonClickable)
     }
 }

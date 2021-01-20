@@ -16,7 +16,7 @@ struct Home: View {
         ScrollView {
             
             LazyVStack {
-                ForEach( self.categoryVM.categories) { category in
+                ForEach( self.categoryVM.categories ) { category in
                     
                     NavigationLink(
                         destination: SelectedCategory(category: category).environmentObject(self.mainVM),

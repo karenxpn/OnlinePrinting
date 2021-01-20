@@ -7,40 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F9E5DAC4B8A7EBA77277496 /* Pods_Online_PrintingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF225BEBC8B4861FB5E73DB /* Pods_Online_PrintingTests.framework */; };
-		C50D0887C560CD1427353BBD /* Pods_Online_Printing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14430420797D92E9F4A82CCF /* Pods_Online_Printing.framework */; };
+		B1842895900D206E27F55520 /* Pods_Online_PrintingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0421F9F8CDA11643D2D43516 /* Pods_Online_PrintingTests.framework */; };
 		FF046548252FB96300D7460D /* SelectedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF046547252FB96300D7460D /* SelectedCategory.swift */; };
-		FF11E530257E8E4B00ED4389 /* Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11E52F257E8E4B00ED4389 /* Specs.swift */; };
 		FF11E53D257EC7D300ED4389 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF11E53C257EC7D300ED4389 /* LaunchScreen.storyboard */; };
 		FF1413F825B11F9200134343 /* MockUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1413F725B11F9200134343 /* MockUploadService.swift */; };
-		FF14140425B1260C00134343 /* AlertMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14140325B1260C00134343 /* AlertMessages.swift */; };
 		FF1B451F2582809100A6E639 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B451E2582809100A6E639 /* AuthView.swift */; };
 		FF1B4524258280AC00A6E639 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B4523258280AC00A6E639 /* AuthService.swift */; };
 		FF1B4529258280C500A6E639 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B4528258280C500A6E639 /* AuthViewModel.swift */; };
 		FF1B45312582974C00A6E639 /* AuthBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B45302582974C00A6E639 /* AuthBackground.swift */; };
-		FF3FDA79259CB39C005DEE31 /* AdditionalFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA78259CB39C005DEE31 /* AdditionalFunctionality.swift */; };
-		FF3FDA8D259D4E05005DEE31 /* ConfirmPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA8C259D4E05005DEE31 /* ConfirmPaymentRequest.swift */; };
-		FF3FDA92259D4E09005DEE31 /* ConfirmPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA91259D4E09005DEE31 /* ConfirmPaymentResponse.swift */; };
-		FF3FDA97259D4E0E005DEE31 /* InitPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA96259D4E0E005DEE31 /* InitPaymentRequest.swift */; };
-		FF3FDA9C259D4E10005DEE31 /* InitPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDA9B259D4E10005DEE31 /* InitPaymentResponse.swift */; };
-		FF3FDAA1259D4E15005DEE31 /* PaymentDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDAA0259D4E15005DEE31 /* PaymentDetailsRequest.swift */; };
-		FF3FDAA6259D4E18005DEE31 /* PaymentDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDAA5259D4E18005DEE31 /* PaymentDetailsResponse.swift */; };
-		FF3FDAAB259D4E1D005DEE31 /* RedirectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDAAA259D4E1D005DEE31 /* RedirectResponse.swift */; };
-		FF3FDAB0259D4E22005DEE31 /* URLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FDAAF259D4E22005DEE31 /* URLS.swift */; };
 		FF4136DC252FAFFF00345FF7 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136DB252FAFFF00345FF7 /* CategoryViewModel.swift */; };
 		FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4136E3252FB14500345FF7 /* SingleCategoryPreview.swift */; };
+		FF534AAC25B8D53900AFAAE9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF534AAB25B8D53900AFAAE9 /* WidgetKit.framework */; };
+		FF534AAE25B8D53900AFAAE9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF534AAD25B8D53900AFAAE9 /* SwiftUI.framework */; };
+		FF534AB125B8D53900AFAAE9 /* OnlinePrinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534AB025B8D53900AFAAE9 /* OnlinePrinting.swift */; };
+		FF534AB425B8D53B00AFAAE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534AB325B8D53B00AFAAE9 /* Assets.xcassets */; };
+		FF534AB625B8D53B00AFAAE9 /* OnlinePrinting.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = FF534AB225B8D53900AFAAE9 /* OnlinePrinting.intentdefinition */; };
+		FF534AB725B8D53B00AFAAE9 /* OnlinePrinting.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = FF534AB225B8D53900AFAAE9 /* OnlinePrinting.intentdefinition */; };
+		FF534ABA25B8D53B00AFAAE9 /* OnlinePrintingExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FF534AAA25B8D53900AFAAE9 /* OnlinePrintingExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FF534AF825B8D85800AFAAE9 /* AdditionalFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534AF725B8D85800AFAAE9 /* AdditionalFunctionality.swift */; };
+		FF534B0025B8D86900AFAAE9 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534AFC25B8D86400AFAAE9 /* CategoryModel.swift */; };
+		FF534B0125B8D86900AFAAE9 /* AlertMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534AFD25B8D86600AFAAE9 /* AlertMessages.swift */; };
+		FF534B0225B8D86900AFAAE9 /* CartItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534AFE25B8D86700AFAAE9 /* CartItemModel.swift */; };
+		FF534B0325B8D86900AFAAE9 /* Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534AFF25B8D86900AFAAE9 /* Specs.swift */; };
+		FF534B1825B8D8A000AFAAE9 /* ConfirmPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534B1025B8D89000AFAAE9 /* ConfirmPaymentRequest.swift */; };
+		FF534B1925B8D8A000AFAAE9 /* ConfirmPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534B1125B8D89200AFAAE9 /* ConfirmPaymentResponse.swift */; };
+		FF534B1A25B8D8A000AFAAE9 /* InitPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534B1225B8D89300AFAAE9 /* InitPaymentResponse.swift */; };
+		FF534B1B25B8D8A000AFAAE9 /* InitPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534B1325B8D89500AFAAE9 /* InitPaymentRequest.swift */; };
+		FF534B1C25B8D8A000AFAAE9 /* PaymentDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534B1425B8D89700AFAAE9 /* PaymentDetailsResponse.swift */; };
+		FF534B1D25B8D8A000AFAAE9 /* PaymentDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534B1525B8D89900AFAAE9 /* PaymentDetailsRequest.swift */; };
+		FF534B1E25B8D8A000AFAAE9 /* RedirectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534B1625B8D89E00AFAAE9 /* RedirectResponse.swift */; };
+		FF534B1F25B8D8A000AFAAE9 /* URLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534B1725B8D8A000AFAAE9 /* URLS.swift */; };
+		FF534B5825B8E28B00AFAAE9 /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF534B5725B8E28B00AFAAE9 /* McLaren-Regular.ttf */; };
 		FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6405D8251FD1FB0062DA9B /* AppDelegate.swift */; };
 		FF6405E2251FD5C10062DA9B /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6405E1251FD5C10062DA9B /* CategoryService.swift */; };
-		FF6405EA251FD6070062DA9B /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6405E9251FD6070062DA9B /* CategoryModel.swift */; };
 		FF69EBF52567F33000939256 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69EBF42567F33000939256 /* MainViewModel.swift */; };
 		FF69EBFA2567F34900939256 /* UploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69EBF92567F34900939256 /* UploadService.swift */; };
 		FF7FADFE257FE6B900FDB32E /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FADFD257FE6B900FDB32E /* Cart.swift */; };
-		FF7FAE0E2580052A00FDB32E /* CartItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FAE0D2580052A00FDB32E /* CartItemModel.swift */; };
 		FF7FAE16258006FD00FDB32E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FAE15258006FD00FDB32E /* Home.swift */; };
 		FF7FAE3E25815B0600FDB32E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FF7FAE3D25815B0600FDB32E /* .gitignore */; };
 		FFB81EB02593D001007554B5 /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFB81EAF2593D001007554B5 /* McLaren-Regular.ttf */; };
 		FFBCD092259542C600339448 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FFBCD091259542C600339448 /* AlertX */; };
 		FFBEE38E253CE419001EF94F /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE38D253CE419001EF94F /* Loading.swift */; };
+		FFBF810B25B8E722002226BC /* Pods_Online_Printing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C71AAAE135D7347C8DE84BD /* Pods_Online_Printing.framework */; };
+		FFBF810C25B8E722002226BC /* Pods_Online_Printing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C71AAAE135D7347C8DE84BD /* Pods_Online_Printing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FFDA65E5259E5A3F00C6EF97 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */; };
 		FFDE43C625AF726800286B40 /* MainViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE43C525AF726800286B40 /* MainViewModelTest.swift */; };
 		FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFC6DF251FCEBA0088190E /* Online_PrintingApp.swift */; };
@@ -59,6 +68,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FF534AB825B8D53B00AFAAE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFDFC6D4251FCEBA0088190E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF534AA925B8D53900AFAAE9;
+			remoteInfo = OnlinePrintingExtension;
+		};
 		FFDFC6EE251FCEBC0088190E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FFDFC6D4251FCEBA0088190E /* Project object */;
@@ -68,48 +84,81 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FF534ABB25B8D53B00AFAAE9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FF534ABA25B8D53B00AFAAE9 /* OnlinePrintingExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFBF810D25B8E722002226BC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FFBF810C25B8E722002226BC /* Pods_Online_Printing.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		14430420797D92E9F4A82CCF /* Pods_Online_Printing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E4C4237C3F3F91B21216133 /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.release.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.release.xcconfig"; sourceTree = "<group>"; };
-		31AEF846C1CF20DCC8DD1868 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing-Online PrintingUITests/Pods-Online Printing-Online PrintingUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3DC15BF3987BC44B571BB273 /* Pods-Online Printing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.debug.xcconfig"; sourceTree = "<group>"; };
-		769AA0F5869DDFBA4E06E884 /* Pods_Online_Printing_Online_PrintingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing_Online_PrintingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEF225BEBC8B4861FB5E73DB /* Pods_Online_PrintingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_PrintingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8D8E1913777F545EE15FA0A /* Pods-Online PrintingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.debug.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F4A7295A9F66161FE1612310 /* Pods-Online PrintingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.release.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.release.xcconfig"; sourceTree = "<group>"; };
-		F7FDD87679AA8CE77A9EC4CA /* Pods-Online Printing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.release.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.release.xcconfig"; sourceTree = "<group>"; };
+		0421F9F8CDA11643D2D43516 /* Pods_Online_PrintingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_PrintingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24FAF48E809F2F749873F350 /* Pods-Online PrintingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.debug.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C71AAAE135D7347C8DE84BD /* Pods_Online_Printing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Printing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47E39FAAE46893D476C1A24E /* Pods-Online Printing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.release.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.release.xcconfig"; sourceTree = "<group>"; };
+		53649A012FEECFB305C13D54 /* Pods-Online PrintingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online PrintingTests.release.xcconfig"; path = "Target Support Files/Pods-Online PrintingTests/Pods-Online PrintingTests.release.xcconfig"; sourceTree = "<group>"; };
+		98CD223A90B2861E07532505 /* Pods-Online Printing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Online Printing.debug.xcconfig"; path = "Target Support Files/Pods-Online Printing/Pods-Online Printing.debug.xcconfig"; sourceTree = "<group>"; };
 		FF046547252FB96300D7460D /* SelectedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategory.swift; sourceTree = "<group>"; };
-		FF11E52F257E8E4B00ED4389 /* Specs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specs.swift; sourceTree = "<group>"; };
 		FF11E53C257EC7D300ED4389 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF1413F725B11F9200134343 /* MockUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUploadService.swift; sourceTree = "<group>"; };
-		FF14140325B1260C00134343 /* AlertMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessages.swift; sourceTree = "<group>"; };
 		FF1B451E2582809100A6E639 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		FF1B4523258280AC00A6E639 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		FF1B4528258280C500A6E639 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		FF1B45302582974C00A6E639 /* AuthBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBackground.swift; sourceTree = "<group>"; };
-		FF3FDA78259CB39C005DEE31 /* AdditionalFunctionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFunctionality.swift; sourceTree = "<group>"; };
-		FF3FDA8C259D4E05005DEE31 /* ConfirmPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentRequest.swift; sourceTree = "<group>"; };
-		FF3FDA91259D4E09005DEE31 /* ConfirmPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentResponse.swift; sourceTree = "<group>"; };
-		FF3FDA96259D4E0E005DEE31 /* InitPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentRequest.swift; sourceTree = "<group>"; };
-		FF3FDA9B259D4E10005DEE31 /* InitPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentResponse.swift; sourceTree = "<group>"; };
-		FF3FDAA0259D4E15005DEE31 /* PaymentDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsRequest.swift; sourceTree = "<group>"; };
-		FF3FDAA5259D4E18005DEE31 /* PaymentDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsResponse.swift; sourceTree = "<group>"; };
-		FF3FDAAA259D4E1D005DEE31 /* RedirectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectResponse.swift; sourceTree = "<group>"; };
-		FF3FDAAF259D4E22005DEE31 /* URLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLS.swift; sourceTree = "<group>"; };
 		FF4136DB252FAFFF00345FF7 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		FF4136E3252FB14500345FF7 /* SingleCategoryPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCategoryPreview.swift; sourceTree = "<group>"; };
+		FF534AAA25B8D53900AFAAE9 /* OnlinePrintingExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OnlinePrintingExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF534AAB25B8D53900AFAAE9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FF534AAD25B8D53900AFAAE9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FF534AB025B8D53900AFAAE9 /* OnlinePrinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlinePrinting.swift; sourceTree = "<group>"; };
+		FF534AB225B8D53900AFAAE9 /* OnlinePrinting.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = OnlinePrinting.intentdefinition; sourceTree = "<group>"; };
+		FF534AB325B8D53B00AFAAE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF534AB525B8D53B00AFAAE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF534AC225B8D57800AFAAE9 /* Online Printing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Online Printing.entitlements"; sourceTree = "<group>"; };
+		FF534AC625B8D5D200AFAAE9 /* OnlinePrintingExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OnlinePrintingExtension.entitlements; sourceTree = "<group>"; };
+		FF534AF725B8D85800AFAAE9 /* AdditionalFunctionality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalFunctionality.swift; sourceTree = "<group>"; };
+		FF534AFC25B8D86400AFAAE9 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		FF534AFD25B8D86600AFAAE9 /* AlertMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertMessages.swift; sourceTree = "<group>"; };
+		FF534AFE25B8D86700AFAAE9 /* CartItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItemModel.swift; sourceTree = "<group>"; };
+		FF534AFF25B8D86900AFAAE9 /* Specs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specs.swift; sourceTree = "<group>"; };
+		FF534B1025B8D89000AFAAE9 /* ConfirmPaymentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentRequest.swift; sourceTree = "<group>"; };
+		FF534B1125B8D89200AFAAE9 /* ConfirmPaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentResponse.swift; sourceTree = "<group>"; };
+		FF534B1225B8D89300AFAAE9 /* InitPaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitPaymentResponse.swift; sourceTree = "<group>"; };
+		FF534B1325B8D89500AFAAE9 /* InitPaymentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitPaymentRequest.swift; sourceTree = "<group>"; };
+		FF534B1425B8D89700AFAAE9 /* PaymentDetailsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailsResponse.swift; sourceTree = "<group>"; };
+		FF534B1525B8D89900AFAAE9 /* PaymentDetailsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailsRequest.swift; sourceTree = "<group>"; };
+		FF534B1625B8D89E00AFAAE9 /* RedirectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectResponse.swift; sourceTree = "<group>"; };
+		FF534B1725B8D8A000AFAAE9 /* URLS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLS.swift; sourceTree = "<group>"; };
+		FF534B5725B8E28B00AFAAE9 /* McLaren-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "McLaren-Regular.ttf"; sourceTree = "<group>"; };
 		FF6405D8251FD1FB0062DA9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF6405E1251FD5C10062DA9B /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
-		FF6405E9251FD6070062DA9B /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		FF69EBF42567F33000939256 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FF69EBF92567F34900939256 /* UploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadService.swift; sourceTree = "<group>"; };
 		FF7FADFD257FE6B900FDB32E /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
-		FF7FAE0D2580052A00FDB32E /* CartItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemModel.swift; sourceTree = "<group>"; };
 		FF7FAE15258006FD00FDB32E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		FF7FAE3D25815B0600FDB32E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FFB81EAF2593D001007554B5 /* McLaren-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "McLaren-Regular.ttf"; sourceTree = "<group>"; };
 		FFBEE38D253CE419001EF94F /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		FFBEF80A259A64B3006A21E0 /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
+		FFBF813025B8E7F2002226BC /* SDWebImageSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImageSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDA65E4259E5A3F00C6EF97 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 		FFDE43C525AF726800286B40 /* MainViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTest.swift; sourceTree = "<group>"; };
 		FFDFC6DC251FCEBA0088190E /* Online Printing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Printing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,12 +181,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FF534AA725B8D53900AFAAE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF534AAE25B8D53900AFAAE9 /* SwiftUI.framework in Frameworks */,
+				FF534AAC25B8D53900AFAAE9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFDFC6D9251FCEBA0088190E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFBF810B25B8E722002226BC /* Pods_Online_Printing.framework in Frameworks */,
 				FFBCD092259542C600339448 /* AlertX in Frameworks */,
-				C50D0887C560CD1427353BBD /* Pods_Online_Printing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F9E5DAC4B8A7EBA77277496 /* Pods_Online_PrintingTests.framework in Frameworks */,
+				B1842895900D206E27F55520 /* Pods_Online_PrintingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +213,11 @@
 		1DE93ACC306B96E4AB6B4C0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				14430420797D92E9F4A82CCF /* Pods_Online_Printing.framework */,
-				769AA0F5869DDFBA4E06E884 /* Pods_Online_Printing_Online_PrintingUITests.framework */,
-				DEF225BEBC8B4861FB5E73DB /* Pods_Online_PrintingTests.framework */,
+				FFBF813025B8E7F2002226BC /* SDWebImageSwiftUI.framework */,
+				FF534AAB25B8D53900AFAAE9 /* WidgetKit.framework */,
+				FF534AAD25B8D53900AFAAE9 /* SwiftUI.framework */,
+				2C71AAAE135D7347C8DE84BD /* Pods_Online_Printing.framework */,
+				0421F9F8CDA11643D2D43516 /* Pods_Online_PrintingTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,29 +225,60 @@
 		9C31D7ACCF45030B2106C1B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3DC15BF3987BC44B571BB273 /* Pods-Online Printing.debug.xcconfig */,
-				F7FDD87679AA8CE77A9EC4CA /* Pods-Online Printing.release.xcconfig */,
-				31AEF846C1CF20DCC8DD1868 /* Pods-Online Printing-Online PrintingUITests.debug.xcconfig */,
-				2E4C4237C3F3F91B21216133 /* Pods-Online Printing-Online PrintingUITests.release.xcconfig */,
-				E8D8E1913777F545EE15FA0A /* Pods-Online PrintingTests.debug.xcconfig */,
-				F4A7295A9F66161FE1612310 /* Pods-Online PrintingTests.release.xcconfig */,
+				98CD223A90B2861E07532505 /* Pods-Online Printing.debug.xcconfig */,
+				47E39FAAE46893D476C1A24E /* Pods-Online Printing.release.xcconfig */,
+				24FAF48E809F2F749873F350 /* Pods-Online PrintingTests.debug.xcconfig */,
+				53649A012FEECFB305C13D54 /* Pods-Online PrintingTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		FF3FDA86259D4D82005DEE31 /* Payment */ = {
+		FF534AAF25B8D53900AFAAE9 /* OnlinePrinting */ = {
 			isa = PBXGroup;
 			children = (
-				FF3FDA8C259D4E05005DEE31 /* ConfirmPaymentRequest.swift */,
-				FF3FDA91259D4E09005DEE31 /* ConfirmPaymentResponse.swift */,
-				FF3FDA96259D4E0E005DEE31 /* InitPaymentRequest.swift */,
-				FF3FDA9B259D4E10005DEE31 /* InitPaymentResponse.swift */,
-				FF3FDAA0259D4E15005DEE31 /* PaymentDetailsRequest.swift */,
-				FF3FDAA5259D4E18005DEE31 /* PaymentDetailsResponse.swift */,
-				FF3FDAAA259D4E1D005DEE31 /* RedirectResponse.swift */,
-				FF3FDAAF259D4E22005DEE31 /* URLS.swift */,
+				FF534B5C25B8E29100AFAAE9 /* font */,
+				FF534AB025B8D53900AFAAE9 /* OnlinePrinting.swift */,
+				FF534AB225B8D53900AFAAE9 /* OnlinePrinting.intentdefinition */,
+				FF534AB325B8D53B00AFAAE9 /* Assets.xcassets */,
+				FF534AB525B8D53B00AFAAE9 /* Info.plist */,
+			);
+			path = OnlinePrinting;
+			sourceTree = "<group>";
+		};
+		FF534AF625B8D84B00AFAAE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF534B0C25B8D87A00AFAAE9 /* Payment */,
+				FF534AF725B8D85800AFAAE9 /* AdditionalFunctionality.swift */,
+				FF534AFD25B8D86600AFAAE9 /* AlertMessages.swift */,
+				FF534AFE25B8D86700AFAAE9 /* CartItemModel.swift */,
+				FF534AFC25B8D86400AFAAE9 /* CategoryModel.swift */,
+				FF534AFF25B8D86900AFAAE9 /* Specs.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF534B0C25B8D87A00AFAAE9 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				FF534B1025B8D89000AFAAE9 /* ConfirmPaymentRequest.swift */,
+				FF534B1125B8D89200AFAAE9 /* ConfirmPaymentResponse.swift */,
+				FF534B1325B8D89500AFAAE9 /* InitPaymentRequest.swift */,
+				FF534B1225B8D89300AFAAE9 /* InitPaymentResponse.swift */,
+				FF534B1525B8D89900AFAAE9 /* PaymentDetailsRequest.swift */,
+				FF534B1425B8D89700AFAAE9 /* PaymentDetailsResponse.swift */,
+				FF534B1625B8D89E00AFAAE9 /* RedirectResponse.swift */,
+				FF534B1725B8D8A000AFAAE9 /* URLS.swift */,
 			);
 			path = Payment;
+			sourceTree = "<group>";
+		};
+		FF534B5C25B8E29100AFAAE9 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				FF534B5725B8E28B00AFAAE9 /* McLaren-Regular.ttf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 		FF6405DD251FD58C0062DA9B /* Views */ = {
@@ -199,19 +290,6 @@
 				FFBEE38D253CE419001EF94F /* Loading.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		FF6405DE251FD5970062DA9B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				FF3FDA86259D4D82005DEE31 /* Payment */,
-				FF6405E9251FD6070062DA9B /* CategoryModel.swift */,
-				FF11E52F257E8E4B00ED4389 /* Specs.swift */,
-				FF7FAE0D2580052A00FDB32E /* CartItemModel.swift */,
-				FF3FDA78259CB39C005DEE31 /* AdditionalFunctionality.swift */,
-				FF14140325B1260C00134343 /* AlertMessages.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		FF6405DF251FD59C0062DA9B /* Services */ = {
@@ -269,9 +347,11 @@
 		FFDFC6D3251FCEBA0088190E = {
 			isa = PBXGroup;
 			children = (
+				FF534AC625B8D5D200AFAAE9 /* OnlinePrintingExtension.entitlements */,
 				FF7FAE3D25815B0600FDB32E /* .gitignore */,
 				FFDFC6DE251FCEBA0088190E /* Online Printing */,
 				FFDFC6F0251FCEBC0088190E /* Online PrintingTests */,
+				FF534AAF25B8D53900AFAAE9 /* OnlinePrinting */,
 				FFDFC6DD251FCEBA0088190E /* Products */,
 				9C31D7ACCF45030B2106C1B4 /* Pods */,
 				1DE93ACC306B96E4AB6B4C0F /* Frameworks */,
@@ -283,6 +363,7 @@
 			children = (
 				FFDFC6DC251FCEBA0088190E /* Online Printing.app */,
 				FFDFC6ED251FCEBC0088190E /* Online PrintingTests.xctest */,
+				FF534AAA25B8D53900AFAAE9 /* OnlinePrintingExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,7 +371,8 @@
 		FFDFC6DE251FCEBA0088190E /* Online Printing */ = {
 			isa = PBXGroup;
 			children = (
-				FF6405DE251FD5970062DA9B /* Models */,
+				FF534AF625B8D84B00AFAAE9 /* Models */,
+				FF534AC225B8D57800AFAAE9 /* Online Printing.entitlements */,
 				FF6405E0251FD5B30062DA9B /* ViewModels */,
 				FF6405DF251FD59C0062DA9B /* Services */,
 				FF6405DD251FD58C0062DA9B /* Views */,
@@ -349,19 +431,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FFDFC6DB251FCEBA0088190E /* Online Printing */ = {
+		FF534AA925B8D53900AFAAE9 /* OnlinePrintingExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FFDFC701251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online Printing" */;
+			buildConfigurationList = FF534ABE25B8D53B00AFAAE9 /* Build configuration list for PBXNativeTarget "OnlinePrintingExtension" */;
 			buildPhases = (
-				74711F2F334722D8744CB748 /* [CP] Check Pods Manifest.lock */,
-				FFDFC6D8251FCEBA0088190E /* Sources */,
-				FFDFC6D9251FCEBA0088190E /* Frameworks */,
-				FFDFC6DA251FCEBA0088190E /* Resources */,
-				746E6DBB34C101892224A5D7 /* [CP] Embed Pods Frameworks */,
+				FF534AA625B8D53900AFAAE9 /* Sources */,
+				FF534AA725B8D53900AFAAE9 /* Frameworks */,
+				FF534AA825B8D53900AFAAE9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = OnlinePrintingExtension;
+			productName = OnlinePrintingExtension;
+			productReference = FF534AAA25B8D53900AFAAE9 /* OnlinePrintingExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		FFDFC6DB251FCEBA0088190E /* Online Printing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDFC701251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online Printing" */;
+			buildPhases = (
+				30F30ECA9F254E97C4A0878C /* [CP] Check Pods Manifest.lock */,
+				FFDFC6D8251FCEBA0088190E /* Sources */,
+				FFDFC6D9251FCEBA0088190E /* Frameworks */,
+				FFDFC6DA251FCEBA0088190E /* Resources */,
+				FF534ABB25B8D53B00AFAAE9 /* Embed App Extensions */,
+				0FCB7D4B2E54424AEE759E89 /* [CP] Embed Pods Frameworks */,
+				FFBF810D25B8E722002226BC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF534AB925B8D53B00AFAAE9 /* PBXTargetDependency */,
 			);
 			name = "Online Printing";
 			packageProductDependencies = (
@@ -375,7 +477,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFDFC704251FCEBC0088190E /* Build configuration list for PBXNativeTarget "Online PrintingTests" */;
 			buildPhases = (
-				71C76F5E166F5C5341FC22FD /* [CP] Check Pods Manifest.lock */,
+				3F8A7D3FC64879BFB58FAE99 /* [CP] Check Pods Manifest.lock */,
 				FFDFC6E9251FCEBC0088190E /* Sources */,
 				FFDFC6EA251FCEBC0088190E /* Frameworks */,
 				FFDFC6EB251FCEBC0088190E /* Resources */,
@@ -396,9 +498,12 @@
 		FFDFC6D4251FCEBA0088190E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					FF534AA925B8D53900AFAAE9 = {
+						CreatedOnToolsVersion = 12.3;
+					};
 					FFDFC6DB251FCEBA0088190E = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -426,11 +531,21 @@
 			targets = (
 				FFDFC6DB251FCEBA0088190E /* Online Printing */,
 				FFDFC6EC251FCEBC0088190E /* Online PrintingTests */,
+				FF534AA925B8D53900AFAAE9 /* OnlinePrintingExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FF534AA825B8D53900AFAAE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF534B5825B8E28B00AFAAE9 /* McLaren-Regular.ttf in Resources */,
+				FF534AB425B8D53B00AFAAE9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFDFC6DA251FCEBA0088190E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -454,29 +569,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		71C76F5E166F5C5341FC22FD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Online PrintingTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		746E6DBB34C101892224A5D7 /* [CP] Embed Pods Frameworks */ = {
+		0FCB7D4B2E54424AEE759E89 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -493,7 +586,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Online Printing/Pods-Online Printing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		74711F2F334722D8744CB748 /* [CP] Check Pods Manifest.lock */ = {
+		30F30ECA9F254E97C4A0878C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -515,47 +608,79 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3F8A7D3FC64879BFB58FAE99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Online PrintingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FF534AA625B8D53900AFAAE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF534AB625B8D53B00AFAAE9 /* OnlinePrinting.intentdefinition in Sources */,
+				FF534AB125B8D53900AFAAE9 /* OnlinePrinting.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFDFC6D8251FCEBA0088190E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF3FDAA6259D4E18005DEE31 /* PaymentDetailsResponse.swift in Sources */,
 				FFF692E825A53EE70087B640 /* WebView.swift in Sources */,
 				FFF692ED25A540410087B640 /* BankPayment.swift in Sources */,
-				FF3FDA97259D4E0E005DEE31 /* InitPaymentRequest.swift in Sources */,
-				FF14140425B1260C00134343 /* AlertMessages.swift in Sources */,
+				FF534AB725B8D53B00AFAAE9 /* OnlinePrinting.intentdefinition in Sources */,
+				FF534B1825B8D8A000AFAAE9 /* ConfirmPaymentRequest.swift in Sources */,
 				FF6405D9251FD1FB0062DA9B /* AppDelegate.swift in Sources */,
 				FF69EBF52567F33000939256 /* MainViewModel.swift in Sources */,
 				FF046548252FB96300D7460D /* SelectedCategory.swift in Sources */,
+				FF534B0225B8D86900AFAAE9 /* CartItemModel.swift in Sources */,
 				FF1B4524258280AC00A6E639 /* AuthService.swift in Sources */,
 				FFBEE38E253CE419001EF94F /* Loading.swift in Sources */,
+				FF534B1E25B8D8A000AFAAE9 /* RedirectResponse.swift in Sources */,
+				FF534B1C25B8D8A000AFAAE9 /* PaymentDetailsResponse.swift in Sources */,
 				FF1B45312582974C00A6E639 /* AuthBackground.swift in Sources */,
 				FFDFC6E2251FCEBA0088190E /* ContentView.swift in Sources */,
+				FF534B1B25B8D8A000AFAAE9 /* InitPaymentRequest.swift in Sources */,
+				FF534B1F25B8D8A000AFAAE9 /* URLS.swift in Sources */,
 				FF1B4529258280C500A6E639 /* AuthViewModel.swift in Sources */,
+				FF534B0325B8D86900AFAAE9 /* Specs.swift in Sources */,
 				FF7FAE16258006FD00FDB32E /* Home.swift in Sources */,
+				FF534B1925B8D8A000AFAAE9 /* ConfirmPaymentResponse.swift in Sources */,
 				FF4136E4252FB14500345FF7 /* SingleCategoryPreview.swift in Sources */,
-				FF7FAE0E2580052A00FDB32E /* CartItemModel.swift in Sources */,
+				FF534B0025B8D86900AFAAE9 /* CategoryModel.swift in Sources */,
 				FFDFC6E0251FCEBA0088190E /* Online_PrintingApp.swift in Sources */,
-				FF3FDAAB259D4E1D005DEE31 /* RedirectResponse.swift in Sources */,
-				FF6405EA251FD6070062DA9B /* CategoryModel.swift in Sources */,
 				FF69EBFA2567F34900939256 /* UploadService.swift in Sources */,
 				FFEE01C52598920A009B614C /* Credentials.swift in Sources */,
 				FFEE019C2597D78B009B614C /* PaymentService.swift in Sources */,
 				FF4136DC252FAFFF00345FF7 /* CategoryViewModel.swift in Sources */,
 				FF7FADFE257FE6B900FDB32E /* Cart.swift in Sources */,
-				FF3FDAB0259D4E22005DEE31 /* URLS.swift in Sources */,
+				FF534B1D25B8D8A000AFAAE9 /* PaymentDetailsRequest.swift in Sources */,
 				FF1B451F2582809100A6E639 /* AuthView.swift in Sources */,
-				FF3FDA9C259D4E10005DEE31 /* InitPaymentResponse.swift in Sources */,
-				FF3FDA8D259D4E05005DEE31 /* ConfirmPaymentRequest.swift in Sources */,
-				FF11E530257E8E4B00ED4389 /* Specs.swift in Sources */,
-				FF3FDAA1259D4E15005DEE31 /* PaymentDetailsRequest.swift in Sources */,
 				FF6405E2251FD5C10062DA9B /* CategoryService.swift in Sources */,
-				FF3FDA92259D4E09005DEE31 /* ConfirmPaymentResponse.swift in Sources */,
-				FF3FDA79259CB39C005DEE31 /* AdditionalFunctionality.swift in Sources */,
 				FFDA65E5259E5A3F00C6EF97 /* Checkout.swift in Sources */,
+				FF534AF825B8D85800AFAAE9 /* AdditionalFunctionality.swift in Sources */,
+				FF534B0125B8D86900AFAAE9 /* AlertMessages.swift in Sources */,
+				FF534B1A25B8D8A000AFAAE9 /* InitPaymentResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +700,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FF534AB925B8D53B00AFAAE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF534AA925B8D53900AFAAE9 /* OnlinePrintingExtension */;
+			targetProxy = FF534AB825B8D53B00AFAAE9 /* PBXContainerItemProxy */;
+		};
 		FFDFC6EF251FCEBC0088190E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FFDFC6DB251FCEBA0088190E /* Online Printing */;
@@ -583,6 +713,54 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		FF534ABC25B8D53B00AFAAE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = OnlinePrintingExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
+				INFOPLIST_FILE = OnlinePrinting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-xpn.store.Online-Printing.OnlinePrinting";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF534ABD25B8D53B00AFAAE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = OnlinePrintingExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
+				INFOPLIST_FILE = OnlinePrinting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-xpn.store.Online-Printing.OnlinePrinting";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FFDFC6FF251FCEBC0088190E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -701,10 +879,12 @@
 		};
 		FFDFC702251FCEBC0088190E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DC15BF3987BC44B571BB273 /* Pods-Online Printing.debug.xcconfig */;
+			baseConfigurationReference = 98CD223A90B2861E07532505 /* Pods-Online Printing.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Online Printing/Online Printing.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Online Printing/Preview Content\"";
@@ -726,10 +906,12 @@
 		};
 		FFDFC703251FCEBC0088190E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7FDD87679AA8CE77A9EC4CA /* Pods-Online Printing.release.xcconfig */;
+			baseConfigurationReference = 47E39FAAE46893D476C1A24E /* Pods-Online Printing.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Online Printing/Online Printing.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Online Printing/Preview Content\"";
@@ -751,7 +933,7 @@
 		};
 		FFDFC705251FCEBC0088190E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8D8E1913777F545EE15FA0A /* Pods-Online PrintingTests.debug.xcconfig */;
+			baseConfigurationReference = 24FAF48E809F2F749873F350 /* Pods-Online PrintingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -774,7 +956,7 @@
 		};
 		FFDFC706251FCEBC0088190E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4A7295A9F66161FE1612310 /* Pods-Online PrintingTests.release.xcconfig */;
+			baseConfigurationReference = 53649A012FEECFB305C13D54 /* Pods-Online PrintingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -798,6 +980,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FF534ABE25B8D53B00AFAAE9 /* Build configuration list for PBXNativeTarget "OnlinePrintingExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF534ABC25B8D53B00AFAAE9 /* Debug */,
+				FF534ABD25B8D53B00AFAAE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FFDFC6D7251FCEBA0088190E /* Build configuration list for PBXProject "Online Printing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
