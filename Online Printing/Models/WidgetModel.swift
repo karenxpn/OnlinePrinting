@@ -8,6 +8,6 @@
 import Foundation
 
 struct WidgetModel: Codable {
-    var image: String
+    var image: Data
     var title: String
 }

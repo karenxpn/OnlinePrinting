@@ -17,8 +17,6 @@ struct SelectedCategory: View {
     let category: CategoryModel
     @State private var openFile: Bool = false
     
-    @AppStorage( "lastVisitedCategory", store: UserDefaults(suiteName: "group.com.developer-xpn.store.OnlinePrinting") )
-    private var lastVisitedCategory: Data = Data()
         
     var body: some View {
         
@@ -79,8 +77,7 @@ struct SelectedCategory: View {
             self.mainVM.selectedCategory = nil
             self.mainVM.additionalFunctionality = ""
             
-            storeLastVisitedCategory()
-            WidgetCenter.shared.reloadAllTimelines()
+            self.mainVM.storeLastVisitedCategory(category: self.category)
         }.gesture(DragGesture().onChanged { _ in
             UIApplication.shared.windows.forEach { $0.endEditing(false) }
         })
@@ -99,25 +96,6 @@ struct SelectedCategory: View {
         .navigationBarTitle(Text(self.category.name), displayMode: .inline)
     }
     
-    func storeLastVisitedCategory() {
-        
-        let widgetModel = WidgetModel(image: self.category.image, title: self.category.name)
-        
-        guard let categoryData = try? JSONEncoder().encode(widgetModel) else {
-            return
-        }
-        self.lastVisitedCategory = categoryData
-    }
-    
-    func getLastVisitedCategoryModel() {
-        print("This method was called")
-        guard let item = try? JSONDecoder().decode(WidgetModel.self, from: lastVisitedCategory) else {
-            return
-        }
-        
-        print(item)
-    }
-        
     func getDocumentsDirectory() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }

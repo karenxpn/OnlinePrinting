@@ -18,6 +18,7 @@ protocol UploadServiceProtocol {
     func uploadFileToStorage( cartItems: [CartItemModel], completion: @escaping ( [String]? ) -> () )
     func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], completion: @escaping ( Bool ) -> ())
     func calculateAmount( selectedCategorySpecs: Specs, count: Int, typeOfPrinting: String, additionalFunctionalityTitle: String, completion: @escaping ( Int ) -> () )
+    func storeLastVisitedCategory( category: CategoryModel, completion: @escaping ( Data?) -> ())
 }
 
 
@@ -135,5 +136,29 @@ extension UploadService : UploadServiceProtocol{
         DispatchQueue.main.async {
             completion( amount )
         }
+    }
+    
+    func storeLastVisitedCategory( category: CategoryModel, completion: @escaping ( Data?) -> ()) {
+        URLSession.shared.dataTask(with: URL(string: category.image)!) { data, response, error in
+            
+            if error != nil {
+                DispatchQueue.main.async {
+                    completion( nil )
+                }
+                return
+            }
+            
+            if let data = data {
+                let widgetModel = WidgetModel(image: data, title: category.name)
+
+                guard let categoryData = try? JSONEncoder().encode(widgetModel) else {
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    completion( categoryData )
+                }
+            }
+        }.resume()
     }
 }

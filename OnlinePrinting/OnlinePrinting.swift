@@ -21,18 +21,18 @@ struct Provider: TimelineProvider {
     private var lastVisitedCategory: Data = Data()
     
     func placeholder(in context: Context) -> SimpleEntry {
-        return SimpleEntry( widgetModel: WidgetModel(image: "", title: "Loading visited items"))
+        return SimpleEntry( widgetModel: WidgetModel(image: Data(), title: "Loading visited items"))
     }
     
     func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
-        let entry = SimpleEntry(widgetModel:  WidgetModel(image: "", title: "The best Item Ever!!!"))
+        let entry = SimpleEntry(widgetModel:  WidgetModel(image: Data(), title: "The best Item Ever!!!"))
         completion( entry )
     }
         
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         
         guard let item = try? JSONDecoder().decode(WidgetModel.self, from: lastVisitedCategory) else {
-            let entry = SimpleEntry(widgetModel:  WidgetModel(image: "", title: "Not found"))
+            let entry = SimpleEntry(widgetModel:  WidgetModel(image: Data(), title: "Not found"))
             completion( Timeline(entries: [entry], policy: .atEnd))
             return
         }
@@ -50,10 +50,12 @@ struct WidgetView: Widget {
         
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             
-            ZStack {
-                Image(entry.widgetModel.title)
+            HStack {
+                
+                Image(uiImage: UIImage(data: entry.widgetModel.image) ?? UIImage())
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio( contentMode: .fill)
+               
                 
                 Text( "Your last visited item was: \(entry.widgetModel.title)" )
                     .font(.custom("McLaren-Regular", size: 15))
@@ -61,6 +63,7 @@ struct WidgetView: Widget {
             }
             
         } .configurationDisplayName("OnlinePrinting.am")
-        .supportedFamilies([.systemSmall])
+        .description("Shows the last item you visited during your usage of the app!")
+        .supportedFamilies([.systemMedium])
     }
 }

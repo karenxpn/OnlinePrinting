@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WidgetKit
 import Combine
 import SwiftUI
 
@@ -54,6 +55,9 @@ class MainViewModel : ObservableObject {
     @Published var countMessage: String = ""
     @Published var specsMessage: String = ""
     @Published var fileMessage: String = ""
+    
+    @AppStorage( "lastVisitedCategory", store: UserDefaults(suiteName: "group.com.developer-xpn.store.OnlinePrinting") )
+    private var lastVisitedCategory: Data = Data()
     
     private var cancellableSet: Set<AnyCancellable> = []
     var dataManager: UploadServiceProtocol
@@ -262,5 +266,15 @@ extension MainViewModel {
         self.activeAlert = alertType
         self.alertMessage = message
         self.showAlert = true
+    }
+    
+    func storeLastVisitedCategory(category: CategoryModel) {
+        
+        dataManager.storeLastVisitedCategory( category: category, completion: { data in
+            if let data = data {
+                self.lastVisitedCategory = data
+                WidgetCenter.shared.reloadAllTimelines()
+            }
+        })
     }
 }
