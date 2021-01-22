@@ -15,20 +15,24 @@ class MockUploadService {
 }
 
 extension MockUploadService: UploadServiceProtocol {
+    func placeOrder(orderList: [CartItemModel], address: String, fileURLS: [String], paymentMethod: String, completion: @escaping (Bool) -> ()) {
+        if returnErrorPlacement == true {
+            completion( false )
+        } else {
+            completion( true )
+        }
+    }
+    
+    func storeLastVisitedCategory(category: CategoryModel, completion: @escaping (Data?) -> ()) {
+        
+    }
+    
     
     func uploadFileToStorage(cartItems: [CartItemModel], completion: @escaping ([String]?) -> ()) {
         if returnErrorUpload == true {
             completion ( nil )
         } else {
             completion( ["karen", "martin"])
-        }
-    }
-    
-    func placeOrder(orderList: [CartItemModel], address: String, fileURLS: [String], completion: @escaping (Bool) -> ()) {
-        if returnErrorPlacement == true {
-            completion( false )
-        } else {
-            completion( true )
         }
     }
     

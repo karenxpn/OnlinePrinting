@@ -175,7 +175,7 @@ extension MainViewModel {
         self.loading = true
         dataManager.uploadFileToStorage(cartItems: self.orderList) { (response) in
             if let response = response {
-                self.dataManager.placeOrder(orderList: self.orderList, address: self.address, fileURLS: response) { (uploadResponse) in
+                self.dataManager.placeOrder(orderList: self.orderList, address: self.address, fileURLS: response, paymentMethod: self.paymentMethod) { (uploadResponse) in
                     if uploadResponse == true {
                         self.orderList.removeAll(keepingCapacity: false)
                         self.displayError(with: AlertMessages.uploadSuccessMessage, for: .placementCompleted)

@@ -65,7 +65,7 @@ struct SelectedCategory: View {
             
             CalculatePriceButton(category: self.category).environmentObject( self.mainVM )
             
-        }.onAppear{
+        }.onAppear {
             self.mainVM.path = nil
             self.mainVM.fileName = ""
             self.mainVM.info = ""

@@ -16,7 +16,7 @@ import CombineFirebaseFirestore
 
 protocol UploadServiceProtocol {
     func uploadFileToStorage( cartItems: [CartItemModel], completion: @escaping ( [String]? ) -> () )
-    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], completion: @escaping ( Bool ) -> ())
+    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], paymentMethod: String, completion: @escaping ( Bool ) -> ())
     func calculateAmount( selectedCategorySpecs: Specs, count: Int, typeOfPrinting: String, additionalFunctionalityTitle: String, completion: @escaping ( Int ) -> () )
     func storeLastVisitedCategory( category: CategoryModel, completion: @escaping ( Data?) -> ())
 }
@@ -68,7 +68,7 @@ extension UploadService : UploadServiceProtocol{
         }
     }
     
-    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], completion: @escaping ( Bool ) -> () ) {
+    func placeOrder( orderList: [CartItemModel], address: String, fileURLS: [String], paymentMethod: String, completion: @escaping ( Bool ) -> () ) {
         let db = Firestore.firestore()
         
         var orders = [[String: Any]]()
@@ -91,7 +91,8 @@ extension UploadService : UploadServiceProtocol{
         
         let orderDetails = [
             "totalPrice" : totalPrice,
-            "address" : address
+            "address" : address,
+            "paymentMethod": paymentMethod
         ] as [String : Any]
         
         db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).collection("orders").addDocument( data: [ "orderDetails" : orderDetails, "order" : orders ]) { (error) in

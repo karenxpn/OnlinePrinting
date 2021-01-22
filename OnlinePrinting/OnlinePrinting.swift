@@ -38,7 +38,7 @@ struct Provider: TimelineProvider {
         }
                 
         let entry = SimpleEntry(widgetModel:  item)
-        completion( Timeline(entries: [entry], policy: .atEnd))
+        completion( Timeline(entries: [entry], policy: .atEnd) )
     }
 }
 
